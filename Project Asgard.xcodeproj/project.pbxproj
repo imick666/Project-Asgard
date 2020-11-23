@@ -15,7 +15,10 @@
 		E0E44BF5256BFF870086F451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E44BF4256BFF870086F451 /* Assets.xcassets */; };
 		E0E44BF8256BFF870086F451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E44BF6256BFF870086F451 /* LaunchScreen.storyboard */; };
 		E0E44C03256BFF870086F451 /* Project_AsgardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C02256BFF870086F451 /* Project_AsgardTests.swift */; };
-		E0E44C0E256BFF870086F451 /* Project_AsgardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C0D256BFF870086F451 /* Project_AsgardUITests.swift */; };
+		E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C2C256C00C20086F451 /* CoreDataStack.swift */; };
+		E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C33256C02740086F451 /* CoreDataManager.swift */; };
+		E0E44C3A256C03010086F451 /* MokeCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */; };
+		E0E44C42256C04D40086F451 /* DogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C41256C04D40086F451 /* DogTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +52,10 @@
 		E0E44C02256BFF870086F451 /* Project_AsgardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AsgardTests.swift; sourceTree = "<group>"; };
 		E0E44C04256BFF870086F451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0E44C09256BFF870086F451 /* Project AsgardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AsgardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0E44C0D256BFF870086F451 /* Project_AsgardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AsgardUITests.swift; sourceTree = "<group>"; };
-		E0E44C0F256BFF870086F451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E44C2C256C00C20086F451 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E0E44C33256C02740086F451 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokeCoreDataStack.swift; sourceTree = "<group>"; };
+		E0E44C41256C04D40086F451 /* DogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +88,6 @@
 			children = (
 				E0E44BE7256BFF860086F451 /* Project Asgard */,
 				E0E44C01256BFF870086F451 /* Project AsgardTests */,
-				E0E44C0C256BFF870086F451 /* Project AsgardUITests */,
 				E0E44BE6256BFF860086F451 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,19 +117,11 @@
 		E0E44C01256BFF870086F451 /* Project AsgardTests */ = {
 			isa = PBXGroup;
 			children = (
+				E0E44C38256C02F30086F451 /* CoreDataTest */,
 				E0E44C02256BFF870086F451 /* Project_AsgardTests.swift */,
 				E0E44C04256BFF870086F451 /* Info.plist */,
 			);
 			path = "Project AsgardTests";
-			sourceTree = "<group>";
-		};
-		E0E44C0C256BFF870086F451 /* Project AsgardUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E0E44C0D256BFF870086F451 /* Project_AsgardUITests.swift */,
-				E0E44C0F256BFF870086F451 /* Info.plist */,
-			);
-			path = "Project AsgardUITests";
 			sourceTree = "<group>";
 		};
 		E0E44C24256BFFB10086F451 /* Model */ = {
@@ -167,8 +163,19 @@
 			isa = PBXGroup;
 			children = (
 				E0E44BF1256BFF860086F451 /* Project_Asgard.xcdatamodeld */,
+				E0E44C2C256C00C20086F451 /* CoreDataStack.swift */,
+				E0E44C33256C02740086F451 /* CoreDataManager.swift */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		E0E44C38256C02F30086F451 /* CoreDataTest */ = {
+			isa = PBXGroup;
+			children = (
+				E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */,
+				E0E44C41256C04D40086F451 /* DogTest.swift */,
+			);
+			path = CoreDataTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +308,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */,
+				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
 				E0E44BED256BFF860086F451 /* ViewController.swift in Sources */,
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
@@ -312,7 +321,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E44C42256C04D40086F451 /* DogTest.swift in Sources */,
 				E0E44C03256BFF870086F451 /* Project_AsgardTests.swift in Sources */,
+				E0E44C3A256C03010086F451 /* MokeCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +331,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0E44C0E256BFF870086F451 /* Project_AsgardUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
