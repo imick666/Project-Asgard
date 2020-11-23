@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F56256C0D9000D09424 /* DogListTableViewController.swift */; };
+		E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F63256C280800D09424 /* CreateDogViewController.swift */; };
+		E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F68256C28B300D09424 /* UIButton+Layer.swift */; };
+		E0C8FA71256C09E900029BDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA70256C09E900029BDB /* Constants.swift */; };
+		E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */; };
+		E0C8FA7A256C0A9500029BDB /* DogMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */; };
+		E0C8FA83256C0B6600029BDB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA82256C0B6600029BDB /* ImageView.swift */; };
 		E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44BE8256BFF860086F451 /* AppDelegate.swift */; };
 		E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44BEA256BFF860086F451 /* SceneDelegate.swift */; };
-		E0E44BED256BFF860086F451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44BEC256BFF860086F451 /* ViewController.swift */; };
 		E0E44BF0256BFF860086F451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E44BEE256BFF860086F451 /* Main.storyboard */; };
 		E0E44BF3256BFF860086F451 /* Project_Asgard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0E44BF1256BFF860086F451 /* Project_Asgard.xcdatamodeld */; };
 		E0E44BF5256BFF870086F451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E44BF4256BFF870086F451 /* Assets.xcassets */; };
@@ -39,10 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0952F56256C0D9000D09424 /* DogListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListTableViewController.swift; sourceTree = "<group>"; };
+		E0952F63256C280800D09424 /* CreateDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
+		E0952F68256C28B300D09424 /* UIButton+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Layer.swift"; sourceTree = "<group>"; };
+		E0C8FA70256C09E900029BDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogMenuCell.swift; sourceTree = "<group>"; };
+		E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogMenuCell.xib; sourceTree = "<group>"; };
+		E0C8FA82256C0B6600029BDB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		E0E44BE5256BFF860086F451 /* Project Asgard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Asgard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E44BE8256BFF860086F451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E44BEA256BFF860086F451 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0E44BEC256BFF860086F451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0E44BEF256BFF860086F451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0E44BF2256BFF860086F451 /* Project_Asgard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project_Asgard.xcdatamodel; sourceTree = "<group>"; };
 		E0E44BF4256BFF870086F451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +95,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E0C8FA75256C0A3E00029BDB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E0C8FA76256C0A4300029BDB /* DogMenuCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E0C8FA76256C0A4300029BDB /* DogMenuCells */ = {
+			isa = PBXGroup;
+			children = (
+				E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */,
+				E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */,
+			);
+			path = DogMenuCells;
+			sourceTree = "<group>";
+		};
+		E0C8FA81256C0B5800029BDB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E0C8FA82256C0B6600029BDB /* ImageView.swift */,
+				E0952F68256C28B300D09424 /* UIButton+Layer.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		E0E44BDC256BFF860086F451 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +143,7 @@
 		E0E44BE7256BFF860086F451 /* Project Asgard */ = {
 			isa = PBXGroup;
 			children = (
+				E0C8FA81256C0B5800029BDB /* Extension */,
 				E0E44C27256BFFC20086F451 /* Supported Files */,
 				E0E44C26256BFFBB0086F451 /* Controller */,
 				E0E44C25256BFFB70086F451 /* View */,
@@ -135,6 +174,7 @@
 		E0E44C25256BFFB70086F451 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E0C8FA75256C0A3E00029BDB /* Cells */,
 				E0E44BEE256BFF860086F451 /* Main.storyboard */,
 				E0E44BF6256BFF870086F451 /* LaunchScreen.storyboard */,
 			);
@@ -144,7 +184,8 @@
 		E0E44C26256BFFBB0086F451 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E0E44BEC256BFF860086F451 /* ViewController.swift */,
+				E0952F56256C0D9000D09424 /* DogListTableViewController.swift */,
+				E0952F63256C280800D09424 /* CreateDogViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,6 +196,7 @@
 				E0E44BE8256BFF860086F451 /* AppDelegate.swift */,
 				E0E44BEA256BFF860086F451 /* SceneDelegate.swift */,
 				E0E44BF4256BFF870086F451 /* Assets.xcassets */,
+				E0C8FA70256C09E900029BDB /* Constants.swift */,
 			);
 			path = "Supported Files";
 			sourceTree = "<group>";
@@ -284,6 +326,7 @@
 				E0E44BF8256BFF870086F451 /* LaunchScreen.storyboard in Resources */,
 				E0E44BF5256BFF870086F451 /* Assets.xcassets in Resources */,
 				E0E44BF0256BFF860086F451 /* Main.storyboard in Resources */,
+				E0C8FA7A256C0A9500029BDB /* DogMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */,
 				E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */,
 				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
-				E0E44BED256BFF860086F451 /* ViewController.swift in Sources */,
+				E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */,
+				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
+				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
+				E0C8FA83256C0B6600029BDB /* ImageView.swift in Sources */,
+				E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
 				E0E44BF3256BFF860086F451 /* Project_Asgard.xcdatamodeld in Sources */,
 			);
