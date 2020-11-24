@@ -9,7 +9,7 @@ import UIKit
 
 protocol CreateDogDelegate {
     
-    func createDog()
+    func createDog(named name: String, _ affix: String, birthThe date: Date, lofNumber: String?, chipNumber: String?, picture: Data?)
 }
 
 class CreateDogViewController: UIViewController {
@@ -30,9 +30,7 @@ class CreateDogViewController: UIViewController {
     // MARK: - Properties
     
     private let imagePicker = PickerViewManager()
-    private var imageHasChanged: Bool {
-        return dogImageView.image?.pngData() != UIImage(named: "DogPlaceHolder")?.pngData()
-    }
+    var delegate: CreateDogDelegate?
     
     // MARK: - View Life Cycle
     
@@ -52,7 +50,7 @@ class CreateDogViewController: UIViewController {
         imagePicker.presentAlert(from: self)
         imagePicker.completionHandler = { (image) in
             self.dogImageView.image = image
-            self.resetImageButton.isHidden = !self.imageHasChanged
+            self.resetImageButton.isHidden = !self.dogImageView.imageHasChanged
         }
     }
     
@@ -61,7 +59,7 @@ class CreateDogViewController: UIViewController {
         doneButton.roundFilled(wih: .green)
         resetImageButton.roundFilled(wih: .gray)
         dogImageView.rounded(nil)
-        resetImageButton.isHidden = !imageHasChanged
+        resetImageButton.isHidden = !dogImageView.imageHasChanged
     }
     
     private func setupTextFields() {
@@ -75,7 +73,7 @@ class CreateDogViewController: UIViewController {
     
     @IBAction func didTapResetImageButton(_ sender: Any) {
         dogImageView.image = UIImage(named: "DogPlaceHolder")
-        resetImageButton.isHidden = !imageHasChanged
+        resetImageButton.isHidden = !dogImageView.imageHasChanged
     }
     
     @IBAction func didTapCancelButton(_ sender: Any) {
@@ -83,7 +81,15 @@ class CreateDogViewController: UIViewController {
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
+        guard let name = nameTextField.text.orNil, let affix = affixTextField.text.orNil else { return }
+        let birthDate = birthDatePicker.date
+        let lofNumber = lofTextField.text.orNil
+        let chipNumber = chipTextField.text.orNil
+        let image = dogImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
         
+        delegate?.createDog(named: name, affix, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, picture: image)
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

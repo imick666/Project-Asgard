@@ -37,4 +37,21 @@ final class CoreDataManager {
     
     // MARK: - Mehodes
     
+    func createDog(named name: String, _ affix: String, birthThe date: Date, lofNumber: String?, chipNumber: String?, pitcure: Data?) {
+        let newDog = Dog(context: context)
+        newDog.name = name
+        newDog.affix = affix
+        newDog.birthDate = date
+        newDog.lofNumber = lofNumber
+        newDog.chipNumber = chipNumber
+        newDog.image = pitcure
+        
+        coreDataStack.saveContext()
+    }
+    
+    func deteObject(_ object: NSManagedObject) {
+        context.delete(object)
+        
+        coreDataStack.saveContext()
+    }
 }

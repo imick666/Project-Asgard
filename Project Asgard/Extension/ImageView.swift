@@ -18,5 +18,12 @@ extension UIImageView {
         self.image = image != nil ? UIImage(data: image!) : UIImage(named: "DogPlaceHolder")
     }
     
+    var imageHasChanged: Bool {
+        return self.image?.pngData() != UIImage(named: "DogPlaceHolder")?.pngData()
+    }
+    
+    var imageOrNil: UIImage? {
+        return self.imageHasChanged ? self.image : nil
+    }
     
 }

@@ -13,11 +13,15 @@ class DogMenuCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var affixLabel: UILabel!
     
-    var dog: Dog!
+    var dog: Dog! {
+        didSet {
+            setupView()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

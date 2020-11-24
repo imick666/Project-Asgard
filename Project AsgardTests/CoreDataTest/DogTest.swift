@@ -31,4 +31,23 @@ class DogTest: XCTestCase {
     
     // MARK: - Tests
 
+    // Create / Read
+    
+    func testCreateDog() {
+        coreDataManager.createDog(named: "fidjy", "de la baracine", birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
+        
+        XCTAssertEqual(coreDataManager.allDogs.count, 1)
+    }
+    
+    // Delete
+    
+    func testDeleteObject() {
+        coreDataManager.createDog(named: "fidjy", "de la baracine", birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
+        
+        let dog = coreDataManager.allDogs[0]
+        
+        coreDataManager.deteObject(dog)
+        
+        XCTAssertEqual(coreDataManager.allDogs.count, 0)
+    }
 }

@@ -11,6 +11,7 @@
 		E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F63256C280800D09424 /* CreateDogViewController.swift */; };
 		E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F68256C28B300D09424 /* UIButton+Layer.swift */; };
 		E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */; };
+		E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */; };
 		E0C8FA71256C09E900029BDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA70256C09E900029BDB /* Constants.swift */; };
 		E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */; };
 		E0C8FA7A256C0A9500029BDB /* DogMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */; };
@@ -36,13 +37,6 @@
 			remoteGlobalIDString = E0E44BE4256BFF860086F451;
 			remoteInfo = "Project Asgard";
 		};
-		E0E44C0A256BFF870086F451 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E0E44BDD256BFF860086F451 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E0E44BE4256BFF860086F451;
-			remoteInfo = "Project Asgard";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +44,7 @@
 		E0952F63256C280800D09424 /* CreateDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
 		E0952F68256C28B300D09424 /* UIButton+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Layer.swift"; sourceTree = "<group>"; };
 		E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
+		E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+DefaultValue.swift"; sourceTree = "<group>"; };
 		E0C8FA70256C09E900029BDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogMenuCell.swift; sourceTree = "<group>"; };
 		E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogMenuCell.xib; sourceTree = "<group>"; };
@@ -65,7 +60,6 @@
 		E0E44BFE256BFF870086F451 /* Project AsgardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AsgardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E44C02256BFF870086F451 /* Project_AsgardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AsgardTests.swift; sourceTree = "<group>"; };
 		E0E44C04256BFF870086F451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0E44C09256BFF870086F451 /* Project AsgardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AsgardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E44C2C256C00C20086F451 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E0E44C33256C02740086F451 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokeCoreDataStack.swift; sourceTree = "<group>"; };
@@ -81,13 +75,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E0E44BFB256BFF870086F451 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0E44C06256BFF870086F451 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,6 +106,7 @@
 			children = (
 				E0C8FA82256C0B6600029BDB /* ImageView.swift */,
 				E0952F68256C28B300D09424 /* UIButton+Layer.swift */,
+				E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -137,7 +125,6 @@
 			children = (
 				E0E44BE5256BFF860086F451 /* Project Asgard.app */,
 				E0E44BFE256BFF870086F451 /* Project AsgardTests.xctest */,
-				E0E44C09256BFF870086F451 /* Project AsgardUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,24 +248,6 @@
 			productReference = E0E44BFE256BFF870086F451 /* Project AsgardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E0E44C08256BFF870086F451 /* Project AsgardUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E0E44C18256BFF870086F451 /* Build configuration list for PBXNativeTarget "Project AsgardUITests" */;
-			buildPhases = (
-				E0E44C05256BFF870086F451 /* Sources */,
-				E0E44C06256BFF870086F451 /* Frameworks */,
-				E0E44C07256BFF870086F451 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E0E44C0B256BFF870086F451 /* PBXTargetDependency */,
-			);
-			name = "Project AsgardUITests";
-			productName = "Project AsgardUITests";
-			productReference = E0E44C09256BFF870086F451 /* Project AsgardUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,10 +261,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					E0E44BFD256BFF870086F451 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = E0E44BE4256BFF860086F451;
-					};
-					E0E44C08256BFF870086F451 = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = E0E44BE4256BFF860086F451;
 					};
@@ -316,7 +281,6 @@
 			targets = (
 				E0E44BE4256BFF860086F451 /* Project Asgard */,
 				E0E44BFD256BFF870086F451 /* Project AsgardTests */,
-				E0E44C08256BFF870086F451 /* Project AsgardUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -340,13 +304,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0E44C07256BFF870086F451 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -361,6 +318,7 @@
 				E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */,
 				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
+				E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */,
 				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
 				E0C8FA83256C0B6600029BDB /* ImageView.swift in Sources */,
 				E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */,
@@ -379,13 +337,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0E44C05256BFF870086F451 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -393,11 +344,6 @@
 			isa = PBXTargetDependency;
 			target = E0E44BE4256BFF860086F451 /* Project Asgard */;
 			targetProxy = E0E44BFF256BFF870086F451 /* PBXContainerItemProxy */;
-		};
-		E0E44C0B256BFF870086F451 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E0E44BE4256BFF860086F451 /* Project Asgard */;
-			targetProxy = E0E44C0A256BFF870086F451 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -619,46 +565,6 @@
 			};
 			name = Release;
 		};
-		E0E44C19256BFF870086F451 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V6M3YC3LQG;
-				INFOPLIST_FILE = "Project AsgardUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mickaelruzel.Project-AsgardUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Project Asgard";
-			};
-			name = Debug;
-		};
-		E0E44C1A256BFF870086F451 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V6M3YC3LQG;
-				INFOPLIST_FILE = "Project AsgardUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mickaelruzel.Project-AsgardUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Project Asgard";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -685,15 +591,6 @@
 			buildConfigurations = (
 				E0E44C16256BFF870086F451 /* Debug */,
 				E0E44C17256BFF870086F451 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E0E44C18256BFF870086F451 /* Build configuration list for PBXNativeTarget "Project AsgardUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E0E44C19256BFF870086F451 /* Debug */,
-				E0E44C1A256BFF870086F451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

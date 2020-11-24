@@ -14,6 +14,7 @@ class DogListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCoreData()
+        setupTableView()
     }
 
     // MARK: - Methodes
@@ -44,6 +45,10 @@ class DogListTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView: UIView = {
             let label = UILabel()
@@ -60,6 +65,37 @@ class DogListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return coreData?.allDogs.count == 0 ? 70 : 0
     }
+    
+    // MARK: - TableView Delegate
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let dog = coreData?.allDogs[indexPath.row] else { return }
+            coreData?.deteObject(dog)
+            tableView.reloadData()
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.SeguesID.createDog {
+            guard let destination = segue.destination as? CreateDogViewController else { return }
+            destination.delegate = self
+        }
+    }
 
 
+}
+
+extension DogListTableViewController: CreateDogDelegate {
+    
+    func createDog(named name: String, _ affix: String, birthThe date: Date, lofNumber: String?, chipNumber: String?, picture: Data?) {
+        
+        coreData?.createDog(named: name, affix, birthThe: date, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: picture)
+        
+        tableView.reloadData()
+    }
+    
+    
 }

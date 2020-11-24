@@ -10,7 +10,7 @@ import Foundation
 struct Constants {
     
     struct SeguesID {
-        
+        static let createDog = "CreateDogSegue"
     }
     
     struct StoryboardID {
