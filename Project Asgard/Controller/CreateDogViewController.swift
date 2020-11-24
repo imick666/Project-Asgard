@@ -29,26 +29,54 @@ class CreateDogViewController: UIViewController {
     
     // MARK: - Properties
     
+    private let imagePicker = PickerViewManager()
+    private var imageHasChanged: Bool {
+        return dogImageView.image?.pngData() != UIImage(named: "DogPlaceHolder")?.pngData()
+    }
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupTextFields()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewDidTapped(_:)))
+        dogImageView.addGestureRecognizer(tap)
     }
     
     // MARK: - Methodes
+    
+    @objc
+    private func imageViewDidTapped(_ gesture: UITapGestureRecognizer) {
+        imagePicker.presentAlert(from: self)
+        imagePicker.completionHandler = { (image) in
+            self.dogImageView.image = image
+            self.resetImageButton.isHidden = !self.imageHasChanged
+        }
+    }
     
     private func setupView() {
         cancelButton.roundFilled(wih: .red)
         doneButton.roundFilled(wih: .green)
         resetImageButton.roundFilled(wih: .gray)
         dogImageView.rounded(nil)
+        resetImageButton.isHidden = !imageHasChanged
     }
     
-    
+    private func setupTextFields() {
+        nameTextField.delegate = self
+        affixTextField.delegate = self
+        lofTextField.delegate = self
+        chipTextField.delegate = self
+    }
     
     // MARK: - Actions
+    
+    @IBAction func didTapResetImageButton(_ sender: Any) {
+        dogImageView.image = UIImage(named: "DogPlaceHolder")
+        resetImageButton.isHidden = !imageHasChanged
+    }
     
     @IBAction func didTapCancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -58,4 +86,11 @@ class CreateDogViewController: UIViewController {
         
     }
     
+}
+
+extension CreateDogViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

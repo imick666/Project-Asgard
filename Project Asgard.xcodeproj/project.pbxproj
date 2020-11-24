@@ -10,6 +10,7 @@
 		E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F56256C0D9000D09424 /* DogListTableViewController.swift */; };
 		E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F63256C280800D09424 /* CreateDogViewController.swift */; };
 		E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F68256C28B300D09424 /* UIButton+Layer.swift */; };
+		E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */; };
 		E0C8FA71256C09E900029BDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA70256C09E900029BDB /* Constants.swift */; };
 		E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */; };
 		E0C8FA7A256C0A9500029BDB /* DogMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */; };
@@ -48,6 +49,7 @@
 		E0952F56256C0D9000D09424 /* DogListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListTableViewController.swift; sourceTree = "<group>"; };
 		E0952F63256C280800D09424 /* CreateDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
 		E0952F68256C28B300D09424 /* UIButton+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Layer.swift"; sourceTree = "<group>"; };
+		E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
 		E0C8FA70256C09E900029BDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogMenuCell.swift; sourceTree = "<group>"; };
 		E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogMenuCell.xib; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				E0952F56256C0D9000D09424 /* DogListTableViewController.swift */,
 				E0952F63256C280800D09424 /* CreateDogViewController.swift */,
+				E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */,
 				E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */,
+				E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */,
 				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
 				E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */,
 				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,
