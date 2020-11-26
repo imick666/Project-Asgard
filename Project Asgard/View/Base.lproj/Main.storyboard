@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WlK-Qx-W0w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Fe-gv-Qvu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,17 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail Dog View Controller-->
         <scene sceneID="HTR-Yv-lrN">
             <objects>
-                <viewController id="W3x-Ar-Okd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailDogVC" id="W3x-Ar-Okd" customClass="DetailDogViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0gS-kq-A3s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MainView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6j-X1-hep">
-                                <rect key="frame" x="186" y="438" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wZ-oV-Z3a">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,13 +26,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3gv-Xr-Sog"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5wZ-oV-Z3a" firstAttribute="centerX" secondItem="0gS-kq-A3s" secondAttribute="centerX" id="7MI-sy-PmI"/>
+                            <constraint firstItem="5wZ-oV-Z3a" firstAttribute="centerY" secondItem="0gS-kq-A3s" secondAttribute="centerY" id="IJF-bE-4zG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="5wZ-oV-Z3a" id="OtG-WK-uyO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gP5-TV-wcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="-402"/>
+            <point key="canvasLocation" x="599" y="-353"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Dog List-->
         <scene sceneID="PNF-MQ-G0F">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="eoZ-cN-cQC" customClass="DogListTableViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +52,7 @@
                             <outlet property="delegate" destination="eoZ-cN-cQC" id="h7n-vw-Uh1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HFx-9I-CEb">
+                    <navigationItem key="navigationItem" title="Dog List" id="HFx-9I-CEb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ySA-X3-zZd">
                             <connections>
                                 <segue destination="Sqq-rb-iOJ" kind="presentation" identifier="CreateDogSegue" id="TpK-r0-JUO"/>
@@ -120,7 +126,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="LaA-Df-Z93">
-                                                        <rect key="frame" x="0.0" y="20" width="398" height="216"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="398" height="216"/>
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
@@ -177,7 +183,7 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DogPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="two-g9-ArA">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DogPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="two-g9-ArA">
                                                         <rect key="frame" x="74" y="38" width="250" height="250"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="250" id="ELO-ge-hv9"/>
@@ -258,8 +264,8 @@
         <scene sceneID="lWO-I1-yKb">
             <objects>
                 <navigationController id="Sxt-tF-Vcj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2t2-5s-MPd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2t2-5s-MPd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -270,31 +276,14 @@
             </objects>
             <point key="canvasLocation" x="599" y="-1009"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="BXw-w4-zdT">
-            <objects>
-                <tabBarController id="WlK-Qx-W0w" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F2M-e4-7xZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="5Fe-gv-Qvu" kind="relationship" relationship="viewControllers" id="378-vw-AvI"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHb-C3-evy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1319" y="73"/>
-        </scene>
         <!--Item-->
         <scene sceneID="FsD-RC-8OE">
             <objects>
-                <splitViewController allowDoubleColumnStyle="YES" id="5Fe-gv-Qvu" sceneMemberID="viewController">
+                <splitViewController allowDoubleColumnStyle="YES" id="5Fe-gv-Qvu" customClass="SplitViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="tHY-Gh-w4I"/>
                     <connections>
                         <segue destination="Sxt-tF-Vcj" kind="relationship" relationship="masterViewController" id="8yE-Em-7ky"/>
-                        <segue destination="W3x-Ar-Okd" kind="relationship" relationship="detailViewController" id="Kjf-EV-n4m"/>
+                        <segue destination="W3x-Ar-Okd" kind="relationship" relationship="detailViewController" id="lWI-Au-yYJ"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yck-LU-Cbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

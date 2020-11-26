@@ -47,7 +47,7 @@ class CreateDogViewController: UIViewController {
     
     @objc
     private func imageViewDidTapped(_ gesture: UITapGestureRecognizer) {
-        imagePicker.presentAlert(from: self)
+        imagePicker.presentAlert(from: self, popOver: self)
         imagePicker.completionHandler = { (image) in
             self.dogImageView.image = image
             self.resetImageButton.isHidden = !self.dogImageView.imageHasChanged
@@ -98,5 +98,12 @@ extension CreateDogViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension CreateDogViewController: UIPopoverPresentationControllerDelegate {
+    func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+        popoverPresentationController.sourceView = dogImageView
+        popoverPresentationController.permittedArrowDirections = .down
     }
 }

@@ -14,7 +14,7 @@ struct Constants {
     }
     
     struct StoryboardID {
-        
+        static let detailDog = "DetailDogVC"
     }
     
     struct Cells {

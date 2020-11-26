@@ -16,10 +16,11 @@ class PickerViewManager: UIImagePickerController {
     
     // MARK: - Methodes
     
-    func presentAlert(from controller: UIViewController) {
+    func presentAlert(from controller: UIViewController, popOver delegate: UIPopoverPresentationControllerDelegate?) {
         viewController = controller
         
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.popoverPresentationController?.delegate = delegate
         
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
             let picker = UIImagePickerController()
@@ -49,6 +50,7 @@ class PickerViewManager: UIImagePickerController {
         actionSheet.addAction(cancelAction)
         
         viewController?.present(actionSheet, animated: true, completion: nil)
+        
     }
     
 }
