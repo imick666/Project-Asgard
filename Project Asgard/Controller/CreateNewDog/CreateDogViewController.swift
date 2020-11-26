@@ -10,6 +10,7 @@ import UIKit
 protocol CreateDogDelegate {
     
     func createDog(named name: String, _ affix: String, birthThe date: Date, lofNumber: String?, chipNumber: String?, picture: Data?)
+    
 }
 
 class CreateDogViewController: UIViewController {
@@ -31,6 +32,7 @@ class CreateDogViewController: UIViewController {
     
     private let imagePicker = PickerViewManager()
     var delegate: CreateDogDelegate?
+    var dog: Dog?
     
     // MARK: - View Life Cycle
     

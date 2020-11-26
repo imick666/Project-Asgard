@@ -9,6 +9,8 @@ import UIKit
 
 class DogListTableViewController: UITableViewController {
     
+    // MARK: - Properties
+    
     private var allDogs: [Dog] {
         return mySplitViewController.coreData?.allDogs ?? [Dog]()
     }
@@ -25,10 +27,15 @@ class DogListTableViewController: UITableViewController {
         return splitView.detailView
     }
     
-
+    // MARK: - Vew Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     // MARK: - Methodes

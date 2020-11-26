@@ -29,6 +29,7 @@
 		E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C33256C02740086F451 /* CoreDataManager.swift */; };
 		E0E44C3A256C03010086F451 /* MokeCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */; };
 		E0E44C42256C04D40086F451 /* DogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C41256C04D40086F451 /* DogTest.swift */; };
+		E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		E0E44C33256C02740086F451 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokeCoreDataStack.swift; sourceTree = "<group>"; };
 		E0E44C41256C04D40086F451 /* DogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTest.swift; sourceTree = "<group>"; };
+		E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				E0C8FA82256C0B6600029BDB /* ImageView.swift */,
 				E0952F68256C28B300D09424 /* UIButton+Layer.swift */,
 				E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */,
+				E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */,
 				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
 				E0C8FA83256C0B6600029BDB /* ImageView.swift in Sources */,
+				E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */,
 				E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
 				E0E44BF3256BFF860086F451 /* Project_Asgard.xcdatamodeld in Sources */,
