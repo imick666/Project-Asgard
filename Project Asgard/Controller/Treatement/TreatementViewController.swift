@@ -88,12 +88,22 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.setTitle(treatements[indexPath.row].name!, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: UIColor.red)
-        
+        var alert: UIAlertController!
         let vc = DetailTreatementViewController()
         vc.treatement = treatements[indexPath.row]
-        vc.preferredContentSize.height = view.bounds.height * 0.4
+        vc.preferredContentSize.height = parentView.view.bounds.height * 0.4
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        case .pad:
+            alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        default:
+            return
+        }
+        
+        alert.setTitle(treatements[indexPath.row].name!, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: nil)
+        
         alert.setContentViewController(vc)
         
         let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -103,6 +113,7 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
         }
         alert.addAction(okAction)
         alert.addAction(deleteAction)
+        
         present(alert, animated: true, completion: nil)
     }
     

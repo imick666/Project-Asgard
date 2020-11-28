@@ -22,6 +22,8 @@ class DetailDogViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var noDogView: UIView!
+    
     // MARK: - Properties
     
     var selectedDog: Dog? {
@@ -42,6 +44,12 @@ class DetailDogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        noDogView.isHidden = selectedDog != nil
     }
     
     // MARK: - Methodes
