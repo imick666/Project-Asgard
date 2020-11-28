@@ -14,6 +14,11 @@
 		E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */; };
 		E0952F7E256D1E5300D09424 /* DetailDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */; };
 		E0952F88256D204900D09424 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F87256D204900D09424 /* SplitViewController.swift */; };
+		E0BE1EE42571480E00E9EEFA /* TreatementTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */; };
+		E0BE1EE8257151E200E9EEFA /* CreateTreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */; };
+		E0BE1EEC25715A9400E9EEFA /* Notifcation.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */; };
+		E0BE1EF52571631500E9EEFA /* DetailTreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EF42571631500E9EEFA /* DetailTreatementViewController.swift */; };
+		E0BE1EFB25716F4200E9EEFA /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EFA25716F4200E9EEFA /* UIView+Constraints.swift */; };
 		E0C8FA71256C09E900029BDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA70256C09E900029BDB /* Constants.swift */; };
 		E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */; };
 		E0C8FA7A256C0A9500029BDB /* DogMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */; };
@@ -29,7 +34,9 @@
 		E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C33256C02740086F451 /* CoreDataManager.swift */; };
 		E0E44C3A256C03010086F451 /* MokeCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */; };
 		E0E44C42256C04D40086F451 /* DogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C41256C04D40086F451 /* DogTest.swift */; };
+		E0ED833225729617003E6BA2 /* UIAlertController+setValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */; };
 		E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */; };
+		E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2568E2571444900D45094 /* TreatementViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,11 @@
 		E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+DefaultValue.swift"; sourceTree = "<group>"; };
 		E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDogViewController.swift; sourceTree = "<group>"; };
 		E0952F87256D204900D09424 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementTest.swift; sourceTree = "<group>"; };
+		E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTreatementViewController.swift; sourceTree = "<group>"; };
+		E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifcation.Name.swift; sourceTree = "<group>"; };
+		E0BE1EF42571631500E9EEFA /* DetailTreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTreatementViewController.swift; sourceTree = "<group>"; };
+		E0BE1EFA25716F4200E9EEFA /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		E0C8FA70256C09E900029BDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E0C8FA77256C0A9500029BDB /* DogMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogMenuCell.swift; sourceTree = "<group>"; };
 		E0C8FA78256C0A9500029BDB /* DogMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogMenuCell.xib; sourceTree = "<group>"; };
@@ -69,7 +81,9 @@
 		E0E44C33256C02740086F451 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokeCoreDataStack.swift; sourceTree = "<group>"; };
 		E0E44C41256C04D40086F451 /* DogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTest.swift; sourceTree = "<group>"; };
+		E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+setValues.swift"; sourceTree = "<group>"; };
 		E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		E0F2568E2571444900D45094 /* TreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,14 +113,24 @@
 			path = CreateNewDog;
 			sourceTree = "<group>";
 		};
-		E03D7728256FC559001128F9 /* SplitViewController */ = {
+		E03D7728256FC559001128F9 /* SplitView */ = {
 			isa = PBXGroup;
 			children = (
 				E0952F56256C0D9000D09424 /* DogListTableViewController.swift */,
 				E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */,
 				E0952F87256D204900D09424 /* SplitViewController.swift */,
 			);
-			path = SplitViewController;
+			path = SplitView;
+			sourceTree = "<group>";
+		};
+		E0BE1EEF2571610E00E9EEFA /* Treatement */ = {
+			isa = PBXGroup;
+			children = (
+				E0F2568E2571444900D45094 /* TreatementViewController.swift */,
+				E0BE1EF42571631500E9EEFA /* DetailTreatementViewController.swift */,
+				E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */,
+			);
+			path = Treatement;
 			sourceTree = "<group>";
 		};
 		E0C8FA75256C0A3E00029BDB /* Cells */ = {
@@ -133,6 +157,9 @@
 				E0952F68256C28B300D09424 /* UIButton+Layer.swift */,
 				E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */,
 				E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */,
+				E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */,
+				E0BE1EFA25716F4200E9EEFA /* UIView+Constraints.swift */,
+				E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -199,8 +226,9 @@
 		E0E44C26256BFFBB0086F451 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E03D7728256FC559001128F9 /* SplitViewController */,
+				E03D7728256FC559001128F9 /* SplitView */,
 				E03D7727256FC54E001128F9 /* CreateNewDog */,
+				E0BE1EEF2571610E00E9EEFA /* Treatement */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,6 +259,7 @@
 			children = (
 				E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */,
 				E0E44C41256C04D40086F451 /* DogTest.swift */,
+				E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -338,7 +367,10 @@
 			files = (
 				E0952F7E256D1E5300D09424 /* DetailDogViewController.swift in Sources */,
 				E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */,
+				E0BE1EF52571631500E9EEFA /* DetailTreatementViewController.swift in Sources */,
+				E0BE1EFB25716F4200E9EEFA /* UIView+Constraints.swift in Sources */,
 				E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */,
+				E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */,
 				E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */,
 				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
 				E0952F88256D204900D09424 /* SplitViewController.swift in Sources */,
@@ -348,8 +380,11 @@
 				E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */,
 				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
 				E0C8FA83256C0B6600029BDB /* ImageView.swift in Sources */,
+				E0BE1EE8257151E200E9EEFA /* CreateTreatementViewController.swift in Sources */,
+				E0BE1EEC25715A9400E9EEFA /* Notifcation.Name.swift in Sources */,
 				E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */,
 				E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */,
+				E0ED833225729617003E6BA2 /* UIAlertController+setValues.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
 				E0E44BF3256BFF860086F451 /* Project_Asgard.xcdatamodeld in Sources */,
 			);
@@ -359,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BE1EE42571480E00E9EEFA /* TreatementTest.swift in Sources */,
 				E0E44C42256C04D40086F451 /* DogTest.swift in Sources */,
 				E0E44C03256BFF870086F451 /* Project_AsgardTests.swift in Sources */,
 				E0E44C3A256C03010086F451 /* MokeCoreDataStack.swift in Sources */,

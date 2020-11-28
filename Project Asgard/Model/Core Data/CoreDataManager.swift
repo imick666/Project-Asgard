@@ -49,6 +49,17 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
     
+    func createTreatement(named name: String, startDate: Date, endDate: Date, note: String?, toDog: Dog) {
+        let newTreatement = Treatement(context: context)
+        newTreatement.toDog = toDog
+        newTreatement.name = name
+        newTreatement.startDate = startDate
+        newTreatement.endDate = endDate
+        newTreatement.note = note
+        
+        coreDataStack.saveContext()
+    }
+    
     func deteObject(_ object: NSManagedObject) {
         context.delete(object)
         

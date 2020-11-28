@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol CreateDogDelegate {
-    
-    func createDog(named name: String, _ affix: String, birthThe date: Date, lofNumber: String?, chipNumber: String?, picture: Data?)
-    
-}
-
 class CreateDogViewController: UIViewController {
 
     // MARK: - Outlets
@@ -31,7 +25,7 @@ class CreateDogViewController: UIViewController {
     // MARK: - Properties
     
     private let imagePicker = PickerViewManager()
-    var delegate: CreateDogDelegate?
+    private var coreData: CoreDataManager?
     var dog: Dog?
     
     // MARK: - View Life Cycle
@@ -40,6 +34,7 @@ class CreateDogViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupTextFields()
+        setupCoreData()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewDidTapped(_:)))
         dogImageView.addGestureRecognizer(tap)
@@ -56,6 +51,13 @@ class CreateDogViewController: UIViewController {
         }
     }
     
+    private func setupCoreData() {
+        guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else {
+            fatalError("Failed to load CoreData")
+        }
+        coreData = CoreDataManager(stack)
+    }
+    
     private func setupView() {
         cancelButton.roundFilled(wih: .red)
         doneButton.roundFilled(wih: .green)
@@ -69,6 +71,11 @@ class CreateDogViewController: UIViewController {
         affixTextField.delegate = self
         lofTextField.delegate = self
         chipTextField.delegate = self
+    }
+    
+    private func sendNotifcation() {
+        let noticationCenter = NotificationCenter.default
+        noticationCenter.post(name: .changeDog, object: nil)
     }
     
     // MARK: - Actions
@@ -89,9 +96,11 @@ class CreateDogViewController: UIViewController {
         let chipNumber = chipTextField.text.orNil
         let image = dogImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
         
-        delegate?.createDog(named: name, affix, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, picture: image)
+        coreData?.createDog(named: name, affix, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: image)
         
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.sendNotifcation()
+        }
     }
     
 }

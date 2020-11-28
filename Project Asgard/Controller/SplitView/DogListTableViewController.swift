@@ -40,12 +40,15 @@ class DogListTableViewController: UITableViewController {
 
     // MARK: - Methodes
     
+    
+    
     private func setupTableView() {
         let nib = UINib(nibName: Constants.Cells.dogMenuCellNib, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Constants.Cells.dogMenuCellID)
         
         tableView.tableFooterView = UIView()
     }
+    
     
     // MARK: - Table view data source
 
@@ -95,14 +98,5 @@ class DogListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         detailView?.selectedDog = allDogs[indexPath.row]
         splitViewController?.showDetailViewController(detailView!, sender: nil)
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.SeguesID.createDog {
-            guard let destination = segue.destination as? CreateDogViewController else { return }
-            destination.delegate = mySplitViewController
-        }
     }
 }

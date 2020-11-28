@@ -19,6 +19,9 @@ class DetailDogViewController: UIViewController {
     @IBOutlet weak var lofNbLabel: UILabel!
     @IBOutlet weak var chipNbLabel: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     // MARK: - Properties
     
     var selectedDog: Dog? {
@@ -27,11 +30,18 @@ class DetailDogViewController: UIViewController {
         }
     }
     
+    private var treatementViewController: TreatementViewController {
+        guard let vc = children.first(where: {$0 is TreatementViewController}) as? TreatementViewController else {
+            fatalError("Failed to get TreatementViewController")
+        }
+        return vc
+    }
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        scrollView.delegate = self
     }
     
     // MARK: - Methodes
@@ -55,6 +65,21 @@ class DetailDogViewController: UIViewController {
         birthDateLabel.text = "\(birthDate) (\(age))"
         lofNbLabel.text? = "Lof : \(dog.lofNumber.orNc)"
         chipNbLabel.text = "Chip : \(dog.chipNumber.orNc)"
+        
+        setupChildrens()
     }
+    
+    private func setupChildrens() {
+        let treatement = selectedDog?.treatements?.sortedArray(using: [NSSortDescriptor(key: "name", ascending: true)]) as? [Treatement]
+        treatementViewController.treatements = treatement ?? [Treatement]()
+    }
+}
 
+extension DetailDogViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        pageControl.currentPage = page
+    }
+    
 }
