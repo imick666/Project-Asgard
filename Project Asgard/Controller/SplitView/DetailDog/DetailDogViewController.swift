@@ -28,7 +28,7 @@ class DetailDogViewController: UIViewController {
     
     var selectedDog: Dog? {
         didSet {
-            setupView()
+            setupContent()
         }
     }
     
@@ -43,7 +43,9 @@ class DetailDogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         scrollView.delegate = self
+        
         
     }
     
@@ -55,21 +57,25 @@ class DetailDogViewController: UIViewController {
     // MARK: - Methodes
     
     private func setupView() {
-        guard let dog = selectedDog,
-              let birthDate = dog.birthDate?.ddMMYY,
-              let age = dog.birthDate?.age else { return }
-        topView.layer.cornerRadius = 30
         
+        topView.layer.cornerRadius = 30
         topView.layer.shadowOffset = CGSize(width: 0, height: 5)
         topView.layer.shadowColor = UIColor.gray.cgColor
         topView.layer.shadowRadius = 10
         topView.layer.shadowOpacity = 0.5
         
+        pictureImageViw.rounded(nil)
+    }
+    
+    private func setupContent() {
+        guard let dog = selectedDog,
+              let birthDate = dog.birthDate?.ddMMYY,
+              let age = dog.birthDate?.age else { return }
+        
         nameLabel.text = dog.name?.capitalized
         nameLabel.sizeToFit()
         affixLabel.text = dog.affix?.capitalized
         pictureImageViw.dogImage(from: dog.image)
-        pictureImageViw.rounded(nil)
         birthDateLabel.text = "\(birthDate) (\(age))"
         lofNbLabel.text? = "Lof : \(dog.lofNumber.orNc)"
         chipNbLabel.text = "Chip : \(dog.chipNumber.orNc)"
@@ -89,5 +95,4 @@ extension DetailDogViewController: UIScrollViewDelegate {
         let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         pageControl.currentPage = page
     }
-    
 }

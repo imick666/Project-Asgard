@@ -36,6 +36,10 @@ class TreatementViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupCoreData()
+        
+        view.layer.cornerRadius = 30
+        view.layer.borderColor = UIColor.blue.cgColor
+        view.layer.borderWidth = 2
     }
     
     // MARK: - Methodes
