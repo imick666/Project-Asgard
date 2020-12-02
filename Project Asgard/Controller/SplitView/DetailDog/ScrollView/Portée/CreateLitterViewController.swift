@@ -20,7 +20,13 @@ class CreateLitterViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var puppies = [Puppy]()
+    private var puppies = [Puppy]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    private var coreData: CoreDataManager?
+    var forDog: Dog!
     
     // MARK: - View Life Cycle
 
@@ -32,6 +38,13 @@ class CreateLitterViewController: UIViewController {
     
     // MARK: - Methodes
     
+    private func setupCoreData() {
+        guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else {
+            fatalError("Failed to load CoreDataStack")
+        }
+        coreData = CoreDataManager(stack)
+    }
+    
     private func setupView() {
         cancelButton.roundFilled(wih: .red)
         doneButton.roundFilled(wih: .green)
@@ -41,14 +54,18 @@ class CreateLitterViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        
-        let createPuppyNib = UINib(nibName: Constants.Cells.createPuppyCellNib, bundle: .main)
-        tableView.register(createPuppyNib, forCellReuseIdentifier: Constants.Cells.createPuppyCellID)
+    }
+    
+    private func sendNotification() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.post(Notification(name: .changeDog))
     }
     
     @objc
     private func addPuppy() {
-        print("Add Puppy")
+        guard let createPuppyVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createPuppy) as? CreatePuppyViewController else { return }
+        
+        present(createPuppyVC, animated: true, completion: nil)
     }
     
     // MARK: - Actions
@@ -58,7 +75,19 @@ class CreateLitterViewController: UIViewController {
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
+        let date = datePicker.date
+        let cesarean = cesareanSwitch.isOn
+        guard puppies.count != 0 else {
+            // TODO: add alert
+            // You must add a leats one puppy
+            return
+        }
         
+        coreData?.createLitter(of: forDog, the: date, cesarean: cesarean, with: puppies)
+        
+        dismiss(animated: true) {
+            self.sendNotification()
+        }
     }
 
 }
@@ -80,7 +109,7 @@ extension CreateLitterViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 44
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -94,7 +123,7 @@ extension CreateLitterViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 70
+        return 44
     }
     
     // MARK: - TableView Delegate

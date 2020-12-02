@@ -16,12 +16,11 @@ struct Constants {
     struct StoryboardID {
         static let createTreatement = "CreateTreatementVC"
         static let createLitter = "CreateLitterVC"
+        static let createPuppy = "CreatePuppyVC"
     }
     
     struct Cells {
         static let dogMenuCellID = "DogMenuCellID"
         static let dogMenuCellNib = "DogMenuCell"
-        static let createPuppyCellID = "CreatePuppyCellID"
-        static let createPuppyCellNib = "CreatePuppyCell"
     }
 }

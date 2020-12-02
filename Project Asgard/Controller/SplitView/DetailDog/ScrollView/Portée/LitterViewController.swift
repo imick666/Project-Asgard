@@ -20,6 +20,13 @@ class LitterViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    private var parentView: DetailDogViewController {
+        guard let vc = parent as? DetailDogViewController else {
+            fatalError("Failed to load parent viewController")
+        }
+        return vc
+    }
 
     // MARK: - View Life Cycle
     
@@ -48,6 +55,7 @@ class LitterViewController: UIViewController {
     
     @IBAction func didTapAddButton(_ sender: Any) {
         guard let createLitterVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createLitter) as? CreateLitterViewController else { return }
+        createLitterVC.forDog = parentView.selectedDog
         present(createLitterVC, animated: true, completion: nil)
     }
 }

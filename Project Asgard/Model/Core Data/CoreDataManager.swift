@@ -60,10 +60,11 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
     
-    func createLitter(of dog: Dog, the date: Date, with puppies: [Puppy]) {
+    func createLitter(of dog: Dog, the date: Date, cesarean: Bool, with puppies: [Puppy]) {
         let newLitter = DogLitter(context: context)
         newLitter.date = date
         newLitter.dog = dog
+        newLitter.cesrean = cesarean
         puppies.forEach( {newLitter.addToPuppies(_: $0) })
         
         coreDataStack.saveContext()

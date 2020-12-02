@@ -10,13 +10,6 @@ import UIKit
 class DetailTreatementViewController: UIViewController {
     
     // MARK: - View Properties
-    private var nameLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        
-        return label
-    }()
     
     private var startDateLabel: UILabel = {
         let label = UILabel()
@@ -59,20 +52,6 @@ class DetailTreatementViewController: UIViewController {
         return stack
     }()
     
-    private var topBorder: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        
-        return view
-    }()
-    
-    private var bottomBorder: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        
-        return view
-    }()
-    
     // MARK: - Properties
     
     var treatement: Treatement!
@@ -89,7 +68,6 @@ class DetailTreatementViewController: UIViewController {
     // MARK: - Methodes
     
     private func setupContent() {
-        nameLabel.text = treatement.name?.capitalized
         startDateLabel.text = """
             Start
             \(String(treatement.startDate!.ddMMYY))
