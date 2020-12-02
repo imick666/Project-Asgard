@@ -32,10 +32,20 @@ class DetailDogViewController: UIViewController {
         }
     }
     
+    // MARK: - Children ViewController
+    
     private var treatementViewController: TreatementViewController {
         guard let vc = children.first(where: {$0 is TreatementViewController}) as? TreatementViewController else {
             fatalError("Failed to get TreatementViewController")
         }
+        return vc
+    }
+    
+    private var litterViewController: LitterViewController {
+        guard let vc = children.first(where: { $0 is LitterViewController }) as? LitterViewController else {
+            fatalError("Failed to load LitterVeiwController")
+        }
+        
         return vc
     }
     
@@ -82,8 +92,13 @@ class DetailDogViewController: UIViewController {
     }
     
     private func setupChildrens() {
+        // Treatements
         let treatement = selectedDog?.treatements?.sortedArray(using: [NSSortDescriptor(key: "name", ascending: true)]) as? [Treatement]
         treatementViewController.treatements = treatement ?? [Treatement]()
+        
+        // Litters
+        let litters = selectedDog?.litter?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [DogLitter]
+        litterViewController.litters = litters ?? [DogLitter]()
     }
 }
 

@@ -8,26 +8,84 @@
 import UIKit
 
 class LitterViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
+    
+    var litters = [DogLitter]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
+        setupView()
+    }
+    
+    // MARK: - Methodes
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+    }
+
+    private func setupView() {
         view.layer.cornerRadius = 30
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.red.cgColor
-        
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    
+    @IBAction func didTapAddButton(_ sender: Any) {
+        guard let createLitterVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createLitter) as? CreateLitterViewController else { return }
+        present(createLitterVC, animated: true, completion: nil)
     }
-    */
+}
+
+// MARK: - TableView
+
+extension LitterViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // MARK: - TableView DataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "This dog has no litter for the moment"
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.textColor = .gray
+        
+        return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return litters.count == 0 ? tableView.bounds.height : 0
+    }
+
+    // MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
