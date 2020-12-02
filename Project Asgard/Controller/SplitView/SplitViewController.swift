@@ -35,7 +35,6 @@ class SplitViewController: UISplitViewController {
     
     @objc
     private func notificationReceive() {
-        ("je passe!")
         masterView.tableView.reloadData()
         detailView.selectedDog = coreData?.allDogs.first(where: {$0 == detailView.selectedDog})
     }

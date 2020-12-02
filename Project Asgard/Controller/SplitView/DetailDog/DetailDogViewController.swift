@@ -45,8 +45,6 @@ class DetailDogViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         scrollView.delegate = self
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

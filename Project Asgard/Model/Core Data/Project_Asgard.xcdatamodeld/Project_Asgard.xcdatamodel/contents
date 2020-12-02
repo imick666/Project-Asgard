@@ -7,7 +7,24 @@
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="lofNumber" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Treatement" inverseName="toDog" inverseEntity="Treatement"/>
+        <relationship name="litter" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DogLitter" inverseName="dog" inverseEntity="DogLitter"/>
+        <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Treatement" inverseName="toDog" inverseEntity="Treatement"/>
+    </entity>
+    <entity name="DogLitter" representedClassName=".DogLitter" syncable="YES" codeGenerationType="class">
+        <attribute name="cesrean" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="dog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="litter" inverseEntity="Dog"/>
+        <relationship name="puppies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Puppy" inverseName="litter" inverseEntity="Puppy"/>
+    </entity>
+    <entity name="Puppy" representedClassName=".Puppy" syncable="YES" codeGenerationType="class">
+        <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="chipNumber" optional="YES" attributeType="String"/>
+        <attribute name="dogColor" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="necklaceColor" optional="YES" attributeType="String"/>
+        <attribute name="picture" optional="YES" attributeType="Binary"/>
+        <attribute name="sex" attributeType="String"/>
+        <relationship name="litter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DogLitter" inverseName="puppies" inverseEntity="DogLitter"/>
     </entity>
     <entity name="Treatement" representedClassName=".Treatement" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" attributeType="Date" usesScalarValueType="NO"/>
@@ -17,7 +34,9 @@
         <relationship name="toDog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="treatements" inverseEntity="Dog"/>
     </entity>
     <elements>
-        <element name="Dog" positionX="-117.647705078125" positionY="332.8988037109375" width="128" height="134"/>
-        <element name="Treatement" positionX="-63" positionY="27" width="128" height="118"/>
+        <element name="Dog" positionX="-117.647705078125" positionY="332.8988037109375" width="128" height="149"/>
+        <element name="DogLitter" positionX="-90" positionY="189" width="128" height="89"/>
+        <element name="Puppy" positionX="-81" positionY="198" width="128" height="149"/>
+        <element name="Treatement" positionX="-63" positionY="27" width="128" height="104"/>
     </elements>
 </model>

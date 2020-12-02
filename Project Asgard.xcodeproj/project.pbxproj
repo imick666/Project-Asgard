@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E02282BC2577CD1200AD28DD /* Litter&PuppyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */; };
 		E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F56256C0D9000D09424 /* DogListTableViewController.swift */; };
 		E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F63256C280800D09424 /* CreateDogViewController.swift */; };
 		E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F68256C28B300D09424 /* UIButton+Layer.swift */; };
@@ -35,7 +36,7 @@
 		E0E44C3A256C03010086F451 /* MokeCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */; };
 		E0E44C42256C04D40086F451 /* DogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E44C41256C04D40086F451 /* DogTest.swift */; };
 		E0ED833225729617003E6BA2 /* UIAlertController+setValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */; };
-		E0ED833725730C0C003E6BA2 /* PortéeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833625730C0C003E6BA2 /* PortéeViewController.swift */; };
+		E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833625730C0C003E6BA2 /* LitterViewController.swift */; };
 		E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */; };
 		E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2568E2571444900D45094 /* TreatementViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Litter&PuppyTest.swift"; sourceTree = "<group>"; };
 		E0952F56256C0D9000D09424 /* DogListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListTableViewController.swift; sourceTree = "<group>"; };
 		E0952F63256C280800D09424 /* CreateDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
 		E0952F68256C28B300D09424 /* UIButton+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Layer.swift"; sourceTree = "<group>"; };
@@ -83,7 +85,7 @@
 		E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokeCoreDataStack.swift; sourceTree = "<group>"; };
 		E0E44C41256C04D40086F451 /* DogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTest.swift; sourceTree = "<group>"; };
 		E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+setValues.swift"; sourceTree = "<group>"; };
-		E0ED833625730C0C003E6BA2 /* PortéeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PortéeViewController.swift"; sourceTree = "<group>"; };
+		E0ED833625730C0C003E6BA2 /* LitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitterViewController.swift; sourceTree = "<group>"; };
 		E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		E0F2568E2571444900D45094 /* TreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +262,7 @@
 				E0E44C39256C03010086F451 /* MokeCoreDataStack.swift */,
 				E0E44C41256C04D40086F451 /* DogTest.swift */,
 				E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */,
+				E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -267,7 +270,7 @@
 		E0ED833525730BFA003E6BA2 /* Portée */ = {
 			isa = PBXGroup;
 			children = (
-				E0ED833625730C0C003E6BA2 /* PortéeViewController.swift */,
+				E0ED833625730C0C003E6BA2 /* LitterViewController.swift */,
 			);
 			name = "Portée";
 			path = "Portée";
@@ -415,7 +418,7 @@
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
 				E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */,
 				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
-				E0ED833725730C0C003E6BA2 /* PortéeViewController.swift in Sources */,
+				E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */,
 				E0C8FA83256C0B6600029BDB /* ImageView.swift in Sources */,
 				E0BE1EE8257151E200E9EEFA /* CreateTreatementViewController.swift in Sources */,
 				E0BE1EEC25715A9400E9EEFA /* Notifcation.Name.swift in Sources */,
@@ -434,6 +437,7 @@
 				E0BE1EE42571480E00E9EEFA /* TreatementTest.swift in Sources */,
 				E0E44C42256C04D40086F451 /* DogTest.swift in Sources */,
 				E0E44C03256BFF870086F451 /* Project_AsgardTests.swift in Sources */,
+				E02282BC2577CD1200AD28DD /* Litter&PuppyTest.swift in Sources */,
 				E0E44C3A256C03010086F451 /* MokeCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

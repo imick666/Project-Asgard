@@ -16,6 +16,4 @@ extension Optional where Wrapped == String {
     var orNc: String {
         return self == nil ? "N/C" : self!
     }
-    
-    
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Porte_eViewController: UIViewController {
+class LitterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

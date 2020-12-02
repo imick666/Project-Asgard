@@ -60,6 +60,24 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
     
+    func createLitter(of dog: Dog, the date: Date, with puppies: [Puppy]) {
+        let newLitter = DogLitter(context: context)
+        newLitter.date = date
+        newLitter.dog = dog
+        puppies.forEach( {newLitter.addToPuppies(_: $0) })
+        
+        coreDataStack.saveContext()
+    }
+    
+    func createPuppy(birth date: Date, sex: String, dogColor: String?) -> Puppy {
+        let newPuppy = Puppy(context: context)
+        newPuppy.birthDate = date
+        newPuppy.sex = sex
+        newPuppy.dogColor = dogColor
+        
+        return newPuppy
+    }
+    
     func deteObject(_ object: NSManagedObject) {
         context.delete(object)
         
