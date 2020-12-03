@@ -37,10 +37,11 @@ final class CoreDataManager {
     
     // MARK: - Mehodes
     
-    func createDog(named name: String, _ affix: String, birthThe date: Date, lofNumber: String?, chipNumber: String?, pitcure: Data?) {
+    func createDog(named name: String, _ affix: String,sex: Int16, birthThe date: Date, lofNumber: String?, chipNumber: String?, pitcure: Data?) {
         let newDog = Dog(context: context)
         newDog.name = name
         newDog.affix = affix
+        newDog.sex = sex
         newDog.birthDate = date
         newDog.lofNumber = lofNumber
         newDog.chipNumber = chipNumber
@@ -70,7 +71,7 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
     
-    func createPuppy(birth date: Date, sex: String, dogColor: String?) -> Puppy {
+    func createPuppy(birth date: Date, sex: Int16, dogColor: String?) -> Puppy {
         let newPuppy = Puppy(context: context)
         newPuppy.birthDate = date
         newPuppy.sex = sex

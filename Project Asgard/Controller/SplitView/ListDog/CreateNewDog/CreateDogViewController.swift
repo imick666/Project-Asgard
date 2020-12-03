@@ -13,6 +13,7 @@ class CreateDogViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var affixTextField: UITextField!
+    @IBOutlet weak var sexSegmentedControl: UISegmentedControl!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var lofTextField: UITextField!
     @IBOutlet weak var chipTextField: UITextField!
@@ -95,8 +96,9 @@ class CreateDogViewController: UIViewController {
         let lofNumber = lofTextField.text.orNil
         let chipNumber = chipTextField.text.orNil
         let image = dogImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
+        let sex = Int16(sexSegmentedControl.selectedSegmentIndex)
         
-        coreData?.createDog(named: name, affix, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: image)
+        coreData?.createDog(named: name, affix, sex: sex, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: image)
         
         dismiss(animated: true) {
             self.sendNotifcation()

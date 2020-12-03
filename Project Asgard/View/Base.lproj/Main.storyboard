@@ -51,18 +51,15 @@
                                                 <rect key="frame" x="0.0" y="68" width="380" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KJD-4N-Jjp">
-                                                        <rect key="frame" x="0.0" y="40" width="222" height="70"/>
+                                                        <rect key="frame" x="0.0" y="27" width="222" height="96"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-kg-bDa">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-Uz-hWt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
-                                                                <variation key="heightClass=regular-widthClass=regular">
-                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
-                                                                </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA5-Nk-dlp">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-kg-bDa">
                                                                 <rect key="frame" x="0.0" y="26" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -71,8 +68,17 @@
                                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tA-Ew-IV7">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA5-Nk-dlp">
                                                                 <rect key="frame" x="0.0" y="52" width="222" height="18"/>
+                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                                                </variation>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tA-Ew-IV7">
+                                                                <rect key="frame" x="0.0" y="78" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -198,6 +204,7 @@ Please Add some dog on the precedent page.</string>
                         <outlet property="pageControl" destination="vYQ-ec-YJv" id="f8p-d4-RGG"/>
                         <outlet property="pictureImageViw" destination="i1U-af-QB1" id="Eos-mS-HGx"/>
                         <outlet property="scrollView" destination="4Cj-jS-wZz" id="dqK-6g-maF"/>
+                        <outlet property="sexLabel" destination="P4p-Uz-hWt" id="tuA-p0-Cng"/>
                         <outlet property="topView" destination="tid-nL-1eQ" id="SnX-Jl-RSn"/>
                     </connections>
                 </viewController>
@@ -242,7 +249,7 @@ Please Add some dog on the precedent page.</string>
                                 <rect key="frame" x="8" y="8" width="412" height="770"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-XI-8NX">
-                                        <rect key="frame" x="0.0" y="0.0" width="412" height="867.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="914.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Dog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXa-KD-h9I">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
@@ -282,8 +289,26 @@ Please Add some dog on the precedent page.</string>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-nY-Y2c">
+                                                <rect key="frame" x="0.0" y="186.66666666666666" width="412" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDI-sn-Xdt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="206" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="78I-h8-M82">
+                                                        <rect key="frame" x="206" y="0.0" width="206" height="32"/>
+                                                        <segments>
+                                                            <segment title="Male"/>
+                                                            <segment title="Female"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xJh-dN-Mhn">
-                                                <rect key="frame" x="0.0" y="186.66666666666663" width="412" height="236.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="233.66666666666663" width="412" height="236.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUy-oz-9t8">
                                                         <rect key="frame" x="0.0" y="0.0" width="412" height="20.333333333333332"/>
@@ -297,7 +322,7 @@ Please Add some dog on the precedent page.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yk7-Pj-NR9">
-                                                <rect key="frame" x="0.0" y="439" width="412" height="54.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="485.99999999999994" width="412" height="54.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DN-QB-YTa">
                                                         <rect key="frame" x="0.0" y="0.0" width="412" height="20.333333333333332"/>
@@ -306,14 +331,14 @@ Please Add some dog on the precedent page.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123456789" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BZ-c7-9if">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="412" height="34"/>
+                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="412" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e95-tW-Fzc">
-                                                <rect key="frame" x="0.0" y="509.33333333333331" width="412" height="54.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="556.33333333333337" width="412" height="54.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MY-h4-fxk">
                                                         <rect key="frame" x="0.0" y="0.0" width="412" height="20.333333333333332"/>
@@ -329,7 +354,7 @@ Please Add some dog on the precedent page.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="N63-rO-USn">
-                                                <rect key="frame" x="0.0" y="579.66666666666663" width="412" height="288"/>
+                                                <rect key="frame" x="0.0" y="626.66666666666663" width="412" height="288"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="q55-6w-8zm">
                                                         <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
@@ -420,6 +445,7 @@ Please Add some dog on the precedent page.</string>
                         <outlet property="lofTextField" destination="4BZ-c7-9if" id="f0A-8k-a7m"/>
                         <outlet property="nameTextField" destination="pxY-Ap-LHK" id="WbU-ro-Ldi"/>
                         <outlet property="resetImageButton" destination="vmi-LU-KLR" id="pDK-Pc-wUK"/>
+                        <outlet property="sexSegmentedControl" destination="78I-h8-M82" id="9PR-J8-wcr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHI-zS-g5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -631,7 +657,7 @@ Please Add some dog on the precedent page.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-cT-gWg">
-                                                <rect key="frame" x="0.0" y="13" width="412" height="216"/>
+                                                <rect key="frame" x="0.0" y="13.333333333333329" width="412" height="216"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
