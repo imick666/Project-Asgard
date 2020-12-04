@@ -8,19 +8,28 @@
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="lofNumber" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="sex" attributeType="Integer 16" minValueString="0" maxValueString="1" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sex" attributeType="Integer 16" minValueString="0" maxValueString="1" usesScalarValueType="YES"/>
         <relationship name="litter" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DogLitter" inverseName="dog" inverseEntity="DogLitter"/>
         <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Treatement" inverseName="toDog" inverseEntity="Treatement"/>
     </entity>
     <entity name="DogLitter" representedClassName=".DogLitter" syncable="YES" codeGenerationType="class">
         <attribute name="cesrean" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="dog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="litter" inverseEntity="Dog"/>
-        <relationship name="puppies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Puppy" inverseName="puppyPitter" inverseEntity="Puppy"/>
+        <relationship name="dog" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="litter" inverseEntity="Dog"/>
+        <relationship name="puppies" toMany="YES" deletionRule="Cascade" destinationEntity="Puppy" inverseName="dogLitter" inverseEntity="Puppy"/>
     </entity>
-    <entity name="Puppy" representedClassName=".Puppy" parentEntity="Dog" syncable="YES" codeGenerationType="class">
+    <entity name="Puppy" representedClassName=".Puppy" syncable="YES" codeGenerationType="class">
+        <attribute name="affix" optional="YES" attributeType="String"/>
+        <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="chipNumber" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="lofNumber" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="necklaceColor" optional="YES" attributeType="String"/>
-        <relationship name="puppyPitter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DogLitter" inverseName="puppies" inverseEntity="DogLitter"/>
+        <attribute name="puppyColor" optional="YES" attributeType="String"/>
+        <attribute name="sex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="dogLitter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DogLitter" inverseName="puppies" inverseEntity="DogLitter"/>
+        <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Treatement" inverseName="toPuppy" inverseEntity="Treatement"/>
     </entity>
     <entity name="Treatement" representedClassName=".Treatement" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" attributeType="Date" usesScalarValueType="NO"/>
@@ -28,11 +37,12 @@
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="toDog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="treatements" inverseEntity="Dog"/>
+        <relationship name="toPuppy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Puppy" inverseName="treatements" inverseEntity="Puppy"/>
     </entity>
     <elements>
         <element name="Dog" positionX="-117.647705078125" positionY="332.8988037109375" width="128" height="179"/>
         <element name="DogLitter" positionX="-90" positionY="189" width="128" height="89"/>
-        <element name="Puppy" positionX="-81" positionY="198" width="128" height="59"/>
-        <element name="Treatement" positionX="-63" positionY="27" width="128" height="104"/>
+        <element name="Puppy" positionX="-81" positionY="198" width="128" height="194"/>
+        <element name="Treatement" positionX="-63" positionY="27" width="128" height="119"/>
     </elements>
 </model>

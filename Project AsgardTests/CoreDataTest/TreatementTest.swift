@@ -29,7 +29,7 @@ class TreatementTest: XCTestCase {
     // MARK: - Methodes
     
     private func createDog() -> Dog {
-        coreData?.createDog(named: "astride", "des", birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
+        coreData?.createDog(named: "astride", "des", sex: 0, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
         
         guard let dog = coreData?.allDogs[0] else {
             fatalError("Failed to create dog")
@@ -45,7 +45,7 @@ class TreatementTest: XCTestCase {
     func testCreateTreatement() {
         let dog = createDog()
         
-        coreData?.createTreatement(named: "keto", startDate: Date(), endDate: Date(), note: nil, toDog: dog)
+        coreData?.createTreatement(named: "keto", startDate: Date(), endDate: Date(), note: nil, to: dog)
         
         XCTAssertEqual(coreData?.allDogs[0].treatements?.count, 1)
     }
@@ -55,7 +55,7 @@ class TreatementTest: XCTestCase {
     func testDeleteTreatement() {
         let dog = createDog()
         
-        coreData?.createTreatement(named: "keto", startDate: Date(), endDate: Date(), note: nil, toDog: dog)
+        coreData?.createTreatement(named: "keto", startDate: Date(), endDate: Date(), note: nil, to: dog)
         
         guard let treatement = coreData?.allDogs[0].treatements?.allObjects[0] as? Treatement else {
             fatalError("Failed to get treatement")

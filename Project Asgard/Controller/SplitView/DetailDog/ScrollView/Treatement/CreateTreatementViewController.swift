@@ -67,7 +67,7 @@ class CreateTreatementViewController: UIViewController {
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
               
-        coreData?.createTreatement(named: name, startDate: startDate, endDate: endDate, note: note, toDog: forDog)
+        coreData?.createTreatement(named: name, startDate: startDate, endDate: endDate, note: note, to: forDog)
         
         dismiss(animated: true) {
             self.sendNotification()

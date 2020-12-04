@@ -50,13 +50,18 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
     
-    func createTreatement(named name: String, startDate: Date, endDate: Date, note: String?, toDog: Dog) {
+    func createTreatement<T: NSObject>(named name: String, startDate: Date, endDate: Date, note: String?, to: T) {
         let newTreatement = Treatement(context: context)
-        newTreatement.toDog = toDog
         newTreatement.name = name
         newTreatement.startDate = startDate
         newTreatement.endDate = endDate
         newTreatement.note = note
+        if let dog = to as? Dog {
+            newTreatement.toDog = dog
+        }
+        if let puppy = to as? Puppy {
+            newTreatement.toPuppy = puppy
+        }
         
         coreDataStack.saveContext()
     }
@@ -75,7 +80,7 @@ final class CoreDataManager {
         let newPuppy = Puppy(context: context)
         newPuppy.birthDate = date
         newPuppy.sex = sex
-        newPuppy.dogColor = dogColor
+        newPuppy.puppyColor = dogColor
         
         return newPuppy
     }

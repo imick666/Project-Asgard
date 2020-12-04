@@ -8,6 +8,19 @@
 import UIKit
 
 extension UIImageView {
+    
+    // MARK: - Properties
+    
+    var imageHasChanged: Bool {
+        return self.image?.pngData() != UIImage(named: "DogPlaceHolder")?.pngData()
+    }
+    
+    var imageOrNil: UIImage? {
+        return self.imageHasChanged ? self.image : nil
+    }
+    
+    // MARK: - Methodes
+ 
     func rounded(_ fillColor: UIColor?) {
         self.layer.cornerRadius = self.bounds.height / 2
         self.layer.borderWidth = 2
@@ -18,12 +31,7 @@ extension UIImageView {
         self.image = image != nil ? UIImage(data: image!) : UIImage(named: "DogPlaceHolder")
     }
     
-    var imageHasChanged: Bool {
-        return self.image?.pngData() != UIImage(named: "DogPlaceHolder")?.pngData()
+    func resetImage() {
+        self.image = UIImage(named: "DogPlaceHolder")
     }
-    
-    var imageOrNil: UIImage? {
-        return self.imageHasChanged ? self.image : nil
-    }
-    
 }

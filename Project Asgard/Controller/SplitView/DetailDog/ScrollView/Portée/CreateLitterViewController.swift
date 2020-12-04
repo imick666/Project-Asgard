@@ -89,7 +89,6 @@ class CreateLitterViewController: UIViewController {
             self.sendNotification()
         }
     }
-
 }
 
 // MARK: - TableView
