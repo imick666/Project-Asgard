@@ -32,6 +32,7 @@ class CreateLitterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCoreData()
         setupView()
         setupTableView()
     }
@@ -64,6 +65,7 @@ class CreateLitterViewController: UIViewController {
     @objc
     private func addPuppy() {
         guard let createPuppyVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createPuppy) as? CreatePuppyViewController else { return }
+        createPuppyVC.delegate = self
         
         present(createPuppyVC, animated: true, completion: nil)
     }
@@ -102,9 +104,15 @@ extension CreateLitterViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let puppy = puppies[indexPath.row]
+        let name = puppy.name ?? "N/C"
+        let color = puppy.puppyColor ?? "N/C"
+        let sex = DogSex(rawValue: puppy.sex)?.description ?? "N/C"
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = "\(name) - \(color) - \(sex)"
         
-        return UITableViewCell()
         
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -126,4 +134,13 @@ extension CreateLitterViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     // MARK: - TableView Delegate
+}
+
+extension CreateLitterViewController: CreatePuppyDelegate {
+    
+    func createPuppy(named name: String?, _ affix: String?, sex: Int16, color: String?, image: Data?) {
+        let puppy = coreData?.createPuppy(birth: datePicker.date, sex: sex, dogColor: color)
+        
+        puppies.append(puppy!)
+    }
 }

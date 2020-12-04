@@ -48,7 +48,11 @@ class CreatePuppyViewController: UIViewController {
     
     @objc
     private func selectImage() {
-        
+        pickerView.presentAlert(from: self, popOver: nil)
+        pickerView.completionHandler = { (image) in
+            self.pitcureImageView.image = image
+            self.updateResetButton()
+        }
     }
     
     private func setupView() {
@@ -82,5 +86,6 @@ class CreatePuppyViewController: UIViewController {
         let image = pitcureImageView.image?.jpegData(compressionQuality: 0.8)
         
         delegate?.createPuppy(named: name, affix, sex: sex, color: dogColor, image: image)
+        dismiss(animated: true, completion: nil)
     }
 }
