@@ -758,6 +758,34 @@ Please Add some dog on the precedent page.</string>
             </objects>
             <point key="canvasLocation" x="597" y="783"/>
         </scene>
+        <!--Puppies List Table View Controller-->
+        <scene sceneID="rdB-OW-8RN">
+            <objects>
+                <tableViewController storyboardIdentifier="PuppiesListVC" id="sDQ-Xk-oic" customClass="PuppiesListTableViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qa5-wG-wBt">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lx6-eF-Big">
+                                <rect key="frame" x="0.0" y="28" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lx6-eF-Big" id="vvO-p9-UTm">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sDQ-Xk-oic" id="Zgl-Vj-rqT"/>
+                            <outlet property="delegate" destination="sDQ-Xk-oic" id="oeF-mw-0Vz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVi-Gq-24q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="805"/>
+        </scene>
         <!--Create Puppy View Controller-->
         <scene sceneID="ABM-iX-ohf">
             <objects>

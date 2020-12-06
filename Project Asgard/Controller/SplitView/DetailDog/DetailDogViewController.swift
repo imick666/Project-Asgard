@@ -101,6 +101,7 @@ class DetailDogViewController: UIViewController {
         // Litters
         let litters = selectedDog?.litter?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [DogLitter]
         litterViewController.litters = litters ?? [DogLitter]()
+        litterViewController.delegate = self
     }
 }
 
@@ -109,5 +110,15 @@ extension DetailDogViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         pageControl.currentPage = page
+    }
+}
+
+extension DetailDogViewController: LitterViewControllerDelegate {
+ 
+    func litterDidSelect(_ litter: DogLitter) {
+        guard let puppiesListVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.puppiesList) as? PuppiesListTableViewController else { return }
+        
+        puppiesListVC.puppies = litter.puppies?.allObjects as? [Puppy] ?? [Puppy]()
+        show(puppiesListVC, sender: nil)
     }
 }

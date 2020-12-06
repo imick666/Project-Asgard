@@ -11,6 +11,7 @@
 		E02282C62577DF0100AD28DD /* CreateLitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */; };
 		E02282D52577F02300AD28DD /* CreatePuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */; };
 		E07FEE3D257A81480023232E /* Treatement+PuppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */; };
+		E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */; };
 		E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F56256C0D9000D09424 /* DogListTableViewController.swift */; };
 		E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F63256C280800D09424 /* CreateDogViewController.swift */; };
 		E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F68256C28B300D09424 /* UIButton+Layer.swift */; };
@@ -60,6 +61,7 @@
 		E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLitterViewController.swift; sourceTree = "<group>"; };
 		E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePuppyViewController.swift; sourceTree = "<group>"; };
 		E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Treatement+PuppyTests.swift"; sourceTree = "<group>"; };
+		E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppiesListTableViewController.swift; sourceTree = "<group>"; };
 		E0952F56256C0D9000D09424 /* DogListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListTableViewController.swift; sourceTree = "<group>"; };
 		E0952F63256C280800D09424 /* CreateDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
 		E0952F68256C28B300D09424 /* UIButton+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Layer.swift"; sourceTree = "<group>"; };
@@ -135,9 +137,9 @@
 		E03D7728256FC559001128F9 /* SplitView */ = {
 			isa = PBXGroup;
 			children = (
+				E0952F87256D204900D09424 /* SplitViewController.swift */,
 				E0ED83422573141F003E6BA2 /* ListDog */,
 				E0ED834125731404003E6BA2 /* DetailDog */,
-				E0952F87256D204900D09424 /* SplitViewController.swift */,
 			);
 			path = SplitView;
 			sourceTree = "<group>";
@@ -310,6 +312,7 @@
 			children = (
 				E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */,
 				E0ED833E257313FB003E6BA2 /* ScrollView */,
+				E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */,
 			);
 			path = DetailDog;
 			sourceTree = "<group>";
@@ -317,8 +320,8 @@
 		E0ED83422573141F003E6BA2 /* ListDog */ = {
 			isa = PBXGroup;
 			children = (
-				E03D7727256FC54E001128F9 /* CreateNewDog */,
 				E0952F56256C0D9000D09424 /* DogListTableViewController.swift */,
+				E03D7727256FC54E001128F9 /* CreateNewDog */,
 			);
 			path = ListDog;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */,
 				E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */,
 				E0ED833225729617003E6BA2 /* UIAlertController+setValues.swift in Sources */,
+				E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

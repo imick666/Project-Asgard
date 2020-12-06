@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LitterViewControllerDelegate {
+    func litterDidSelect(_ litter: DogLitter)
+}
+
 class LitterViewController: UIViewController {
     
     // MARK: - Outlets
@@ -20,6 +24,8 @@ class LitterViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    var delegate: LitterViewControllerDelegate?
     
     private var parentView: DetailDogViewController {
         guard let vc = parent as? DetailDogViewController else {
@@ -67,12 +73,13 @@ extension LitterViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableView DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return litters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = litters[indexPath.row].date?.ddMMYY
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -94,6 +101,8 @@ extension LitterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        delegate?.litterDidSelect(litters[indexPath.row])
     }
 
 }
