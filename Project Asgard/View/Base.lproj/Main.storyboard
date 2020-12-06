@@ -533,8 +533,8 @@ Please Add some dog on the precedent page.</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TK2-hF-dMS">
                                 <rect key="frame" x="8" y="52" width="412" height="780"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u3x-Jd-Ue6">
-                                        <rect key="frame" x="0.0" y="0.0" width="412" height="841.33333333333337"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u3x-Jd-Ue6">
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="1041.3333333333333"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Treatement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-CX-TqD">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
@@ -587,7 +587,7 @@ Please Add some dog on the precedent page.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Id1-sc-cdw">
-                                                <rect key="frame" x="0.0" y="621" width="412" height="220.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="621" width="412" height="420.33333333333326"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dR-23-LYx">
                                                         <rect key="frame" x="0.0" y="0.0" width="412" height="20.333333333333332"/>
@@ -596,10 +596,10 @@ Please Add some dog on the precedent page.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-xq-9KY">
-                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="412" height="200"/>
+                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="412" height="400"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="Sjr-JP-ZQR"/>
+                                                            <constraint firstAttribute="height" constant="400" id="Sjr-JP-ZQR"/>
                                                         </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
