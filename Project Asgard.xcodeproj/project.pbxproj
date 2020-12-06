@@ -12,6 +12,7 @@
 		E02282D52577F02300AD28DD /* CreatePuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */; };
 		E07FEE3D257A81480023232E /* Treatement+PuppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */; };
 		E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */; };
+		E07FEE66257D301F0023232E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE65257D301F0023232E /* UIViewController+Alert.swift */; };
 		E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F56256C0D9000D09424 /* DogListTableViewController.swift */; };
 		E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F63256C280800D09424 /* CreateDogViewController.swift */; };
 		E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F68256C28B300D09424 /* UIButton+Layer.swift */; };
@@ -62,6 +63,7 @@
 		E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePuppyViewController.swift; sourceTree = "<group>"; };
 		E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Treatement+PuppyTests.swift"; sourceTree = "<group>"; };
 		E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppiesListTableViewController.swift; sourceTree = "<group>"; };
+		E07FEE65257D301F0023232E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		E0952F56256C0D9000D09424 /* DogListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListTableViewController.swift; sourceTree = "<group>"; };
 		E0952F63256C280800D09424 /* CreateDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
 		E0952F68256C28B300D09424 /* UIButton+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Layer.swift"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */,
 				E0BE1EFA25716F4200E9EEFA /* UIView+Constraints.swift */,
 				E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */,
+				E07FEE65257D301F0023232E /* UIViewController+Alert.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				E0ED833225729617003E6BA2 /* UIAlertController+setValues.swift in Sources */,
 				E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
+				E07FEE66257D301F0023232E /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

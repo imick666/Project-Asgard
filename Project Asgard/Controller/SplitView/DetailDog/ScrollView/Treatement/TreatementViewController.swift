@@ -112,8 +112,15 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
         
         let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
-            self.coreData?.deteObject(self.treatements[indexPath.row])
-            self.sendNotification()
+            self.confirmDeleteAction { (cancelled) in
+                switch cancelled {
+                case true:
+                    self.present(alert, animated: true, completion: nil)
+                case false:
+                    self.coreData?.deteObject(self.treatements[indexPath.row])
+                    self.sendNotification()
+                }
+            }
         }
         alert.addAction(okAction)
         alert.addAction(deleteAction)
