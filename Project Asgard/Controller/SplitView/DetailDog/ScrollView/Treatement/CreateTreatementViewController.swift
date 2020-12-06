@@ -30,9 +30,33 @@ class CreateTreatementViewController: UIViewController {
         super.viewDidLoad()
         setupCoreData()
         setupView()
+        addDoneToKeyboard()
+        nameTextField.delegate = self
+
     }
     
     // MARK: - Methodes
+    
+    @objc
+    private func dismissKeyboard() {
+        nameTextField.resignFirstResponder()
+        noteTextView.resignFirstResponder()
+    }
+    
+    private func addDoneToKeyboard() {
+        let doneToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let felxi = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
+        
+        let items = [felxi, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        noteTextView.inputAccessoryView = doneToolbar
+        
+    }
 
     private func setupCoreData() {
         guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else {
@@ -73,6 +97,11 @@ class CreateTreatementViewController: UIViewController {
             self.sendNotification()
         }
     }
-    
+}
 
+extension CreateTreatementViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return true
+    }
 }
