@@ -40,6 +40,13 @@ class DetailPuppyViewController: UIViewController {
         return vc
     }
     
+    private var weightViewController: WeightViewController {
+        guard let vc = children.first(where: { $0 is WeightViewController }) as? WeightViewController else {
+            fatalError("Failed to get WeightsViewController")
+        }
+        return vc
+    }
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {

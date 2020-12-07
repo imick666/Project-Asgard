@@ -45,6 +45,7 @@
 		E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833625730C0C003E6BA2 /* LitterViewController.swift */; };
 		E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */; };
 		E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2568E2571444900D45094 /* TreatementViewController.swift */; };
+		E0F45117257E8E8E000F75C9 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F45116257E8E8E000F75C9 /* WeightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		E0ED833625730C0C003E6BA2 /* LitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitterViewController.swift; sourceTree = "<group>"; };
 		E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		E0F2568E2571444900D45094 /* TreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementViewController.swift; sourceTree = "<group>"; };
+		E0F45116257E8E8E000F75C9 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +159,8 @@
 		E07FEE76257E6A670023232E /* Puppies */ = {
 			isa = PBXGroup;
 			children = (
-				E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */,
-				E015D070257E813200175DBA /* DetailPuppyViewController.swift */,
+				E0F4510D257E8DE3000F75C9 /* ListPuppies */,
+				E0F4510F257E8DFF000F75C9 /* DetailPuppy */,
 			);
 			path = Puppies;
 			sourceTree = "<group>";
@@ -269,6 +271,7 @@
 		E0E44C26256BFFBB0086F451 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E0F45111257E8E39000F75C9 /* Common */,
 				E07FEE71257E6A430023232E /* TabBar */,
 			);
 			path = Controller;
@@ -321,7 +324,6 @@
 		E0ED833E257313FB003E6BA2 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				E0BE1EEF2571610E00E9EEFA /* Treatement */,
 				E0ED833525730BFA003E6BA2 /* Litter */,
 			);
 			path = ScrollView;
@@ -343,6 +345,55 @@
 				E03D7727256FC54E001128F9 /* CreateNewDog */,
 			);
 			path = ListDog;
+			sourceTree = "<group>";
+		};
+		E0F4510D257E8DE3000F75C9 /* ListPuppies */ = {
+			isa = PBXGroup;
+			children = (
+				E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */,
+			);
+			path = ListPuppies;
+			sourceTree = "<group>";
+		};
+		E0F4510F257E8DFF000F75C9 /* DetailPuppy */ = {
+			isa = PBXGroup;
+			children = (
+				E015D070257E813200175DBA /* DetailPuppyViewController.swift */,
+				E0F45110257E8E13000F75C9 /* ScrollView */,
+			);
+			path = DetailPuppy;
+			sourceTree = "<group>";
+		};
+		E0F45110257E8E13000F75C9 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E0F45115257E8E6E000F75C9 /* Wieght */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		E0F45111257E8E39000F75C9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E0F45112257E8E4A000F75C9 /* Dogs+Puppies */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E0F45112257E8E4A000F75C9 /* Dogs+Puppies */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE1EEF2571610E00E9EEFA /* Treatement */,
+			);
+			path = "Dogs+Puppies";
+			sourceTree = "<group>";
+		};
+		E0F45115257E8E6E000F75C9 /* Wieght */ = {
+			isa = PBXGroup;
+			children = (
+				E0F45116257E8E8E000F75C9 /* WeightViewController.swift */,
+			);
+			path = Wieght;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +524,7 @@
 				E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
 				E015D071257E813200175DBA /* DetailPuppyViewController.swift in Sources */,
+				E0F45117257E8E8E000F75C9 /* WeightViewController.swift in Sources */,
 				E07FEE66257D301F0023232E /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

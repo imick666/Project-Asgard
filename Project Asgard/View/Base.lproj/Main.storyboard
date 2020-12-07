@@ -1406,10 +1406,10 @@
             </objects>
             <point key="canvasLocation" x="380" y="831"/>
         </scene>
-        <!--Litter View Controller-->
+        <!--Weight View Controller-->
         <scene sceneID="Tg0-B2-I17">
             <objects>
-                <viewController id="WLA-ZP-uhd" customClass="LitterViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WLA-ZP-uhd" customClass="WeightViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sld-IU-Zu9">
                         <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1417,8 +1417,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bgc-yB-mL3">
                                 <rect key="frame" x="8" y="8" width="348" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Litters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0J-bD-hyI">
-                                        <rect key="frame" x="0.0" y="0.0" width="59" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0J-bD-hyI">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1436,26 +1436,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ptT-g4-omh">
-                                <rect key="frame" x="8" y="60" width="348" height="389"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ksq-gy-0Bi"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ptT-g4-omh" secondAttribute="bottom" constant="8" id="0fW-R1-dpj"/>
-                            <constraint firstAttribute="trailing" secondItem="ptT-g4-omh" secondAttribute="trailing" constant="8" id="F8X-1N-g43"/>
                             <constraint firstItem="bgc-yB-mL3" firstAttribute="top" secondItem="Sld-IU-Zu9" secondAttribute="top" constant="8" id="LDu-xC-ebd"/>
-                            <constraint firstItem="ptT-g4-omh" firstAttribute="leading" secondItem="Ksq-gy-0Bi" secondAttribute="leading" constant="8" id="Tdg-Tn-zBW"/>
-                            <constraint firstItem="ptT-g4-omh" firstAttribute="top" secondItem="bgc-yB-mL3" secondAttribute="bottom" constant="8" id="ulQ-pA-TH8"/>
                             <constraint firstItem="bgc-yB-mL3" firstAttribute="leading" secondItem="Ksq-gy-0Bi" secondAttribute="leading" constant="8" id="z43-wV-hSh"/>
                             <constraint firstItem="Ksq-gy-0Bi" firstAttribute="trailing" secondItem="bgc-yB-mL3" secondAttribute="trailing" constant="8" id="zxY-L5-RFs"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="ptT-g4-omh" id="uOi-lx-jk8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nA6-a5-YFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
