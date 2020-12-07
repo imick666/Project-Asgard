@@ -19,7 +19,6 @@
 		E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */; };
 		E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */; };
 		E0952F7E256D1E5300D09424 /* DetailDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */; };
-		E0952F88256D204900D09424 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F87256D204900D09424 /* SplitViewController.swift */; };
 		E0BE1EE42571480E00E9EEFA /* TreatementTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */; };
 		E0BE1EE8257151E200E9EEFA /* CreateTreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */; };
 		E0BE1EEC25715A9400E9EEFA /* Notifcation.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */; };
@@ -70,7 +69,6 @@
 		E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
 		E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+DefaultValue.swift"; sourceTree = "<group>"; };
 		E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDogViewController.swift; sourceTree = "<group>"; };
-		E0952F87256D204900D09424 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementTest.swift; sourceTree = "<group>"; };
 		E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTreatementViewController.swift; sourceTree = "<group>"; };
 		E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifcation.Name.swift; sourceTree = "<group>"; };
@@ -136,14 +134,30 @@
 			path = CreateNewDog;
 			sourceTree = "<group>";
 		};
-		E03D7728256FC559001128F9 /* SplitView */ = {
+		E07FEE71257E6A430023232E /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				E0952F87256D204900D09424 /* SplitViewController.swift */,
+				E07FEE73257E6A590023232E /* Dogs */,
+				E07FEE76257E6A670023232E /* Puppies */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E07FEE73257E6A590023232E /* Dogs */ = {
+			isa = PBXGroup;
+			children = (
 				E0ED83422573141F003E6BA2 /* ListDog */,
 				E0ED834125731404003E6BA2 /* DetailDog */,
 			);
-			path = SplitView;
+			path = Dogs;
+			sourceTree = "<group>";
+		};
+		E07FEE76257E6A670023232E /* Puppies */ = {
+			isa = PBXGroup;
+			children = (
+				E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */,
+			);
+			path = Puppies;
 			sourceTree = "<group>";
 		};
 		E0BE1EEF2571610E00E9EEFA /* Treatement */ = {
@@ -252,7 +266,7 @@
 		E0E44C26256BFFBB0086F451 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E03D7728256FC559001128F9 /* SplitView */,
+				E07FEE71257E6A430023232E /* TabBar */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,7 +329,6 @@
 			children = (
 				E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */,
 				E0ED833E257313FB003E6BA2 /* ScrollView */,
-				E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */,
 			);
 			path = DetailDog;
 			sourceTree = "<group>";
@@ -441,7 +454,6 @@
 				E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */,
 				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
 				E0CDC2772578E4BF008D22CB /* DogSex.swift in Sources */,
-				E0952F88256D204900D09424 /* SplitViewController.swift in Sources */,
 				E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */,
 				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
@@ -635,7 +647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mickaelruzel.Project-Asgard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -654,7 +666,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mickaelruzel.Project-Asgard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

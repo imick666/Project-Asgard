@@ -11,6 +11,7 @@ struct Constants {
     
     struct SeguesID {
         static let createDog = "CreateDogSegue"
+        static let detailDog = "DetailDogSegue"
     }
     
     struct StoryboardID {

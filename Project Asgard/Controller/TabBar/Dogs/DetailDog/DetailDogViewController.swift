@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailDogViewController: UIViewController {
 
@@ -23,15 +24,11 @@ class DetailDogViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet weak var noDogView: UIView!
-    
     // MARK: - Properties
     
-    var selectedDog: Dog? {
-        didSet {
-            setupContent()
-        }
-    }
+    var selectedDog: Dog?
+    
+    private var frc: NSFetchedResultsController<Dog>?
     
     // MARK: - Children ViewController
     
@@ -56,14 +53,33 @@ class DetailDogViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         scrollView.delegate = self
+        navigationController?.navigationBar.prefersLargeTitles = false
+        setupContent()
+        setupFrc()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        noDogView.isHidden = selectedDog != nil
     }
     
     // MARK: - Methodes
+    
+    private func setupFrc() {
+        let request: NSFetchRequest<Dog> = Dog.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
+        
+        frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        frc?.delegate = self
+        
+        do {
+            try frc?.performFetch()
+        } catch {
+            print("hoho")
+        }
+    }
     
     private func setupView() {
         
@@ -120,5 +136,12 @@ extension DetailDogViewController: LitterViewControllerDelegate {
         
         puppiesListVC.puppies = litter.puppies?.allObjects as? [Puppy] ?? [Puppy]()
         show(puppiesListVC, sender: nil)
+    }
+}
+
+extension DetailDogViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        selectedDog = frc?.fetchedObjects?.first(where: {$0.name == self.selectedDog?.name })
+        setupChildrens()
     }
 }
