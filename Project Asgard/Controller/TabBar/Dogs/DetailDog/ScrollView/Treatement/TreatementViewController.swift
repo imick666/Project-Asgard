@@ -24,11 +24,14 @@ class TreatementViewController: UIViewController {
     
     private var coreData: CoreDataManager?
     
-    private var parentView: DetailDogViewController {
-        guard let vc = parent as? DetailDogViewController else {
-            fatalError("failed to load parent VC")
+    private var parentView: UIViewController {
+        if let vc = parent as? DetailDogViewController {
+            return vc
+        } else if let vc = parent as? DetailPuppyViewController {
+            return vc
+        } else {
+            fatalError("Failed to load parent ViewController")
         }
-        return vc
     }
 
     // MARK: - View Life Cycle
@@ -68,7 +71,12 @@ class TreatementViewController: UIViewController {
             return
         }
         
-        createTreatementVC.forDog = parentView.selectedDog
+        if let detailDog = parentView as? DetailDogViewController {
+            createTreatementVC.forObject = detailDog.selectedDog
+        } else if let detailPuppy = parentView as? DetailPuppyViewController {
+            createTreatementVC.forObject = detailPuppy.selectedPuppy
+        }
+        
         parent?.present(createTreatementVC, animated: true, completion: nil)
     }
 }

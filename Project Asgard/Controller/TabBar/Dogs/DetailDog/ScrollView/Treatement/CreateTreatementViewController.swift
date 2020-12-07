@@ -21,7 +21,8 @@ class CreateTreatementViewController: UIViewController {
     
     // MARK: - Properties
     
-    var forDog: Dog!
+    var forObject: NSObject!
+    
     private var coreData: CoreDataManager?
     
     // MARK: - View Life Cycle
@@ -70,11 +71,6 @@ class CreateTreatementViewController: UIViewController {
         doneButton.roundFilled(wih: .green)
     }
     
-    private func sendNotification() {
-        let notifactionCenter = NotificationCenter.default
-        notifactionCenter.post(name: .changeDog, object: nil)
-    }
-    
     // MARK: - Actions
     
     @IBAction func didTapCancelButton(_ sender: Any) {
@@ -91,11 +87,9 @@ class CreateTreatementViewController: UIViewController {
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
               
-        coreData?.createTreatement(named: name, startDate: startDate, endDate: endDate, note: note, to: forDog)
+        coreData?.createTreatement(named: name, startDate: startDate, endDate: endDate, note: note, to: forObject)
         
-        dismiss(animated: true) {
-            self.sendNotification()
-        }
+        dismiss(animated: true, completion: nil)
     }
 }
 

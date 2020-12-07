@@ -12,6 +12,7 @@ struct Constants {
     struct SeguesID {
         static let createDog = "CreateDogSegue"
         static let detailDog = "DetailDogSegue"
+        static let detailPuppy = "DetailPuppySegue"
     }
     
     struct StoryboardID {
@@ -19,6 +20,7 @@ struct Constants {
         static let createLitter = "CreateLitterVC"
         static let createPuppy = "CreatePuppyVC"
         static let puppiesList = "PuppiesListVC"
+        static let detailPuppy = "DetailPuppyVC"
     }
     
     struct Cells {
