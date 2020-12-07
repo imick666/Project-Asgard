@@ -50,6 +50,7 @@ class DogListTableViewController: UITableViewController {
         request.sortDescriptors = [
             NSSortDescriptor(key: "name", ascending: true)
         ]
+        
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
