@@ -11,6 +11,7 @@ class CreateDogViewController: UIViewController {
 
     // MARK: - Outlets
     
+    @IBOutlet weak var controllerNameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var affixTextField: UITextField!
     @IBOutlet weak var sexSegmentedControl: UISegmentedControl!
@@ -26,16 +27,21 @@ class CreateDogViewController: UIViewController {
     // MARK: - Properties
     
     private let imagePicker = PickerViewManager()
-    private var coreData: CoreDataManager?
+    private var coreDataStack: CoreDataStack!
+    private var coreData: CoreDataManager!
     var dog: Dog?
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if dog != nil {
+            setupContent()
+        }
         setupView()
         setupTextFields()
         setupCoreData()
+        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewDidTapped(_:)))
         dogImageView.addGestureRecognizer(tap)
@@ -56,7 +62,8 @@ class CreateDogViewController: UIViewController {
         guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else {
             fatalError("Failed to load CoreData")
         }
-        coreData = CoreDataManager(stack)
+        coreDataStack = stack
+        coreData = CoreDataManager(coreDataStack)
     }
     
     private func setupView() {
@@ -74,9 +81,15 @@ class CreateDogViewController: UIViewController {
         chipTextField.delegate = self
     }
     
-    private func sendNotifcation() {
-        let noticationCenter = NotificationCenter.default
-        noticationCenter.post(name: .changeDog, object: nil)
+    private func setupContent() {
+        controllerNameLabel.text = "Modify existing dog"
+        nameTextField.text = dog?.name
+        affixTextField.text = dog?.affix
+        chipTextField.text = dog?.chipNumber
+        lofTextField.text = dog?.lofNumber
+        birthDatePicker.setDate(dog!.birthDate!, animated: true)
+        dogImageView.dogImage(from: dog?.image)
+        sexSegmentedControl.selectedSegmentIndex = Int(dog!.sex)
     }
     
     // MARK: - Actions
@@ -98,13 +111,21 @@ class CreateDogViewController: UIViewController {
         let image = dogImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
         let sex = Int16(sexSegmentedControl.selectedSegmentIndex)
         
-        coreData?.createDog(named: name, affix, sex: sex, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: image)
-        
-        dismiss(animated: true) {
-            self.sendNotifcation()
+        if dog == nil {
+            coreData?.createDog(named: name, affix, sex: sex, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: image)
+        } else {
+            dog?.name = name
+            dog?.affix = affix
+            dog?.birthDate = birthDate
+            dog?.lofNumber = lofNumber
+            dog?.chipNumber = chipNumber
+            dog?.image = image
+            dog?.sex = sex
+            
+            coreDataStack.saveContext()
         }
+        dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension CreateDogViewController: UITextFieldDelegate {

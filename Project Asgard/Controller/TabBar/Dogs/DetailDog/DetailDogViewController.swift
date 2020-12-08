@@ -27,7 +27,6 @@ class DetailDogViewController: UIViewController {
     // MARK: - Properties
     
     var selectedDog: Dog?
-    
     private var frc: NSFetchedResultsController<Dog>?
     
     // MARK: - Children ViewController
@@ -53,13 +52,8 @@ class DetailDogViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         scrollView.delegate = self
-        navigationController?.navigationBar.prefersLargeTitles = false
         setupContent()
         setupFrc()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     // MARK: - Methodes
@@ -119,6 +113,15 @@ class DetailDogViewController: UIViewController {
         litterViewController.litters = litters ?? [DogLitter]()
         litterViewController.delegate = self
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func didTapEditButton(_ sender: Any) {
+        guard let createDogVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createDog) as? CreateDogViewController else { return }
+        
+        createDogVC.dog = selectedDog
+        present(createDogVC, animated: true, completion: nil)
+    }
 }
 
 extension DetailDogViewController: UIScrollViewDelegate {
@@ -143,6 +146,6 @@ extension DetailDogViewController: LitterViewControllerDelegate {
 extension DetailDogViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         selectedDog = frc?.fetchedObjects?.first(where: {$0.name == self.selectedDog?.name })
-        setupChildrens()
+        setupContent()
     }
 }

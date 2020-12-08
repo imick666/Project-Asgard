@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tid-nL-1eQ">
-                                <rect key="frame" x="8" y="148" width="412" height="250"/>
+                                <rect key="frame" x="8" y="96" width="412" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RVP-ix-1DA">
                                         <rect key="frame" x="16" y="16" width="380" height="218"/>
@@ -26,7 +26,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UFS-Qf-Lfi">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fidjy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He0-5y-Oiu" userLabel="Name">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fidjy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He0-5y-Oiu" userLabel="Name">
                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                         <nil key="textColor"/>
@@ -36,7 +36,7 @@
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                                         </variation>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De La Baracine" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpg-oV-cyI" userLabel="Affix">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De La Baracine" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpg-oV-cyI" userLabel="Affix">
                                                         <rect key="frame" x="0.0" y="36" width="380" height="24"/>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                                         <color key="textColor" systemColor="systemGrayColor"/>
@@ -53,13 +53,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KJD-4N-Jjp">
                                                         <rect key="frame" x="0.0" y="27" width="222" height="96"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-Uz-hWt">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-Uz-hWt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-kg-bDa">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-kg-bDa">
                                                                 <rect key="frame" x="0.0" y="26" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -68,7 +68,7 @@
                                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA5-Nk-dlp">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA5-Nk-dlp">
                                                                 <rect key="frame" x="0.0" y="52" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -77,7 +77,7 @@
                                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tA-Ew-IV7">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tA-Ew-IV7">
                                                                 <rect key="frame" x="0.0" y="78" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -88,7 +88,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i1U-af-QB1">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i1U-af-QB1">
                                                         <rect key="frame" x="230" y="0.0" width="150" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="150" id="I1j-eL-EyI"/>
@@ -121,16 +121,16 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cj-jS-wZz">
-                                <rect key="frame" x="0.0" y="430" width="428" height="405"/>
+                                <rect key="frame" x="0.0" y="378" width="428" height="457"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-bE-LWq" userLabel="TreatementContainerView">
-                                        <rect key="frame" x="32" y="0.0" width="364" height="405"/>
+                                        <rect key="frame" x="32" y="0.0" width="364" height="457"/>
                                         <connections>
                                             <segue destination="MVu-Ng-ZjX" kind="embed" id="jcc-Mn-xM7"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-4P-V8t" userLabel="PorteeContainerView">
-                                        <rect key="frame" x="460" y="0.0" width="364" height="405"/>
+                                        <rect key="frame" x="460" y="0.0" width="364" height="457"/>
                                         <connections>
                                             <segue destination="0W9-lP-MEs" kind="embed" id="Th8-N3-Bg8"/>
                                         </connections>
@@ -171,7 +171,13 @@
                             <constraint firstItem="3gv-Xr-Sog" firstAttribute="trailing" secondItem="4Cj-jS-wZz" secondAttribute="trailing" id="vm8-hC-Fqw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ScL-ZG-Pa9"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ScL-ZG-Pa9">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Tbv-hc-NrE">
+                            <connections>
+                                <action selector="didTapEditButton:" destination="W3x-Ar-Okd" id="1Q0-V5-G2p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="affixLabel" destination="Kpg-oV-cyI" id="R35-ja-Luk"/>
                         <outlet property="birthDateLabel" destination="O6N-kg-bDa" id="2Wc-nv-iW4"/>
@@ -220,7 +226,7 @@
         <!--Create Dog View Controller-->
         <scene sceneID="mcV-bC-ZOk">
             <objects>
-                <viewController id="Sqq-rb-iOJ" customClass="CreateDogViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateDogVC" id="Sqq-rb-iOJ" customClass="CreateDogViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPj-qg-sUr">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,7 +237,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-XI-8NX">
                                         <rect key="frame" x="0.0" y="0.0" width="412" height="985"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Dog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXa-KD-h9I">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new dog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXa-KD-h9I">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -436,6 +442,7 @@
                         <outlet property="birthDatePicker" destination="LaA-Df-Z93" id="39f-LR-4Lr"/>
                         <outlet property="cancelButton" destination="7bM-bP-3GJ" id="oGO-7A-t80"/>
                         <outlet property="chipTextField" destination="kME-VS-PnE" id="vvZ-Ev-7ev"/>
+                        <outlet property="controllerNameLabel" destination="bXa-KD-h9I" id="xoO-oV-YS4"/>
                         <outlet property="dogImageView" destination="two-g9-ArA" id="xbo-7L-6xf"/>
                         <outlet property="doneButton" destination="kSL-hy-5a0" id="xAr-7b-YUK"/>
                         <outlet property="lofTextField" destination="4BZ-c7-9if" id="f0A-8k-a7m"/>
@@ -744,7 +751,7 @@
             </objects>
             <point key="canvasLocation" x="1228" y="-667"/>
         </scene>
-        <!--Puppies List Table View Controller-->
+        <!--Puppies List-->
         <scene sceneID="rdB-OW-8RN">
             <objects>
                 <tableViewController storyboardIdentifier="PuppiesListVC" id="sDQ-Xk-oic" customClass="PuppiesListTableViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
@@ -767,7 +774,7 @@
                             <outlet property="delegate" destination="sDQ-Xk-oic" id="oeF-mw-0Vz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eKx-go-6pH"/>
+                    <navigationItem key="navigationItem" title="Puppies List" id="eKx-go-6pH"/>
                     <connections>
                         <segue destination="yFE-PW-dYa" kind="show" identifier="DetailPuppySegue" id="sUA-ef-5bB"/>
                     </connections>
@@ -1030,7 +1037,7 @@
             <objects>
                 <viewController id="MVu-Ng-ZjX" customClass="TreatementViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3MV-yX-93g">
-                        <rect key="frame" x="0.0" y="0.0" width="364" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WPT-zz-Cm8">
@@ -1055,7 +1062,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y2a-0I-exQ">
-                                <rect key="frame" x="8" y="60" width="348" height="337"/>
+                                <rect key="frame" x="8" y="60" width="348" height="389"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1084,7 +1091,7 @@
             <objects>
                 <viewController id="0W9-lP-MEs" customClass="LitterViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ErZ-zR-sCZ">
-                        <rect key="frame" x="0.0" y="0.0" width="364" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fCQ-LW-rYv">
@@ -1110,7 +1117,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="giW-2r-pYQ">
-                                <rect key="frame" x="8" y="60" width="348" height="337"/>
+                                <rect key="frame" x="8" y="60" width="348" height="389"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1140,8 +1147,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hII-bI-fzX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Puppies" id="rMf-eP-dko"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EDT-KF-K5Y">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="EDT-KF-K5Y">
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1334,7 +1341,7 @@
                             <constraint firstItem="UbR-Sl-ckJ" firstAttribute="trailing" secondItem="o1x-FR-a31" secondAttribute="trailing" constant="8" id="tkL-Nj-L0o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="htb-L3-zOi"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="htb-L3-zOi"/>
                     <connections>
                         <outlet property="affixLabel" destination="w4J-ig-YJL" id="H0E-DT-upe"/>
                         <outlet property="birthDateLabel" destination="01i-9i-ZfI" id="cYh-kj-ges"/>

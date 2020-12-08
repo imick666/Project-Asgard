@@ -21,6 +21,7 @@ struct Constants {
         static let createPuppy = "CreatePuppyVC"
         static let puppiesList = "PuppiesListVC"
         static let detailPuppy = "DetailPuppyVC"
+        static let createDog = "CreateDogVC"
     }
     
     struct Cells {
