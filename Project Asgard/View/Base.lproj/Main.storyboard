@@ -826,7 +826,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-K3-jhY">
                                         <rect key="frame" x="0.0" y="0.0" width="412" height="732.66666666666663"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Puppy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-ub-j71">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new puppy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-ub-j71">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -1019,6 +1019,7 @@
                         <outlet property="affixTextField" destination="hUo-k0-Upe" id="Ro6-P1-lWn"/>
                         <outlet property="cancelButton" destination="nJB-ux-Qz4" id="vmy-pT-e59"/>
                         <outlet property="chipNumberTextField" destination="cJ8-cD-Xlg" id="LOX-Ix-su4"/>
+                        <outlet property="controllerNameLabel" destination="ddw-ub-j71" id="NV9-E5-CVI"/>
                         <outlet property="dogColorTextField" destination="T9s-9C-Eag" id="DCS-3g-zXM"/>
                         <outlet property="doneButton" destination="ZAO-Ae-GnE" id="MiO-v1-JEW"/>
                         <outlet property="lofNumberTextField" destination="RIX-Kj-K58" id="OoB-eN-am6"/>
@@ -1341,7 +1342,13 @@
                             <constraint firstItem="UbR-Sl-ckJ" firstAttribute="trailing" secondItem="o1x-FR-a31" secondAttribute="trailing" constant="8" id="tkL-Nj-L0o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="htb-L3-zOi"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="htb-L3-zOi">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="QM4-cu-Q5t">
+                            <connections>
+                                <action selector="didTapEditButton:" destination="yFE-PW-dYa" id="GdN-o3-Ne3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="affixLabel" destination="w4J-ig-YJL" id="H0E-DT-upe"/>
                         <outlet property="birthDateLabel" destination="01i-9i-ZfI" id="cYh-kj-ges"/>

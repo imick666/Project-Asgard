@@ -315,7 +315,6 @@
 			children = (
 				E0ED833625730C0C003E6BA2 /* LitterViewController.swift */,
 				E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */,
-				E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */,
 			);
 			name = Litter;
 			path = "Portée";
@@ -376,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				E0F45112257E8E4A000F75C9 /* Dogs+Puppies */,
+				E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

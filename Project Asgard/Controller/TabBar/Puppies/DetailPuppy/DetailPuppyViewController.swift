@@ -53,13 +53,8 @@ class DetailPuppyViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         scrollView.delegate = self
-        navigationController?.navigationBar.prefersLargeTitles = false
         setupContent()
         setupFrc()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     // MARK: - Methodes
@@ -114,6 +109,16 @@ class DetailPuppyViewController: UIViewController {
         let treatement = selectedPuppy?.treatements?.sortedArray(using: [NSSortDescriptor(key: "name", ascending: true)]) as? [Treatement]
         treatementViewController.treatements = treatement ?? [Treatement]()
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func didTapEditButton(_ sender: Any) {
+        guard let createPuppyVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createPuppy) as? CreatePuppyViewController else { return }
+        createPuppyVC.puppy = selectedPuppy
+        
+        present(createPuppyVC, animated: true, completion: nil)
+    }
+    
 }
 
 extension DetailPuppyViewController: UIScrollViewDelegate {
@@ -127,7 +132,7 @@ extension DetailPuppyViewController: UIScrollViewDelegate {
 extension DetailPuppyViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         selectedPuppy = frc?.fetchedObjects?.first(where: {$0.name == self.selectedPuppy?.name })
-        setupChildrens()
+        setupContent()
     }
 }
 
