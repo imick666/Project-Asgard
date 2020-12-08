@@ -23,6 +23,7 @@ class CreatePuppyViewController: UIViewController {
     @IBOutlet weak var lofNumberTextField: UITextField!
     @IBOutlet weak var chipNumberTextField: UITextField!
     @IBOutlet weak var pictureImageView: UIImageView!
+    @IBOutlet weak var isSoldSwitch: UISwitch!
     
     @IBOutlet weak var resetImageButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -94,6 +95,7 @@ class CreatePuppyViewController: UIViewController {
         pictureImageView.setDogImage(from: puppy?.image)
         puppyColorTextField.text = puppy?.puppyColor
         sexSegmentedControl.selectedSegmentIndex = Int(puppy!.sex)
+        isSoldSwitch.setOn(puppy!.sold, animated: true)
     }
     
     private func updateResetButton() {
@@ -127,6 +129,7 @@ class CreatePuppyViewController: UIViewController {
             puppy?.chipNumber = chipNumber
             puppy?.puppyColor = puppyColor
             puppy?.image = image
+            puppy?.sold = isSoldSwitch.isOn
             
             coreDataStack?.saveContext()
         } else {

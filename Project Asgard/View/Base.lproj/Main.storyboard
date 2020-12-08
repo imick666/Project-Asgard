@@ -805,7 +805,7 @@
                                 <rect key="frame" x="8" y="52" width="412" height="780"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-K3-jhY">
-                                        <rect key="frame" x="0.0" y="0.0" width="412" height="732.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="779.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new puppy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-ub-j71">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
@@ -946,6 +946,20 @@
                                                     <constraint firstAttribute="trailing" secondItem="DFP-07-wYy" secondAttribute="trailing" id="cai-V0-eCa"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3j-Ez-TSa">
+                                                <rect key="frame" x="0.0" y="748.66666666666663" width="412" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrd-VQ-NAS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="363" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NLr-Bm-hr5">
+                                                        <rect key="frame" x="363" y="0.0" width="51" height="31"/>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -1002,6 +1016,7 @@
                         <outlet property="chipNumberTextField" destination="cJ8-cD-Xlg" id="LOX-Ix-su4"/>
                         <outlet property="controllerNameLabel" destination="ddw-ub-j71" id="NV9-E5-CVI"/>
                         <outlet property="doneButton" destination="ZAO-Ae-GnE" id="MiO-v1-JEW"/>
+                        <outlet property="isSoldSwitch" destination="NLr-Bm-hr5" id="PcK-ze-q1S"/>
                         <outlet property="lofNumberTextField" destination="RIX-Kj-K58" id="OoB-eN-am6"/>
                         <outlet property="nameTextField" destination="6vz-Z4-Vg8" id="uaR-6e-vjD"/>
                         <outlet property="pictureImageView" destination="OD5-nb-Wm3" id="Adc-Aa-jdk"/>
