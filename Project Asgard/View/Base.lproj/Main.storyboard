@@ -443,6 +443,7 @@
                         <outlet property="cancelButton" destination="7bM-bP-3GJ" id="oGO-7A-t80"/>
                         <outlet property="chipTextField" destination="kME-VS-PnE" id="vvZ-Ev-7ev"/>
                         <outlet property="controllerNameLabel" destination="bXa-KD-h9I" id="xoO-oV-YS4"/>
+                        <outlet property="dogColorTextField" destination="tpW-qC-Daa" id="b51-13-BFY"/>
                         <outlet property="dogImageView" destination="two-g9-ArA" id="xbo-7L-6xf"/>
                         <outlet property="doneButton" destination="kSL-hy-5a0" id="xAr-7b-YUK"/>
                         <outlet property="lofTextField" destination="4BZ-c7-9if" id="f0A-8k-a7m"/>
@@ -759,16 +760,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lx6-eF-Big">
-                                <rect key="frame" x="0.0" y="28" width="428" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lx6-eF-Big" id="vvO-p9-UTm">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="sDQ-Xk-oic" id="Zgl-Vj-rqT"/>
                             <outlet property="delegate" destination="sDQ-Xk-oic" id="oeF-mw-0Vz"/>
@@ -791,16 +782,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SVf-4S-iVw">
-                                <rect key="frame" x="0.0" y="28" width="428" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SVf-4S-iVw" id="fCV-sz-IUS">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="gad-Me-jCE" id="btv-L1-vHu"/>
                             <outlet property="delegate" destination="gad-Me-jCE" id="yUy-uL-Beb"/>
@@ -1020,11 +1001,11 @@
                         <outlet property="cancelButton" destination="nJB-ux-Qz4" id="vmy-pT-e59"/>
                         <outlet property="chipNumberTextField" destination="cJ8-cD-Xlg" id="LOX-Ix-su4"/>
                         <outlet property="controllerNameLabel" destination="ddw-ub-j71" id="NV9-E5-CVI"/>
-                        <outlet property="dogColorTextField" destination="T9s-9C-Eag" id="DCS-3g-zXM"/>
                         <outlet property="doneButton" destination="ZAO-Ae-GnE" id="MiO-v1-JEW"/>
                         <outlet property="lofNumberTextField" destination="RIX-Kj-K58" id="OoB-eN-am6"/>
                         <outlet property="nameTextField" destination="6vz-Z4-Vg8" id="uaR-6e-vjD"/>
-                        <outlet property="pitcureImageView" destination="OD5-nb-Wm3" id="Adc-Aa-jdk"/>
+                        <outlet property="pictureImageView" destination="OD5-nb-Wm3" id="Adc-Aa-jdk"/>
+                        <outlet property="puppyColorTextField" destination="T9s-9C-Eag" id="DCS-3g-zXM"/>
                         <outlet property="resetImageButton" destination="i1c-Sx-Azx" id="CbK-vn-DuY"/>
                         <outlet property="sexSegmentedControl" destination="NnU-f2-xvb" id="dYc-eH-3fM"/>
                     </connections>

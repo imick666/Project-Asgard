@@ -15,6 +15,7 @@ class CreateDogViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var affixTextField: UITextField!
     @IBOutlet weak var sexSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var dogColorTextField: UITextField!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var lofTextField: UITextField!
     @IBOutlet weak var chipTextField: UITextField!
@@ -39,7 +40,6 @@ class CreateDogViewController: UIViewController {
             setupContent()
         }
         setupView()
-        setupTextFields()
         setupCoreData()
         
         
@@ -72,6 +72,8 @@ class CreateDogViewController: UIViewController {
         resetImageButton.roundFilled(wih: .gray)
         dogImageView.rounded(nil)
         resetImageButton.isHidden = !dogImageView.imageHasChanged
+        
+        setupTextFields()
     }
     
     private func setupTextFields() {
@@ -79,6 +81,7 @@ class CreateDogViewController: UIViewController {
         affixTextField.delegate = self
         lofTextField.delegate = self
         chipTextField.delegate = self
+        dogColorTextField.delegate = self
     }
     
     private func setupContent() {
@@ -88,7 +91,7 @@ class CreateDogViewController: UIViewController {
         chipTextField.text = dog?.chipNumber
         lofTextField.text = dog?.lofNumber
         birthDatePicker.setDate(dog!.birthDate!, animated: true)
-        dogImageView.dogImage(from: dog?.image)
+        dogImageView.setDogImage(from: dog?.image)
         sexSegmentedControl.selectedSegmentIndex = Int(dog!.sex)
     }
     

@@ -27,7 +27,7 @@ extension UIImageView {
         self.layer.borderColor = fillColor?.cgColor ?? UIColor.gray.cgColor
     }
     
-    func dogImage(from image: Data?) {
+    func setDogImage(from image: Data?) {
         self.image = image != nil ? UIImage(data: image!) : UIImage(named: "DogPlaceHolder")
     }
     

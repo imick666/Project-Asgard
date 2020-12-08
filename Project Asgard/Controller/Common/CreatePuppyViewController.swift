@@ -19,10 +19,10 @@ class CreatePuppyViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var affixTextField: UITextField!
     @IBOutlet weak var sexSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var dogColorTextField: UITextField!
+    @IBOutlet weak var puppyColorTextField: UITextField!
     @IBOutlet weak var lofNumberTextField: UITextField!
     @IBOutlet weak var chipNumberTextField: UITextField!
-    @IBOutlet weak var pitcureImageView: UIImageView!
+    @IBOutlet weak var pictureImageView: UIImageView!
     
     @IBOutlet weak var resetImageButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -46,7 +46,7 @@ class CreatePuppyViewController: UIViewController {
         setupView()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-        pitcureImageView.addGestureRecognizer(tap)
+        pictureImageView.addGestureRecognizer(tap)
     }
     
     // MARK: - Methodes
@@ -55,7 +55,7 @@ class CreatePuppyViewController: UIViewController {
     private func selectImage() {
         pickerView.presentAlert(from: self)
         pickerView.completionHandler = { (image) in
-            self.pitcureImageView.image = image
+            self.pictureImageView.image = image
             self.updateResetButton()
         }
     }
@@ -64,10 +64,18 @@ class CreatePuppyViewController: UIViewController {
         resetImageButton.roundFilled(wih: .gray)
         doneButton.roundFilled(wih: .green)
         cancelButton.roundFilled(wih: .red)
-        pitcureImageView.rounded(nil)
-        pitcureImageView.dogImage(from: nil)
+        pictureImageView.rounded(nil)
         
+        setupTextFields()
         updateResetButton()
+    }
+    
+    private func setupTextFields() {
+        nameTextField.delegate = self
+        affixTextField.delegate = self
+        puppyColorTextField.delegate = self
+        lofNumberTextField.delegate = self
+        chipNumberTextField.delegate = self
     }
     
     private func setupCoreData() {
@@ -83,19 +91,19 @@ class CreatePuppyViewController: UIViewController {
         affixTextField.text = puppy?.affix
         lofNumberTextField.text = puppy?.lofNumber
         chipNumberTextField.text = puppy?.chipNumber
-        pitcureImageView.dogImage(from: puppy!.image)
-        dogColorTextField.text = puppy?.puppyColor
+        pictureImageView.setDogImage(from: puppy?.image)
+        puppyColorTextField.text = puppy?.puppyColor
         sexSegmentedControl.selectedSegmentIndex = Int(puppy!.sex)
     }
     
     private func updateResetButton() {
-        resetImageButton.isHidden = !pitcureImageView.imageHasChanged
+        resetImageButton.isHidden = !pictureImageView.imageHasChanged
     }
     
     // MARK: - Actions
     
     @IBAction func didTapResetButton(_ sender: Any) {
-        pitcureImageView.resetImage()
+        pictureImageView.resetImage()
     }
     
     @IBAction func didTapCancelButton(_ sender: Any) {
@@ -106,10 +114,10 @@ class CreatePuppyViewController: UIViewController {
         let name = nameTextField.text.orNil
         let affix = affixTextField.text.orNil
         let sex = Int16(sexSegmentedControl.selectedSegmentIndex)
-        let puppyColor = dogColorTextField.text.orNil
+        let puppyColor = puppyColorTextField.text.orNil
         let lofNumber = lofNumberTextField.text.orNil
         let chipNumber = chipNumberTextField.text.orNil
-        let image = pitcureImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
+        let image = pictureImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
         
         if puppy != nil {
             puppy?.name = name
@@ -127,4 +135,13 @@ class CreatePuppyViewController: UIViewController {
         
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension CreatePuppyViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }

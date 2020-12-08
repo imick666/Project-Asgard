@@ -32,7 +32,7 @@ class DogMenuCell: UITableViewCell {
     
     private func setupView() {
         dogImageView.rounded(nil)
-        dogImageView.dogImage(from: dog.image)
+        dogImageView.setDogImage(from: dog.image)
         nameLabel.text = dog.name?.capitalized
         affixLabel.text = dog.affix?.capitalized
     }

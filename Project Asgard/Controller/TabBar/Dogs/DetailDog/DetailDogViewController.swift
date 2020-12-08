@@ -95,7 +95,7 @@ class DetailDogViewController: UIViewController {
         nameLabel.sizeToFit()
         affixLabel.text = dog.affix?.capitalized
         sexLabel.text = DogSex(rawValue: dog.sex)?.description
-        pictureImageViw.dogImage(from: dog.image)
+        pictureImageViw.setDogImage(from: dog.image)
         birthDateLabel.text = "\(birthDate) (\(age))"
         lofNbLabel.text? = "Lof : \(dog.lofNumber.orNc)"
         chipNbLabel.text = "Chip : \(dog.chipNumber.orNc)"
@@ -145,7 +145,7 @@ extension DetailDogViewController: LitterViewControllerDelegate {
 
 extension DetailDogViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        selectedDog = frc?.fetchedObjects?.first(where: {$0.name == self.selectedDog?.name })
+        selectedDog = frc?.fetchedObjects?.first(where: { $0.objectID == self.selectedDog?.objectID })
         setupContent()
     }
 }

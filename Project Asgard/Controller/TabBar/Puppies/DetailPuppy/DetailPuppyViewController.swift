@@ -88,18 +88,18 @@ class DetailPuppyViewController: UIViewController {
     }
     
     private func setupContent() {
-        guard let dog = selectedPuppy,
-              let birthDate = dog.birthDate?.ddMMYY,
-              let age = dog.birthDate?.age else { return }
+        guard let puppy = selectedPuppy,
+              let birthDate = puppy.birthDate?.ddMMYY,
+              let age = puppy.birthDate?.age else { return }
         
-        nameLabel.text = dog.name?.capitalized
+        nameLabel.text = puppy.name?.capitalized
         nameLabel.sizeToFit()
-        affixLabel.text = dog.affix?.capitalized
-        sexLabel.text = DogSex(rawValue: dog.sex)?.description
-        pictureImageViw.dogImage(from: dog.image)
+        affixLabel.text = puppy.affix?.capitalized
+        sexLabel.text = DogSex(rawValue: puppy.sex)?.description
+        pictureImageViw.setDogImage(from: puppy.image)
         birthDateLabel.text = "\(birthDate) (\(age))"
-        lofNbLabel.text? = "Lof : \(dog.lofNumber.orNc)"
-        chipNbLabel.text = "Chip : \(dog.chipNumber.orNc)"
+        lofNbLabel.text? = "Lof : \(puppy.lofNumber.orNc)"
+        chipNbLabel.text = "Chip : \(puppy.chipNumber.orNc)"
         
         setupChildrens()
     }
@@ -131,7 +131,7 @@ extension DetailPuppyViewController: UIScrollViewDelegate {
 
 extension DetailPuppyViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        selectedPuppy = frc?.fetchedObjects?.first(where: {$0.name == self.selectedPuppy?.name })
+        selectedPuppy = frc?.fetchedObjects?.first(where: { $0.objectID == self.selectedPuppy?.objectID })
         setupContent()
     }
 }
