@@ -28,7 +28,7 @@
         <attribute name="necklaceColor" optional="YES" attributeType="String"/>
         <attribute name="puppyColor" optional="YES" attributeType="String"/>
         <attribute name="sex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="sold" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="sold" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
         <relationship name="dogLitter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DogLitter" inverseName="puppies" inverseEntity="DogLitter"/>
         <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Treatement" inverseName="toPuppy" inverseEntity="Treatement"/>
     </entity>

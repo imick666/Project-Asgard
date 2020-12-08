@@ -138,7 +138,6 @@ extension DetailDogViewController: LitterViewControllerDelegate {
         guard let puppiesListVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.puppiesList) as? PuppiesListTableViewController else { return }
         
         puppiesListVC.puppies = litter.puppies?.allObjects as? [Puppy] ?? [Puppy]()
-        puppiesListVC.allPuppies = false
         show(puppiesListVC, sender: nil)
     }
 }

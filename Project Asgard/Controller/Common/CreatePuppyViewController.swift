@@ -95,7 +95,7 @@ class CreatePuppyViewController: UIViewController {
         pictureImageView.setDogImage(from: puppy?.image)
         puppyColorTextField.text = puppy?.puppyColor
         sexSegmentedControl.selectedSegmentIndex = Int(puppy!.sex)
-        isSoldSwitch.setOn(puppy!.sold, animated: true)
+        isSoldSwitch.setOn(puppy!.sold!.boolValue, animated: true)
     }
     
     private func updateResetButton() {
@@ -129,7 +129,7 @@ class CreatePuppyViewController: UIViewController {
             puppy?.chipNumber = chipNumber
             puppy?.puppyColor = puppyColor
             puppy?.image = image
-            puppy?.sold = isSoldSwitch.isOn
+            puppy?.sold = NSNumber(booleanLiteral: isSoldSwitch.isOn)
             
             coreDataStack?.saveContext()
         } else {
