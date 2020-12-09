@@ -123,36 +123,37 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cj-jS-wZz">
                                 <rect key="frame" x="0.0" y="378" width="428" height="457"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-bE-LWq" userLabel="TreatementContainerView">
-                                        <rect key="frame" x="32" y="0.0" width="364" height="457"/>
-                                        <connections>
-                                            <segue destination="MVu-Ng-ZjX" kind="embed" id="jcc-Mn-xM7"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-4P-V8t" userLabel="PorteeContainerView">
-                                        <rect key="frame" x="460" y="0.0" width="364" height="457"/>
-                                        <connections>
-                                            <segue destination="0W9-lP-MEs" kind="embed" id="Th8-N3-Bg8"/>
-                                        </connections>
-                                    </containerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-y9-inZ">
+                                        <rect key="frame" x="32" y="0.0" width="792" height="457"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-bE-LWq" userLabel="TreatementContainerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
+                                                <connections>
+                                                    <segue destination="MVu-Ng-ZjX" kind="embed" id="jcc-Mn-xM7"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-4P-V8t" userLabel="PorteeContainerView">
+                                                <rect key="frame" x="428" y="0.0" width="364" height="457"/>
+                                                <connections>
+                                                    <segue destination="0W9-lP-MEs" kind="embed" id="Th8-N3-Bg8"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="width" secondItem="iUg-Uy-Kmw" secondAttribute="width" constant="-64" id="67C-O8-3la"/>
-                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="bottom" secondItem="UMx-g6-whm" secondAttribute="bottom" id="7Ly-Vk-cYG"/>
-                                    <constraint firstItem="eGF-4P-V8t" firstAttribute="trailing" secondItem="UMx-g6-whm" secondAttribute="trailing" constant="-32" id="EYg-HS-sGv"/>
-                                    <constraint firstItem="eGF-4P-V8t" firstAttribute="width" secondItem="Pg1-bE-LWq" secondAttribute="width" id="QS7-bD-cad"/>
-                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="height" secondItem="iUg-Uy-Kmw" secondAttribute="height" id="WUb-db-dpo"/>
-                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="leading" secondItem="UMx-g6-whm" secondAttribute="leading" constant="32" id="aLV-yv-fJq"/>
-                                    <constraint firstItem="eGF-4P-V8t" firstAttribute="height" secondItem="Pg1-bE-LWq" secondAttribute="height" id="cKa-cT-la0"/>
-                                    <constraint firstItem="eGF-4P-V8t" firstAttribute="centerY" secondItem="iUg-Uy-Kmw" secondAttribute="centerY" id="tf1-Om-hJA"/>
-                                    <constraint firstItem="eGF-4P-V8t" firstAttribute="leading" secondItem="Pg1-bE-LWq" secondAttribute="trailing" constant="64" id="vuv-yR-hqR"/>
-                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="top" secondItem="UMx-g6-whm" secondAttribute="top" id="wEt-8F-XbT"/>
+                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="trailing" secondItem="UMx-g6-whm" secondAttribute="trailing" constant="-32" id="Hiy-QH-Tgr"/>
+                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="leading" secondItem="UMx-g6-whm" secondAttribute="leading" constant="32" id="M8R-9p-MPp"/>
+                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="height" secondItem="iUg-Uy-Kmw" secondAttribute="height" id="UcO-2k-dIl"/>
+                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="bottom" secondItem="UMx-g6-whm" secondAttribute="bottom" id="Yzx-kl-lOo"/>
+                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="width" secondItem="iUg-Uy-Kmw" secondAttribute="width" constant="-64" id="j64-8E-H97"/>
+                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="top" secondItem="UMx-g6-whm" secondAttribute="top" id="oyO-OL-n0R"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="UMx-g6-whm"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="iUg-Uy-Kmw"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="vYQ-ec-YJv">
-                                <rect key="frame" x="162.33333333333334" y="807.66666666666663" width="103.33333333333334" height="27.333333333333371"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="vYQ-ec-YJv">
+                                <rect key="frame" x="171.66666666666666" y="807.66666666666663" width="84.666666666666657" height="27.333333333333371"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
@@ -1290,36 +1291,37 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfU-Kb-b1t">
                                 <rect key="frame" x="0.0" y="378" width="428" height="457"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yun-NR-Lft" userLabel="TreatementContainerView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-JW-cyx">
                                         <rect key="frame" x="32" y="0.0" width="364" height="457"/>
-                                        <connections>
-                                            <segue destination="8HW-Cs-OLh" kind="embed" id="Y70-dw-LMK"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-lI-v84" userLabel="PorteeContainerView">
-                                        <rect key="frame" x="460" y="0.0" width="364" height="457"/>
-                                        <connections>
-                                            <segue destination="WLA-ZP-uhd" kind="embed" id="NB6-QS-2zk"/>
-                                        </connections>
-                                    </containerView>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yun-NR-Lft" userLabel="TreatementContainerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
+                                                <connections>
+                                                    <segue destination="8HW-Cs-OLh" kind="embed" id="Y70-dw-LMK"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-lI-v84" userLabel="WeightContainerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="457"/>
+                                                <connections>
+                                                    <segue destination="WLA-ZP-uhd" kind="embed" id="NB6-QS-2zk"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="h5S-lI-v84" firstAttribute="leading" secondItem="Yun-NR-Lft" secondAttribute="trailing" constant="64" id="3CO-ea-bXo"/>
-                                    <constraint firstItem="h5S-lI-v84" firstAttribute="trailing" secondItem="ymP-bP-dL2" secondAttribute="trailing" constant="-32" id="9JL-ez-7b3"/>
-                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="width" secondItem="Ieh-d6-iVX" secondAttribute="width" constant="-64" id="GXH-De-hQc"/>
-                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="height" secondItem="Ieh-d6-iVX" secondAttribute="height" id="IMY-hk-32p"/>
-                                    <constraint firstItem="h5S-lI-v84" firstAttribute="width" secondItem="Yun-NR-Lft" secondAttribute="width" id="MoI-Au-fZ9"/>
-                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="top" secondItem="ymP-bP-dL2" secondAttribute="top" id="RYv-qK-ScS"/>
-                                    <constraint firstItem="h5S-lI-v84" firstAttribute="centerY" secondItem="Ieh-d6-iVX" secondAttribute="centerY" id="iZs-w9-hl1"/>
-                                    <constraint firstItem="h5S-lI-v84" firstAttribute="height" secondItem="Yun-NR-Lft" secondAttribute="height" id="kig-SC-lZP"/>
-                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="bottom" secondItem="ymP-bP-dL2" secondAttribute="bottom" id="pKu-3L-HTb"/>
-                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="leading" secondItem="ymP-bP-dL2" secondAttribute="leading" constant="32" id="vXn-oz-2CJ"/>
+                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="leading" secondItem="ymP-bP-dL2" secondAttribute="leading" constant="32" id="7TC-1i-hnV"/>
+                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="height" secondItem="Ieh-d6-iVX" secondAttribute="height" id="BlL-km-cW2"/>
+                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="width" secondItem="Ieh-d6-iVX" secondAttribute="width" constant="-64" id="L57-bw-kGt"/>
+                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="top" secondItem="ymP-bP-dL2" secondAttribute="top" id="agc-LN-OJG"/>
+                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="trailing" secondItem="ymP-bP-dL2" secondAttribute="trailing" constant="-32" id="kcl-bd-yLK"/>
+                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="bottom" secondItem="ymP-bP-dL2" secondAttribute="bottom" id="q3c-Gk-4UC"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="ymP-bP-dL2"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Ieh-d6-iVX"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="QmI-g4-Za0">
-                                <rect key="frame" x="162.33333333333334" y="807.66666666666663" width="103.33333333333334" height="27.333333333333371"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="QmI-g4-Za0">
+                                <rect key="frame" x="171.66666666666666" y="807.66666666666663" width="84.666666666666657" height="27.333333333333371"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
@@ -1360,7 +1362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ZK-Ge-DXS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-636" y="618"/>
+            <point key="canvasLocation" x="-636.44859813084111" y="617.49460043196552"/>
         </scene>
         <!--Treatement View Controller-->
         <scene sceneID="ItM-qU-Ttm">
@@ -1421,11 +1423,11 @@
             <objects>
                 <viewController id="WLA-ZP-uhd" customClass="WeightViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sld-IU-Zu9">
-                        <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bgc-yB-mL3">
-                                <rect key="frame" x="8" y="8" width="348" height="44"/>
+                                <rect key="frame" x="8" y="8" width="99.333333333333329" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0J-bD-hyI">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
@@ -1434,7 +1436,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kj0-Ve-DTU">
-                                        <rect key="frame" x="304" y="0.0" width="44" height="44"/>
+                                        <rect key="frame" x="75" y="0.0" width="24.333333333333329" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="bz0-uJ-VCj"/>
                                             <constraint firstAttribute="width" secondItem="Kj0-Ve-DTU" secondAttribute="height" id="nTF-2W-4Im"/>

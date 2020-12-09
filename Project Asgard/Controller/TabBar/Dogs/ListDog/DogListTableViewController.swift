@@ -23,12 +23,6 @@ class DogListTableViewController: UITableViewController {
         setupTableView()
         setupCoreData()
         setupFetchedResultControler()
-//        setupNotification()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Methodes

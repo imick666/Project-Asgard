@@ -57,6 +57,11 @@ class DetailPuppyViewController: UIViewController {
         setupFrc()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let numberOfPage = Int(scrollView.contentSize.width / scrollView.frame.width)
+        pageControl.numberOfPages = numberOfPage
+    }
     // MARK: - Methodes
     
     private func setupFrc() {
