@@ -13,28 +13,31 @@ class DogMenuCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var affixLabel: UILabel!
     
-    var dog: Dog! {
+    var dog: Dog? {
         didSet {
-            setupView()
+            setupDog()
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var puppy: Puppy? {
+        didSet {
+            setupPuppy()
+        }
     }
     
-    private func setupView() {
+    private func setupDog() {
+        guard let dog = dog else { return }
         dogImageView.rounded(nil)
         dogImageView.setDogImage(from: dog.image)
         nameLabel.text = dog.name?.capitalized
         affixLabel.text = dog.affix?.capitalized
     }
     
+    private func setupPuppy() {
+        guard let puppy = puppy else { return }
+        dogImageView.rounded(nil)
+        dogImageView.setDogImage(from: puppy.image)
+        nameLabel.text = puppy.name?.capitalized
+        affixLabel.text = puppy.affix?.capitalized
+    }
 }

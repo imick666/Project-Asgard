@@ -89,7 +89,14 @@ class DogListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return fetchedResultController?.fetchedObjects?.count == 0 ? 70 : 0
+        var finalHeight: CGFloat {
+            let minTabBarY = tabBarController?.tabBar.frame.minY ?? 0
+            let maxNavBarY = navigationController?.navigationBar.frame.maxY ?? 0
+            
+            return (minTabBarY - maxNavBarY)
+            
+        }
+        return fetchedResultController?.fetchedObjects?.count == 0 ? finalHeight : 0
     }
     
     // MARK: - TableView Delegate

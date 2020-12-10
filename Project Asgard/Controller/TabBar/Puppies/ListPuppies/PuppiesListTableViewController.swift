@@ -11,29 +11,41 @@ import CoreData
 class PuppiesListTableViewController: UITableViewController {
     
     // MARK: - Properties
+
+    var motherId: String?
     
-    private var allPuppies: Bool {
-        return puppies.count == 0
-    }
-    
-    var puppies = [Puppy]()
-    
-    private var frc: NSFetchedResultsController<Puppy>?
+    private var frc: NSFetchedResultsController<Puppy>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFrc()
+        setupView()
     }
     
     // MARK: - Methodes
     
+    private func setupView() {
+        let nib = UINib(nibName: Constants.Cells.dogMenuCellNib, bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: Constants.Cells.dogMenuCellID)
+        tableView.tableFooterView = UIView()
+    }
+    
     private func setupFrc() {
         let request: NSFetchRequest<Puppy> = Puppy.fetchRequest()
         request.sortDescriptors = [
-            NSSortDescriptor(key: "dogLitter.dog.name", ascending: true),
             NSSortDescriptor(key: "name", ascending: true)
         ]
-        request.predicate = NSPredicate(format: "sold == %@", NSNumber(booleanLiteral: false))
+        
+        var predicate: NSPredicate {
+            switch motherId {
+            case .none:
+                return NSPredicate(format: "sold == %@", NSNumber(booleanLiteral: false))
+            case .some(let id):
+                return NSPredicate(format: "dogLitter.dog.name == %@", id)
+            }
+        }
+        
+        request.predicate = predicate
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         
         frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "dogLitter.dog.name", cacheName: nil)
@@ -48,65 +60,81 @@ class PuppiesListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        switch allPuppies {
-        case true:
-            return frc?.sections?.count ?? 0
-        case false:
-            return 1
-        }
-    }
-    
+    // Header
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch allPuppies {
-        case true:
-            return frc?.sections?[section].name.capitalized
-        case false:
-            return nil
-        }
-        
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch allPuppies {
-        case true:
-            return frc?.sections?[section].objects?.count ?? 0
-        case false:
-            return puppies.count
-        }
+        guard let sections = frc.sections else { return nil }
+        return !sections.isEmpty ? sections[section].name : nil
     }
     
+    // NumberOfSections / Row
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        guard let sections = frc.sections, !sections.isEmpty else { return 1 }
+        return sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let sections = frc.sections, !sections.isEmpty else {
+            return 0
+        }
+        return sections[section].numberOfObjects
+    }
+    
+    // Row
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        var puppy: Puppy {
-            switch allPuppies {
-            case true:
-                return frc?.sections?[indexPath.section].objects?[indexPath.row] as! Puppy
-            case false:
-                return puppies[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.dogMenuCellID, for: indexPath) as? DogMenuCell else { return UITableViewCell() }
+        
+        var puppy: Puppy? {
+            guard let sections = frc.sections, !sections.isEmpty else {
+                return nil
             }
+            return sections[indexPath.section].objects?[indexPath.row] as? Puppy
+        }
+
+        cell.puppy = puppy
+
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    // Footer
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = """
+        No puppies to show for the moment...
+        Come back at the next litter
+        """
+        label.numberOfLines = 0
+        label.textColor = .gray
+        label.textAlignment = .center
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        var finalHeight: CGFloat {
+            let minTabBarY = tabBarController?.tabBar.frame.minY ?? 0
+            let maxNavBarY = navigationController?.navigationBar.frame.maxY ?? 0
+            return (minTabBarY - maxNavBarY)
         }
         
-        guard let puppySex = DogSex(rawValue: puppy.sex)?.description.capitalized,
-              let motherName = puppy.dogLitter?.dog?.name?.capitalized,
-              let litterDate = puppy.dogLitter?.date?.ddMMYY else { return UITableViewCell()}
-        
-        cell.textLabel?.text = "\(String(describing: puppySex)) - \(String(describing: motherName)) - \(String(describing: litterDate))"
-        
-        return cell
+        guard let sections = frc.sections else { return 0 }
+        return !sections.isEmpty ? 0 : finalHeight
     }
     
     // MARK: - TableView Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        var puppy: Puppy {
-            switch allPuppies {
-            case true:
-                return frc?.sections?[indexPath.section].objects?[indexPath.row] as! Puppy
-            case false :
-                return puppies[indexPath.row]
+        var puppy: Puppy? {
+            guard let sections = frc.sections, !sections.isEmpty else {
+                return nil
             }
+            return sections[indexPath.section].objects?[indexPath.row] as? Puppy
         }
         performSegue(withIdentifier: Constants.SeguesID.detailPuppy, sender: puppy)
     }

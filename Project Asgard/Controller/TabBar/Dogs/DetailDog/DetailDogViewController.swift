@@ -145,7 +145,8 @@ extension DetailDogViewController: LitterViewControllerDelegate {
     func litterDidSelect(_ litter: DogLitter) {
         guard let puppiesListVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.puppiesList) as? PuppiesListTableViewController else { return }
         
-        puppiesListVC.puppies = litter.puppies?.allObjects as? [Puppy] ?? [Puppy]()
+//        puppiesListVC.puppies = litter.puppies?.allObjects as? [Puppy] ?? [Puppy]()
+        puppiesListVC.motherId = selectedDog?.name
         show(puppiesListVC, sender: nil)
     }
 }

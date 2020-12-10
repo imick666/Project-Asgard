@@ -140,7 +140,6 @@ class CreatePuppyViewController: UIViewController {
         } else {
             delegate?.createPuppy(named: name, affix, sex: sex, color: puppyColor, image: image)
         }
-        
         dismiss(animated: true, completion: nil)
     }
 }
