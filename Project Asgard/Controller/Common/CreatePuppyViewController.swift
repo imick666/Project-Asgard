@@ -73,10 +73,15 @@ class CreatePuppyViewController: UIViewController {
     
     private func setupTextFields() {
         nameTextField.delegate = self
+        nameTextField.addDoneToKeayboard()
         affixTextField.delegate = self
+        affixTextField.addDoneToKeayboard()
         puppyColorTextField.delegate = self
+        puppyColorTextField.addDoneToKeayboard()
         lofNumberTextField.delegate = self
+        lofNumberTextField.addDoneToKeayboard()
         chipNumberTextField.delegate = self
+        chipNumberTextField.addDoneToKeayboard()
     }
     
     private func setupCoreData() {
@@ -143,7 +148,11 @@ class CreatePuppyViewController: UIViewController {
 extension CreatePuppyViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if nameTextField.isFirstResponder { affixTextField.becomeFirstResponder() }
+        else if affixTextField.isFirstResponder { puppyColorTextField.becomeFirstResponder() }
+        else if puppyColorTextField.isFirstResponder { lofNumberTextField.becomeFirstResponder() }
+        else if lofNumberTextField.isFirstResponder { chipNumberTextField.becomeFirstResponder() }
+        else if chipNumberTextField.isFirstResponder { textField.resignFirstResponder() }
         return true
     }
     

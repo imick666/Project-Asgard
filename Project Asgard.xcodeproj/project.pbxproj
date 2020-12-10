@@ -11,6 +11,7 @@
 		E02282BC2577CD1200AD28DD /* Litter&PuppyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */; };
 		E02282C62577DF0100AD28DD /* CreateLitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */; };
 		E02282D52577F02300AD28DD /* CreatePuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */; };
+		E026BB1A258213FE002B8993 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E026BB19258213FE002B8993 /* KeyboardHelper.swift */; };
 		E07FEE3D257A81480023232E /* Treatement+PuppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */; };
 		E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */; };
 		E07FEE66257D301F0023232E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE65257D301F0023232E /* UIViewController+Alert.swift */; };
@@ -63,6 +64,7 @@
 		E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Litter&PuppyTest.swift"; sourceTree = "<group>"; };
 		E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLitterViewController.swift; sourceTree = "<group>"; };
 		E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePuppyViewController.swift; sourceTree = "<group>"; };
+		E026BB19258213FE002B8993 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Treatement+PuppyTests.swift"; sourceTree = "<group>"; };
 		E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppiesListTableViewController.swift; sourceTree = "<group>"; };
 		E07FEE65257D301F0023232E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				E0BE1EFA25716F4200E9EEFA /* UIView+Constraints.swift */,
 				E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */,
 				E07FEE65257D301F0023232E /* UIViewController+Alert.swift */,
+				E026BB19258213FE002B8993 /* KeyboardHelper.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */,
 				E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */,
 				E0ED833225729617003E6BA2 /* UIAlertController+setValues.swift in Sources */,
+				E026BB1A258213FE002B8993 /* KeyboardHelper.swift in Sources */,
 				E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
 				E015D071257E813200175DBA /* DetailPuppyViewController.swift in Sources */,

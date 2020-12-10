@@ -31,32 +31,14 @@ class CreateTreatementViewController: UIViewController {
         super.viewDidLoad()
         setupCoreData()
         setupView()
-        addDoneToKeyboard()
-        nameTextField.delegate = self
 
     }
     
     // MARK: - Methodes
-    
-    @objc
-    private func dismissKeyboard() {
-        nameTextField.resignFirstResponder()
-        noteTextView.resignFirstResponder()
-    }
-    
-    private func addDoneToKeyboard() {
-        let doneToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        doneToolbar.barStyle = .default
-        
-        let felxi = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
-        
-        let items = [felxi, done]
-        doneToolbar.items = items
-        doneToolbar.sizeToFit()
-        
-        noteTextView.inputAccessoryView = doneToolbar
-        
+    private func setupTextFieldAndView() {
+        nameTextField.addDoneToKeayboard()
+        nameTextField.delegate = self
+        noteTextView.addDoneToKeayboard()
     }
 
     private func setupCoreData() {
@@ -69,6 +51,7 @@ class CreateTreatementViewController: UIViewController {
     private func setupView() {
         cancelButton.roundFilled(wih: .red)
         doneButton.roundFilled(wih: .green)
+        setupTextFieldAndView()
     }
     
     // MARK: - Actions
@@ -95,7 +78,7 @@ class CreateTreatementViewController: UIViewController {
 
 extension CreateTreatementViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        dismissKeyboard()
+        if nameTextField.isFirstResponder { noteTextView.becomeFirstResponder() }
         return true
     }
 }

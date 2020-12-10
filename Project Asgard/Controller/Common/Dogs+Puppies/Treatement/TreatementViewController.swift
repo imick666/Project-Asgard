@@ -58,11 +58,6 @@ class TreatementViewController: UIViewController {
         guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else { return }
         coreData = CoreDataManager(stack)
     }
-    
-    private func sendNotification() {
-        let notifictionCenter = NotificationCenter.default
-        notifictionCenter.post(Notification.init(name: .changeDog))
-    }
 
     // MARK: - Actions
     
@@ -105,15 +100,8 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = DetailTreatementViewController()
         vc.treatement = treatements[indexPath.row]
         vc.preferredContentSize.height = parentView.view.bounds.height * 0.4
-        
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone:
-            alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        case .pad:
-            alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        default:
-            return
-        }
+
+        alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.setTitle(treatements[indexPath.row].name!, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: nil)
         
@@ -127,7 +115,6 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
                     self.present(alert, animated: true, completion: nil)
                 case false:
                     self.coreData?.deteObject(self.treatements[indexPath.row])
-                    self.sendNotification()
                 }
             }
         }

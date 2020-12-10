@@ -57,11 +57,6 @@ class CreateLitterViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
-    private func sendNotification() {
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.post(Notification(name: .changeDog))
-    }
-    
     @objc
     private func addPuppy() {
         guard let createPuppyVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createPuppy) as? CreatePuppyViewController else { return }
@@ -87,9 +82,7 @@ class CreateLitterViewController: UIViewController {
         
         coreData?.createLitter(of: forDog, the: date, cesarean: cesarean, with: puppies)
         
-        dismiss(animated: true) {
-            self.sendNotification()
-        }
+        dismiss(animated: true, completion: nil)
     }
 }
 
