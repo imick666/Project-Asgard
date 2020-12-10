@@ -46,7 +46,7 @@ class DogTest: XCTestCase {
         
         let dog = coreDataManager.allDogs[0]
         
-        coreDataManager.deteObject(dog)
+        coreDataManager.deleteObject(dog)
         
         XCTAssertEqual(coreDataManager.allDogs.count, 0)
     }

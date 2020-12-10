@@ -86,7 +86,7 @@ class Treatement_PuppyTests: XCTestCase {
         dog = coreData.allDogs[0]
         XCTAssertEqual(treatement.count, 1)
         
-        coreData.deteObject(treatement[0])
+        coreData.deleteObject(treatement[0])
         dog = coreData.allDogs[0]
         XCTAssertEqual(treatement.count, 0)
     }

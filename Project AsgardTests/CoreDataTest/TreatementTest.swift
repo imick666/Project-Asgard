@@ -61,7 +61,7 @@ class TreatementTest: XCTestCase {
             fatalError("Failed to get treatement")
         }
         
-        coreData?.deteObject(treatement)
+        coreData?.deleteObject(treatement)
         
         XCTAssertEqual(coreData?.allDogs[0].treatements?.count, 0)
     }

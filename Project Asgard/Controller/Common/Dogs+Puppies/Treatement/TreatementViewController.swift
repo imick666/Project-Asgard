@@ -114,7 +114,7 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
                 case true:
                     self.present(alert, animated: true, completion: nil)
                 case false:
-                    self.coreData?.deteObject(self.treatements[indexPath.row])
+                    self.coreData?.deleteObject(self.treatements[indexPath.row])
                 }
             }
         }

@@ -96,7 +96,7 @@ class DogListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            coreData?.deteObject(fetchedResultController!.object(at: indexPath))
+            coreData?.deleteObject(fetchedResultController!.object(at: indexPath))
             tableView.reloadData()
         }
     }

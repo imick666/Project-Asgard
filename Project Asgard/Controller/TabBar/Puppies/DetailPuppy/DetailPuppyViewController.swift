@@ -18,6 +18,7 @@ class DetailPuppyViewController: UIViewController {
     @IBOutlet weak var affixLabel: UILabel!
     @IBOutlet weak var pictureImageViw: UIImageView!
     @IBOutlet weak var sexLabel: UILabel!
+    @IBOutlet weak var puppyColorLabel: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
     @IBOutlet weak var lofNbLabel: UILabel!
     @IBOutlet weak var chipNbLabel: UILabel!
@@ -101,6 +102,7 @@ class DetailPuppyViewController: UIViewController {
         nameLabel.sizeToFit()
         affixLabel.text = puppy.affix?.capitalized
         sexLabel.text = DogSex(rawValue: puppy.sex)?.description
+        puppyColorLabel.text = puppy.puppyColor.orNc.capitalized
         pictureImageViw.setDogImage(from: puppy.image)
         birthDateLabel.text = "\(birthDate) (\(age))"
         lofNbLabel.text? = "Lof : \(puppy.lofNumber.orNc)"

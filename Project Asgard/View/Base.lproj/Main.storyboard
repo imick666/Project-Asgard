@@ -51,7 +51,7 @@
                                                 <rect key="frame" x="0.0" y="68" width="380" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KJD-4N-Jjp">
-                                                        <rect key="frame" x="0.0" y="27" width="222" height="96"/>
+                                                        <rect key="frame" x="0.0" y="14" width="222" height="122"/>
                                                         <subviews>
                                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-Uz-hWt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="222" height="18"/>
@@ -59,16 +59,13 @@
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-kg-bDa">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGU-Sk-mQs">
                                                                 <rect key="frame" x="0.0" y="26" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
-                                                                <variation key="heightClass=regular-widthClass=regular">
-                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
-                                                                </variation>
                                                             </label>
-                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA5-Nk-dlp">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-kg-bDa">
                                                                 <rect key="frame" x="0.0" y="52" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -77,8 +74,17 @@
                                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tA-Ew-IV7">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA5-Nk-dlp">
                                                                 <rect key="frame" x="0.0" y="78" width="222" height="18"/>
+                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                                                </variation>
+                                                            </label>
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tA-Ew-IV7">
+                                                                <rect key="frame" x="0.0" y="104" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -183,6 +189,7 @@
                         <outlet property="affixLabel" destination="Kpg-oV-cyI" id="R35-ja-Luk"/>
                         <outlet property="birthDateLabel" destination="O6N-kg-bDa" id="2Wc-nv-iW4"/>
                         <outlet property="chipNbLabel" destination="5tA-Ew-IV7" id="Hk4-6m-6lj"/>
+                        <outlet property="dogColorLabel" destination="OGU-Sk-mQs" id="Gyp-ED-9tB"/>
                         <outlet property="lofNbLabel" destination="lA5-Nk-dlp" id="aIx-kF-j3v"/>
                         <outlet property="nameLabel" destination="He0-5y-Oiu" id="Dss-nK-n9T"/>
                         <outlet property="pageControl" destination="vYQ-ec-YJv" id="f8p-d4-RGG"/>
@@ -1219,7 +1226,7 @@
                                                 <rect key="frame" x="0.0" y="68" width="380" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YlG-Hr-wng">
-                                                        <rect key="frame" x="0.0" y="27" width="222" height="96"/>
+                                                        <rect key="frame" x="0.0" y="14" width="222" height="122"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhj-Vb-B81">
                                                                 <rect key="frame" x="0.0" y="0.0" width="222" height="18"/>
@@ -1227,16 +1234,13 @@
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01i-9i-ZfI">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4u-UV-NA0">
                                                                 <rect key="frame" x="0.0" y="26" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
-                                                                <variation key="heightClass=regular-widthClass=regular">
-                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
-                                                                </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHs-Wk-WZW">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/10 (10 Years)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01i-9i-ZfI">
                                                                 <rect key="frame" x="0.0" y="52" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -1245,8 +1249,17 @@
                                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5Y-sQ-MD5">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lof : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHs-Wk-WZW">
                                                                 <rect key="frame" x="0.0" y="78" width="222" height="18"/>
+                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                                                </variation>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5Y-sQ-MD5">
+                                                                <rect key="frame" x="0.0" y="104" width="222" height="18"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1355,6 +1368,7 @@
                         <outlet property="nameLabel" destination="5Ru-YH-Uh3" id="gDk-6X-n1A"/>
                         <outlet property="pageControl" destination="QmI-g4-Za0" id="WTU-xH-vEd"/>
                         <outlet property="pictureImageViw" destination="OKM-8B-U1B" id="RER-Bd-Aoc"/>
+                        <outlet property="puppyColorLabel" destination="a4u-UV-NA0" id="19N-69-Yfx"/>
                         <outlet property="scrollView" destination="rfU-Kb-b1t" id="wMP-7B-Doo"/>
                         <outlet property="sexLabel" destination="Mhj-Vb-B81" id="KKt-bf-den"/>
                         <outlet property="topView" destination="o1x-FR-a31" id="hKC-Qu-41a"/>

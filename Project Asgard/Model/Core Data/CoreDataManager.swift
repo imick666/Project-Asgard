@@ -85,7 +85,7 @@ final class CoreDataManager {
         return newPuppy
     }
     
-    func deteObject(_ object: NSManagedObject) {
+    func deleteObject(_ object: NSManagedObject) {
         context.delete(object)
         
         coreDataStack.saveContext()
