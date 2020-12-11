@@ -17,12 +17,14 @@ class TreatementsTableViewController: UITableViewController {
     // MARK: - Properties
     
     private var frc: NSFetchedResultsController<Treatement>!
+    private var coreData: CoreDataManager!
     
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFrc()
+        setupCoreData()
     }
     
     // MARK: - Methodes
@@ -31,16 +33,16 @@ class TreatementsTableViewController: UITableViewController {
         let request: NSFetchRequest<Treatement> = Treatement.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(key: "toDog.name", ascending: true),
-            NSSortDescriptor(key: "toPuppy", ascending: true),
+            NSSortDescriptor(key: "toPuppy.name", ascending: true),
             NSSortDescriptor(key: "startDate", ascending: true)
         ]
         
         var predicate: NSPredicate? {
             switch segmentedController.selectedSegmentIndex {
             case 0:
-                return NSPredicate(format: "toDog != nil")
+                return NSPredicate(format: "toDog != nil && endDate >= %@", Date() as CVarArg)
             case 1:
-                return NSPredicate(format: "toPuppy != nil")
+                return NSPredicate(format: "toPuppy != nil && endDate >= %@", Date() as CVarArg)
             default:
                 return nil
             }
@@ -61,12 +63,18 @@ class TreatementsTableViewController: UITableViewController {
         }
         
         frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: sectionNameKeyPath , cacheName: nil)
+        frc.delegate = self
         
         do {
             try frc.performFetch()
         } catch {
             fatalError("Failed to load FetchedResultController")
         }
+    }
+    
+    private func setupCoreData() {
+        guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else { return }
+        coreData = CoreDataManager(stack)
     }
     
     // MARK: - Actions
@@ -76,7 +84,6 @@ class TreatementsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,7 +98,7 @@ class TreatementsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let sections = frc.sections, !sections.isEmpty else { return nil }
-        return sections[section].name == "" ? "No name" : sections[section].name
+        return sections[section].name == "" ? "No name" : sections[section].name.capitalized
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -106,6 +113,37 @@ class TreatementsTableViewController: UITableViewController {
     
     // MARK: - Table View Delegate
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let object = frc.sections?[indexPath.section].objects?[indexPath.row] as? Treatement,
+              let name = object.name else { return }
+        
+        let detailTreatelementVC = DetailTreatementViewController()
+        detailTreatelementVC.treatement = object
+        detailTreatelementVC.preferredContentSize.height = view.bounds.height * 0.4
+        
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.setTitle(name, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: nil)
+        actionSheet.setContentViewController(detailTreatelementVC)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+            self.confirmDeleteAction { (canceled) in
+                switch canceled {
+                case true:
+                    self.present(actionSheet, animated: true, completion: nil)
+                case false:
+                    self.coreData.deleteObject(object)
+                }
+            }
+        }
+        
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        actionSheet.addAction(okAction)
+        actionSheet.addAction(deleteAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
 }
 
 extension TreatementsTableViewController: NSFetchedResultsControllerDelegate {
