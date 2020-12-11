@@ -782,10 +782,10 @@
             </objects>
             <point key="canvasLocation" x="-1654" y="617"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Treatements-->
         <scene sceneID="Pnr-Jc-a2K">
             <objects>
-                <tableViewController id="gad-Me-jCE" sceneMemberID="viewController">
+                <tableViewController id="gad-Me-jCE" customClass="TreatementsTableViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9zC-mG-465">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -795,7 +795,22 @@
                             <outlet property="delegate" destination="gad-Me-jCE" id="yUy-uL-Beb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="deA-bS-RTn"/>
+                    <navigationItem key="navigationItem" title="Treatements" id="deA-bS-RTn">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="vwb-X1-T6e">
+                            <rect key="frame" x="145.66666666666666" y="6" width="136.99999999999997" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Dogs"/>
+                                <segment title="Puppies"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControllerHasChanged:" destination="gad-Me-jCE" eventType="valueChanged" id="Cxl-Ww-6vv"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedController" destination="vwb-X1-T6e" id="L1L-bB-zjT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjP-Ze-U8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1171,8 +1186,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FZT-IV-2Vf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Treatements" id="HJ8-K4-Vz6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ocj-6r-jlR">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ocj-6r-jlR">
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
