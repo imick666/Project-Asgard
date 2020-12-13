@@ -536,7 +536,7 @@
                                 <rect key="frame" x="8" y="52" width="412" height="780"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u3x-Jd-Ue6">
-                                        <rect key="frame" x="0.0" y="0.0" width="412" height="1041.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="977.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Treatement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-CX-TqD">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
@@ -544,7 +544,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="djc-5k-jRK">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="djc-5k-jRK" userLabel="Name">
                                                 <rect key="frame" x="0.0" y="46" width="412" height="54.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mf-0d-8iN">
@@ -560,7 +560,7 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OY7-gl-64M">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OY7-gl-64M" userLabel="StartDate">
                                                 <rect key="frame" x="0.0" y="116.33333333333333" width="412" height="236.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXa-UK-UrG">
@@ -574,7 +574,7 @@
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lw3-cn-exo">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lw3-cn-exo" userLabel="EndDate">
                                                 <rect key="frame" x="0.0" y="368.66666666666669" width="412" height="236.33333333333331"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo8-gK-gNX">
@@ -588,8 +588,8 @@
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Id1-sc-cdw">
-                                                <rect key="frame" x="0.0" y="621" width="412" height="420.33333333333326"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Id1-sc-cdw" userLabel="Note">
+                                                <rect key="frame" x="0.0" y="621" width="412" height="220.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dR-23-LYx">
                                                         <rect key="frame" x="0.0" y="0.0" width="412" height="20.333333333333332"/>
@@ -598,15 +598,34 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-xq-9KY">
-                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="412" height="400"/>
+                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="412" height="200"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="400" id="Sjr-JP-ZQR"/>
+                                                            <constraint firstAttribute="height" constant="200" id="Sjr-JP-ZQR"/>
                                                         </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-8B-Uri" userLabel="ForDogs">
+                                                <rect key="frame" x="0.0" y="857.33333333333337" width="412" height="120.33333333333337"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Dogs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvQ-gN-S0A">
+                                                        <rect key="frame" x="0.0" y="0.0" width="412" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fP8-Sf-81L">
+                                                        <rect key="frame" x="0.0" y="20.333333333333258" width="412" height="100"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="0Se-cl-B0o"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="IjI-Cn-aHN"/>
+                                                        </constraints>
+                                                    </tableView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -639,6 +658,7 @@
                         <outlet property="cancelButton" destination="8va-bC-PiP" id="8Qy-0o-huJ"/>
                         <outlet property="doneButton" destination="4Qf-W0-y9R" id="KvR-NR-nWI"/>
                         <outlet property="endDatePicker" destination="8d0-Kz-Nhz" id="F5w-R1-YO8"/>
+                        <outlet property="forDogsTableView" destination="fP8-Sf-81L" id="NM4-ga-KcW"/>
                         <outlet property="nameTextField" destination="zBl-8w-x6x" id="QBS-7X-qGF"/>
                         <outlet property="noteTextView" destination="dUH-xq-9KY" id="tfm-w6-V3f"/>
                         <outlet property="startDatePicker" destination="ziX-18-mpJ" id="SWG-Zp-lrl"/>
@@ -647,6 +667,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWd-j7-IFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1227" y="11"/>
+        </scene>
+        <!--Select Dog And Puppy View Controller-->
+        <scene sceneID="aNr-6j-Fqi">
+            <objects>
+                <viewController id="O1h-X6-jI5" customClass="SelectDogAndPuppyViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="50K-0r-Fho">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WOM-k2-MZk">
+                                <rect key="frame" x="8" y="52" width="412" height="832"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fAf-ph-FyW">
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="boe-a7-lWf"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Dogs"/>
+                                            <segment title="Puppies"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="plF-S5-YG6">
+                                        <rect key="frame" x="0.0" y="52" width="412" height="780"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Vy-oq-Ce1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Vy-oq-Ce1" firstAttribute="bottom" secondItem="WOM-k2-MZk" secondAttribute="bottom" constant="8" id="Bzw-o0-URs"/>
+                            <constraint firstItem="9Vy-oq-Ce1" firstAttribute="trailing" secondItem="WOM-k2-MZk" secondAttribute="trailing" constant="8" id="Snl-RF-Poc"/>
+                            <constraint firstItem="WOM-k2-MZk" firstAttribute="top" secondItem="9Vy-oq-Ce1" secondAttribute="top" constant="8" id="fKi-nh-Fms"/>
+                            <constraint firstItem="WOM-k2-MZk" firstAttribute="leading" secondItem="9Vy-oq-Ce1" secondAttribute="leading" constant="8" id="tIL-h6-73b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="fAf-ph-FyW" id="viC-h2-b7H"/>
+                        <outlet property="tableView" destination="plF-S5-YG6" id="qOQ-e6-SJw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9UU-5M-aWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2127" y="10"/>
         </scene>
         <!--Create Litter View Controller-->
         <scene sceneID="Tj1-Dq-zkf">
@@ -796,7 +862,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Treatements" id="deA-bS-RTn">
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="vwb-X1-T6e">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="vwb-X1-T6e">
                             <rect key="frame" x="145.66666666666666" y="6" width="136.99999999999997" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>

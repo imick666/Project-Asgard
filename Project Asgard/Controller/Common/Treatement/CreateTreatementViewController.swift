@@ -15,13 +15,14 @@ class CreateTreatementViewController: UIViewController {
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var forDogsTableView: UITableView!
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
     // MARK: - Properties
     
-    var forObject: NSObject!
+    var objects = [NSObject]()
     
     private var coreData: CoreDataManager?
     
@@ -31,10 +32,16 @@ class CreateTreatementViewController: UIViewController {
         super.viewDidLoad()
         setupCoreData()
         setupView()
-
+        setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        forDogsTableView.reloadData()
     }
     
     // MARK: - Methodes
+    
     private func setupTextFieldAndView() {
         nameTextField.addDoneToKeayboard()
         nameTextField.delegate = self
@@ -54,6 +61,18 @@ class CreateTreatementViewController: UIViewController {
         setupTextFieldAndView()
     }
     
+    private func setupTableView() {
+        forDogsTableView.delegate = self
+        forDogsTableView.dataSource = self
+        forDogsTableView.layer.borderWidth = 1
+        forDogsTableView.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    @objc
+    private func selectDogs() {
+        
+    }
+    
     // MARK: - Actions
     
     @IBAction func didTapCancelButton(_ sender: Any) {
@@ -70,8 +89,10 @@ class CreateTreatementViewController: UIViewController {
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
               
-        coreData?.createTreatement(named: name, startDate: startDate, endDate: endDate, note: note, to: forObject)
-        
+        objects.forEach { (object) in
+            coreData?.createTreatement(named: name, startDate: startDate, endDate: endDate, note: note, to: object)
+        }
+
         dismiss(animated: true, completion: nil)
     }
 }
@@ -80,5 +101,44 @@ extension CreateTreatementViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if nameTextField.isFirstResponder { noteTextView.becomeFirstResponder() }
         return true
+    }
+}
+
+extension CreateTreatementViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return objects.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        
+        var name: String? {
+            if let dog = objects[indexPath.row] as? Dog {
+                return dog.name?.capitalized
+            } else if let puppy = objects[indexPath.row] as? Puppy {
+                return puppy.name?.capitalized
+            } else {
+                return nil
+            }
+        }
+        
+        cell.textLabel?.text = name
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let button = UIButton()
+        button.setTitle("Add dog", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(selectDogs), for: .touchUpInside)
+        
+        return button
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 44
     }
 }

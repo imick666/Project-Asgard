@@ -27,7 +27,7 @@ class DetailDogViewController: UIViewController {
     
     // MARK: - Properties
     
-    var selectedDog: Dog?
+    var selectedDog: Dog!
     private var frc: NSFetchedResultsController<Dog>?
     
     // MARK: - Children ViewController

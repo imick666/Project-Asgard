@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E015D071257E813200175DBA /* DetailPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015D070257E813200175DBA /* DetailPuppyViewController.swift */; };
+		E01D4DB125862A5C00292BFA /* SelectDogAndPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */; };
 		E02282BC2577CD1200AD28DD /* Litter&PuppyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */; };
 		E02282C62577DF0100AD28DD /* CreateLitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */; };
 		E02282D52577F02300AD28DD /* CreatePuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		E015D070257E813200175DBA /* DetailPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPuppyViewController.swift; sourceTree = "<group>"; };
+		E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogAndPuppyViewController.swift; sourceTree = "<group>"; };
 		E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Litter&PuppyTest.swift"; sourceTree = "<group>"; };
 		E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLitterViewController.swift; sourceTree = "<group>"; };
 		E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePuppyViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				E0F2568E2571444900D45094 /* TreatementViewController.swift */,
 				E0BE1EF42571631500E9EEFA /* DetailTreatementViewController.swift */,
 				E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */,
+				E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */,
 			);
 			path = Treatement;
 			sourceTree = "<group>";
@@ -388,18 +391,10 @@
 		E0F45111257E8E39000F75C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E0F45112257E8E4A000F75C9 /* Dogs+Puppies */,
+				E0BE1EEF2571610E00E9EEFA /* Treatement */,
 				E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		E0F45112257E8E4A000F75C9 /* Dogs+Puppies */ = {
-			isa = PBXGroup;
-			children = (
-				E0BE1EEF2571610E00E9EEFA /* Treatement */,
-			);
-			path = "Dogs+Puppies";
 			sourceTree = "<group>";
 		};
 		E0F45115257E8E6E000F75C9 /* Wieght */ = {
@@ -521,6 +516,7 @@
 				E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */,
 				E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */,
 				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
+				E01D4DB125862A5C00292BFA /* SelectDogAndPuppyViewController.swift in Sources */,
 				E0CDC2772578E4BF008D22CB /* DogSex.swift in Sources */,
 				E0C8FA79256C0A9500029BDB /* DogMenuCell.swift in Sources */,
 				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,

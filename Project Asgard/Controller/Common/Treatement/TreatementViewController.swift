@@ -67,9 +67,9 @@ class TreatementViewController: UIViewController {
         }
         
         if let detailDog = parentView as? DetailDogViewController {
-            createTreatementVC.forObject = detailDog.selectedDog
+            createTreatementVC.objects = [detailDog.selectedDog]
         } else if let detailPuppy = parentView as? DetailPuppyViewController {
-            createTreatementVC.forObject = detailPuppy.selectedPuppy
+            createTreatementVC.objects = [detailPuppy.selectedPuppy]
         }
         
         parent?.present(createTreatementVC, animated: true, completion: nil)
