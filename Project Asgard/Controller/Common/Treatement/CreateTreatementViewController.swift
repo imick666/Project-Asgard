@@ -70,7 +70,10 @@ class CreateTreatementViewController: UIViewController {
     
     @objc
     private func selectDogs() {
-        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.selectDogAndPuppy) as? SelectDogAndPuppyViewController else { return }
+        vc.selectedObjects = objects
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
     }
     
     // MARK: - Actions
@@ -140,5 +143,12 @@ extension CreateTreatementViewController: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 44
+    }
+}
+
+extension CreateTreatementViewController: SelectDogAndPuppyDelegate {
+    func didSelectDogsAndPuppies(_ allObjects: [NSObject]) {
+        objects = allObjects
+        forDogsTableView.reloadData()
     }
 }

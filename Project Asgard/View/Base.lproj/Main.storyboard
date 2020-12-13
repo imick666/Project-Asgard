@@ -505,11 +505,11 @@
             <objects>
                 <viewController storyboardIdentifier="CreateTreatementVC" id="b0h-Do-xRX" customClass="CreateTreatementViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rhY-kC-IzW">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mwI-mV-Juo">
-                                <rect key="frame" x="8" y="840" width="412" height="44"/>
+                                <rect key="frame" x="8" y="786" width="412" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8va-bC-PiP">
                                         <rect key="frame" x="0.0" y="0.0" width="198" height="44"/>
@@ -533,10 +533,10 @@
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TK2-hF-dMS">
-                                <rect key="frame" x="8" y="52" width="412" height="780"/>
+                                <rect key="frame" x="8" y="8" width="412" height="770"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u3x-Jd-Ue6">
-                                        <rect key="frame" x="0.0" y="0.0" width="412" height="977.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="1127.6666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Treatement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-CX-TqD">
                                                 <rect key="frame" x="0.0" y="0.0" width="412" height="30"/>
@@ -610,7 +610,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-8B-Uri" userLabel="ForDogs">
-                                                <rect key="frame" x="0.0" y="857.33333333333337" width="412" height="120.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="857.33333333333337" width="412" height="270.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Dogs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvQ-gN-S0A">
                                                         <rect key="frame" x="0.0" y="0.0" width="412" height="20.333333333333332"/>
@@ -619,11 +619,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fP8-Sf-81L">
-                                                        <rect key="frame" x="0.0" y="20.333333333333258" width="412" height="100"/>
+                                                        <rect key="frame" x="0.0" y="20.333333333333258" width="412" height="250"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="0Se-cl-B0o"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="IjI-Cn-aHN"/>
+                                                            <constraint firstAttribute="height" constant="250" id="0Se-cl-B0o"/>
                                                         </constraints>
                                                     </tableView>
                                                 </subviews>
@@ -666,12 +665,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWd-j7-IFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1227" y="11"/>
+            <point key="canvasLocation" x="-636" y="1521"/>
         </scene>
         <!--Select Dog And Puppy View Controller-->
         <scene sceneID="aNr-6j-Fqi">
             <objects>
-                <viewController id="O1h-X6-jI5" customClass="SelectDogAndPuppyViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectDogAndPuppyVC" id="O1h-X6-jI5" customClass="SelectDogAndPuppyViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="50K-0r-Fho">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -688,11 +687,40 @@
                                             <segment title="Dogs"/>
                                             <segment title="Puppies"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentedValueHasChange:" destination="O1h-X6-jI5" eventType="valueChanged" id="RO7-IQ-lJQ"/>
+                                        </connections>
                                     </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="plF-S5-YG6">
-                                        <rect key="frame" x="0.0" y="52" width="412" height="780"/>
+                                        <rect key="frame" x="0.0" y="52" width="412" height="728"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="h0n-dT-4A9">
+                                        <rect key="frame" x="0.0" y="788" width="412" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIh-Pc-mzl">
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="h8S-yd-enL"/>
+                                                </constraints>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="didTapCancelButton:" destination="O1h-X6-jI5" eventType="touchUpInside" id="LDY-ms-JuH"/>
+                                                    <action selector="didTapCancelButton:" destination="Sqq-rb-iOJ" eventType="touchUpInside" id="cUO-gy-jnw"/>
+                                                    <action selector="didTapCancelButton:" destination="b0h-Do-xRX" eventType="touchUpInside" id="io8-3u-05Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-W6-0Fu">
+                                                <rect key="frame" x="214" y="0.0" width="198" height="44"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="didTapDoneButton:" destination="O1h-X6-jI5" eventType="touchUpInside" id="Sw6-mX-BxI"/>
+                                                    <action selector="didTapDoneButton:" destination="Sqq-rb-iOJ" eventType="touchUpInside" id="ein-w5-JsN"/>
+                                                    <action selector="didTapDoneButton:" destination="b0h-Do-xRX" eventType="touchUpInside" id="fWb-SN-qov"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -706,13 +734,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="zIh-Pc-mzl" id="mUs-vI-1KC"/>
+                        <outlet property="doneButton" destination="2Nu-W6-0Fu" id="hjS-K2-eKN"/>
                         <outlet property="segmentedControl" destination="fAf-ph-FyW" id="viC-h2-b7H"/>
                         <outlet property="tableView" destination="plF-S5-YG6" id="qOQ-e6-SJw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9UU-5M-aWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="10"/>
+            <point key="canvasLocation" x="264" y="1521"/>
         </scene>
         <!--Create Litter View Controller-->
         <scene sceneID="Tj1-Dq-zkf">
@@ -873,6 +903,11 @@
                                 <action selector="segmentedControllerHasChanged:" destination="gad-Me-jCE" eventType="valueChanged" id="Cxl-Ww-6vv"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BCc-4D-FKC">
+                            <connections>
+                                <segue destination="b0h-Do-xRX" kind="presentation" id="mGD-5s-RFh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedController" destination="vwb-X1-T6e" id="L1L-bB-zjT"/>
