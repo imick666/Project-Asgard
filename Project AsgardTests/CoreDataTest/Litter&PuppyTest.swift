@@ -60,6 +60,15 @@ class Litter_PuppyTest: XCTestCase {
         XCTAssertEqual(litter[0].puppies?.count, 5)
     }
     
+    func testReadPuppies() {
+        let dog = creatDog()
+        let puppies = createPuppies(2)
+        
+        coreData.createLitter(of: dog, the: Date(), cesarean: false, with: puppies)
+        
+        XCTAssertEqual(coreData.allPuppies.count, 2)
+    }
+    
     // Updtae
     
     

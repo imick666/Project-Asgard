@@ -28,6 +28,19 @@ final class CoreDataManager {
         }
     }
     
+    var allPuppies: [Puppy] {
+        let request: NSFetchRequest<Puppy> = Puppy.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return [Puppy]()
+        }
+    }
+    
     // MARK: - Init
     
     init(_ coreDataStack: CoreDataStack) {
