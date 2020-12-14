@@ -12,7 +12,7 @@ class PuppiesListTableViewController: UITableViewController {
     
     // MARK: - Properties
 
-    var motherId: String?
+    var litterID: DogLitter?
     
     private var frc: NSFetchedResultsController<Puppy>!
 
@@ -37,11 +37,11 @@ class PuppiesListTableViewController: UITableViewController {
         ]
         
         var predicate: NSPredicate {
-            switch motherId {
+            switch litterID {
             case .none:
                 return NSPredicate(format: "sold == %@", NSNumber(booleanLiteral: false))
             case .some(let id):
-                return NSPredicate(format: "dogLitter.dog.name == %@", id)
+                return NSPredicate(format: "dogLitter == %@", id)
             }
         }
         
