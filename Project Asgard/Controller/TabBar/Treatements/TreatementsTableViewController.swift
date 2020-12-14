@@ -25,6 +25,7 @@ class TreatementsTableViewController: UITableViewController {
         super.viewDidLoad()
         setupFrc()
         setupCoreData()
+        tableView.tableFooterView = UIView()
     }
     
     // MARK: - Methodes
@@ -109,6 +110,25 @@ class TreatementsTableViewController: UITableViewController {
         cell.textLabel?.text = treatement?.name?.capitalized
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = """
+            All your pets are good!!
+            """
+        label.textColor = .gray
+        label.textAlignment = .center
+        
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let navBarMaxY = navigationController?.navigationBar.frame.maxY ?? 0
+        let tabBarMinY = tabBarController?.tabBar.frame.minY ?? 0
+        let finalHeight = tabBarMinY - navBarMaxY
+        
+        return frc.fetchedObjects?.count == 0 ? finalHeight : 0
     }
     
     // MARK: - Table View Delegate

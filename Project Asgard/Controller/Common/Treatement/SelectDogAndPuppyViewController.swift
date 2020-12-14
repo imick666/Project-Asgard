@@ -48,8 +48,6 @@ class SelectDogAndPuppyViewController: UIViewController {
         setupCoreData()
         setupView()
         setupTableView()
-        
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Methodes

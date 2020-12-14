@@ -679,9 +679,9 @@
                                 <rect key="frame" x="8" y="52" width="412" height="832"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fAf-ph-FyW">
-                                        <rect key="frame" x="0.0" y="0.0" width="412" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="boe-a7-lWf"/>
+                                            <constraint firstAttribute="height" constant="34" id="boe-a7-lWf"/>
                                         </constraints>
                                         <segments>
                                             <segment title="Dogs"/>
@@ -692,7 +692,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="plF-S5-YG6">
-                                        <rect key="frame" x="0.0" y="52" width="412" height="728"/>
+                                        <rect key="frame" x="0.0" y="42" width="412" height="738"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="h0n-dT-4A9">
