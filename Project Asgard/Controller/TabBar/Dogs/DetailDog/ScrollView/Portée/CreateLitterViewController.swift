@@ -133,6 +133,12 @@ extension CreateLitterViewController: CreatePuppyDelegate {
     
     func createPuppy(named name: String?, _ affix: String?, sex: Int16, color: String?, image: Data?) {
         let puppy = coreData?.createPuppy(birth: datePicker.date, sex: sex, dogColor: color)
+        if puppy?.name == nil {
+            puppy?.name = "Puppy \(puppies.count + 1)"
+        }
+        if puppy?.affix == nil {
+            puppy?.affix = "Des monts d'asgard"
+        }
         
         puppies.append(puppy!)
     }

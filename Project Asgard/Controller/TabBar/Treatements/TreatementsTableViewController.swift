@@ -40,9 +40,9 @@ class TreatementsTableViewController: UITableViewController {
         var predicate: NSPredicate? {
             switch segmentedController.selectedSegmentIndex {
             case 0:
-                return NSPredicate(format: "toDog != nil && endDate >= %@", Date() as CVarArg)
+                return NSPredicate(format: "toDog != nil")
             case 1:
-                return NSPredicate(format: "toPuppy != nil && endDate >= %@", Date() as CVarArg)
+                return NSPredicate(format: "toPuppy != nil")
             default:
                 return nil
             }

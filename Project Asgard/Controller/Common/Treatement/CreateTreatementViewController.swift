@@ -64,8 +64,6 @@ class CreateTreatementViewController: UIViewController {
     private func setupTableView() {
         forDogsTableView.delegate = self
         forDogsTableView.dataSource = self
-        forDogsTableView.layer.borderWidth = 1
-        forDogsTableView.layer.borderColor = UIColor.red.cgColor
     }
     
     @objc
