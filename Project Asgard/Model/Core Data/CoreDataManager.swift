@@ -41,6 +41,17 @@ final class CoreDataManager {
         }
     }
     
+    var allTreatements: [Treatement] {
+        let request: NSFetchRequest<Treatement> = Treatement.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "endDate", ascending: true)]
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
     // MARK: - Init
     
     init(_ coreDataStack: CoreDataStack) {

@@ -50,6 +50,14 @@ class TreatementTest: XCTestCase {
         XCTAssertEqual(coreData?.allDogs[0].treatements?.count, 1)
     }
     
+    func testReadTreatements() {
+        let dog = createDog()
+        
+        coreData?.createTreatement(named: "keto", startDate: Date(), endDate: Date(), note: nil, to: dog)
+        
+        XCTAssertEqual(coreData?.allTreatements.count, 1)
+    }
+    
     // Delete
     
     func testDeleteTreatement() {
