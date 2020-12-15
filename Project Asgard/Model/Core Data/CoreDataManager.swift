@@ -70,6 +70,7 @@ final class CoreDataManager {
         newDog.lofNumber = lofNumber
         newDog.chipNumber = chipNumber
         newDog.image = pitcure
+        newDog.id = UUID()
         
         coreDataStack.saveContext()
     }
@@ -80,6 +81,7 @@ final class CoreDataManager {
         newTreatement.startDate = startDate
         newTreatement.endDate = endDate
         newTreatement.note = note
+        newTreatement.id = UUID()
         if let dog = to as? Dog {
             newTreatement.toDog = dog
         }
@@ -95,6 +97,7 @@ final class CoreDataManager {
         newLitter.date = date
         newLitter.dog = dog
         newLitter.cesrean = cesarean
+        newLitter.id = UUID()
         puppies.forEach( {newLitter.addToPuppies(_: $0) })
         
         coreDataStack.saveContext()
@@ -106,7 +109,7 @@ final class CoreDataManager {
         newPuppy.sex = sex
         newPuppy.puppyColor = dogColor
         newPuppy.necklaceColor = necklaceColor
-        
+        newPuppy.id = UUID()
         
         return newPuppy
     }
