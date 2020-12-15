@@ -28,20 +28,16 @@ class CreateDogViewController: UIViewController {
     // MARK: - Properties
     
     private let imagePicker = PickerViewManager()
-    private var coreDataStack: CoreDataStack!
     private var coreData: CoreDataManager!
-    var dog: Dog?
+    var dogToModify: Dog?
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if dog != nil {
-            setupContent()
-        }
         setupView()
+        setupContent()
         setupCoreData()
-        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewDidTapped(_:)))
         dogImageView.addGestureRecognizer(tap)
@@ -62,8 +58,7 @@ class CreateDogViewController: UIViewController {
         guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else {
             fatalError("Failed to load CoreData")
         }
-        coreDataStack = stack
-        coreData = CoreDataManager(coreDataStack)
+        coreData = CoreDataManager(stack)
     }
     
     private func setupView() {
@@ -90,14 +85,15 @@ class CreateDogViewController: UIViewController {
     }
     
     private func setupContent() {
+        guard let dog = dogToModify else { return }
         controllerNameLabel.text = "Modify existing dog"
-        nameTextField.text = dog?.name
-        affixTextField.text = dog?.affix
-        chipTextField.text = dog?.chipNumber
-        lofTextField.text = dog?.lofNumber
-        birthDatePicker.setDate(dog!.birthDate!, animated: true)
-        dogImageView.setDogImage(from: dog?.image)
-        sexSegmentedControl.selectedSegmentIndex = Int(dog!.sex)
+        nameTextField.text = dog.name
+        affixTextField.text = dog.affix
+        chipTextField.text = dog.chipNumber
+        lofTextField.text = dog.lofNumber
+        birthDatePicker.setDate(dog.birthDate!, animated: true)
+        dogImageView.setDogImage(from: dog.image)
+        sexSegmentedControl.selectedSegmentIndex = Int(dog.sex)
     }
     
     // MARK: - Actions
@@ -114,23 +110,26 @@ class CreateDogViewController: UIViewController {
     @IBAction func didTapDoneButton(_ sender: Any) {
         guard let name = nameTextField.text.orNil, let affix = affixTextField.text.orNil else { return }
         let birthDate = birthDatePicker.date
+        let dogColor = dogColorTextField.text.orNil
         let lofNumber = lofTextField.text.orNil
         let chipNumber = chipTextField.text.orNil
         let image = dogImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
         let sex = Int16(sexSegmentedControl.selectedSegmentIndex)
         
-        if dog == nil {
-            coreData?.createDog(named: name, affix, sex: sex, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: image)
+        if dogToModify != nil {
+            coreData.update(dog: dogToModify!, value: [
+                (name, "name"),
+                (affix, "affix"),
+                (dogColor, "dogColor"),
+                (birthDate, "birthDate"),
+                (lofNumber, "lofNumber"),
+                (chipNumber, "chipNumber"),
+                (image, "image"),
+                (sex, "sex"),
+            ])
         } else {
-            dog?.name = name
-            dog?.affix = affix
-            dog?.birthDate = birthDate
-            dog?.lofNumber = lofNumber
-            dog?.chipNumber = chipNumber
-            dog?.image = image
-            dog?.sex = sex
-            
-            coreDataStack.saveContext()
+
+            coreData?.createDog(named: name, affix, sex: sex, dogColor: dogColor, birthThe: birthDate, lofNumber: lofNumber, chipNumber: chipNumber, pitcure: image)
         }
         dismiss(animated: true, completion: nil)
     }

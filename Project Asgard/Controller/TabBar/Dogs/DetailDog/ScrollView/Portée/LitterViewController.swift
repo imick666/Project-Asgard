@@ -53,8 +53,6 @@ class LitterViewController: UIViewController {
 
     private func setupView() {
         view.layer.cornerRadius = 30
-        view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.red.cgColor
     }
     
     // MARK: - Actions

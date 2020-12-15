@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class TreatementViewController: UIViewController {
     
@@ -40,10 +39,6 @@ class TreatementViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupCoreData()
-        
-        view.layer.cornerRadius = 30
-        view.layer.borderColor = UIColor.blue.cgColor
-        view.layer.borderWidth = 2
     }
     
     // MARK: - Methodes
@@ -51,6 +46,7 @@ class TreatementViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.layer.cornerRadius = 30
         tableView.tableFooterView = UIView()
     }
     

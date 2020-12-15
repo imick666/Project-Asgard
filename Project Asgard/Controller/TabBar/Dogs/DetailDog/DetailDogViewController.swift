@@ -15,7 +15,7 @@ class DetailDogViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var affixLabel: UILabel!
-    @IBOutlet weak var pictureImageViw: UIImageView!
+    @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var sexLabel: UILabel!
     @IBOutlet weak var dogColorLabel: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
@@ -28,7 +28,7 @@ class DetailDogViewController: UIViewController {
     // MARK: - Properties
     
     var selectedDog: Dog!
-    private var frc: NSFetchedResultsController<Dog>?
+    private var fetchedResultController: NSFetchedResultsController<Dog>?
     
     // MARK: - Children ViewController
     
@@ -72,13 +72,13 @@ class DetailDogViewController: UIViewController {
         ]
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         
-        frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        frc?.delegate = self
+        fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController?.delegate = self
         
         do {
-            try frc?.performFetch()
+            try fetchedResultController?.performFetch()
         } catch {
-            print("hoho")
+            print("Failed to fetches data")
         }
     }
     
@@ -89,8 +89,7 @@ class DetailDogViewController: UIViewController {
         topView.layer.shadowColor = UIColor.gray.cgColor
         topView.layer.shadowRadius = 10
         topView.layer.shadowOpacity = 0.5
-        
-        pictureImageViw.rounded(nil)
+        pictureImageView.rounded(nil)
     }
     
     private func setupContent() {
@@ -103,7 +102,7 @@ class DetailDogViewController: UIViewController {
         affixLabel.text = dog.affix?.capitalized
         sexLabel.text = DogSex(rawValue: dog.sex)?.description
         dogColorLabel.text = dog.dogColor.orNc.capitalized
-        pictureImageViw.setDogImage(from: dog.image)
+        pictureImageView.setDogImage(from: dog.image)
         birthDateLabel.text = "\(birthDate) (\(age))"
         lofNbLabel.text? = "Lof : \(dog.lofNumber.orNc)"
         chipNbLabel.text = "Chip : \(dog.chipNumber.orNc)"
@@ -127,7 +126,7 @@ class DetailDogViewController: UIViewController {
     @IBAction func didTapEditButton(_ sender: Any) {
         guard let createDogVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createDog) as? CreateDogViewController else { return }
         
-        createDogVC.dog = selectedDog
+        createDogVC.dogToModify = selectedDog
         present(createDogVC, animated: true, completion: nil)
     }
 }
@@ -152,7 +151,7 @@ extension DetailDogViewController: LitterViewControllerDelegate {
 
 extension DetailDogViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        selectedDog = frc?.fetchedObjects?.first(where: { $0.objectID == self.selectedDog?.objectID })
+        selectedDog = fetchedResultController?.fetchedObjects?.first(where: { $0.objectID == self.selectedDog?.objectID })
         setupContent()
     }
 }

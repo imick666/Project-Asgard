@@ -193,7 +193,7 @@
                         <outlet property="lofNbLabel" destination="lA5-Nk-dlp" id="aIx-kF-j3v"/>
                         <outlet property="nameLabel" destination="He0-5y-Oiu" id="Dss-nK-n9T"/>
                         <outlet property="pageControl" destination="vYQ-ec-YJv" id="f8p-d4-RGG"/>
-                        <outlet property="pictureImageViw" destination="i1U-af-QB1" id="Eos-mS-HGx"/>
+                        <outlet property="pictureImageView" destination="i1U-af-QB1" id="Eos-mS-HGx"/>
                         <outlet property="scrollView" destination="4Cj-jS-wZz" id="dqK-6g-maF"/>
                         <outlet property="sexLabel" destination="P4p-Uz-hWt" id="tuA-p0-Cng"/>
                         <outlet property="topView" destination="tid-nL-1eQ" id="SnX-Jl-RSn"/>
@@ -670,10 +670,10 @@
                         <outlet property="cancelButton" destination="8va-bC-PiP" id="8Qy-0o-huJ"/>
                         <outlet property="doneButton" destination="4Qf-W0-y9R" id="KvR-NR-nWI"/>
                         <outlet property="endDatePicker" destination="8d0-Kz-Nhz" id="F5w-R1-YO8"/>
-                        <outlet property="forDogsTableView" destination="fP8-Sf-81L" id="NM4-ga-KcW"/>
                         <outlet property="nameTextField" destination="zBl-8w-x6x" id="QBS-7X-qGF"/>
                         <outlet property="noteTextView" destination="dUH-xq-9KY" id="tfm-w6-V3f"/>
                         <outlet property="startDatePicker" destination="ziX-18-mpJ" id="SWG-Zp-lrl"/>
+                        <outlet property="tableView" destination="fP8-Sf-81L" id="NM4-ga-KcW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWd-j7-IFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

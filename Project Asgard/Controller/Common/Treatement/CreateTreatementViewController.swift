@@ -15,7 +15,7 @@ class CreateTreatementViewController: UIViewController {
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var noteTextView: UITextView!
-    @IBOutlet weak var forDogsTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
@@ -37,7 +37,7 @@ class CreateTreatementViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        forDogsTableView.reloadData()
+        tableView.reloadData()
     }
     
     // MARK: - Methodes
@@ -62,8 +62,8 @@ class CreateTreatementViewController: UIViewController {
     }
     
     private func setupTableView() {
-        forDogsTableView.delegate = self
-        forDogsTableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     @objc
@@ -147,6 +147,6 @@ extension CreateTreatementViewController: UITableViewDataSource, UITableViewDele
 extension CreateTreatementViewController: SelectDogAndPuppyDelegate {
     func didSelectDogsAndPuppies(_ allObjects: [NSObject]) {
         objects = allObjects
-        forDogsTableView.reloadData()
+        tableView.reloadData()
     }
 }
