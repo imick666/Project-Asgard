@@ -12,6 +12,7 @@ class DogMenuCell: UITableViewCell {
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var affixLabel: UILabel!
+    @IBOutlet weak var sexLabel: UILabel!
     
     var dog: Dog? {
         didSet {
@@ -31,6 +32,7 @@ class DogMenuCell: UITableViewCell {
         dogImageView.setDogImage(from: dog.image)
         nameLabel.text = dog.name?.capitalized
         affixLabel.text = dog.affix?.capitalized
+        sexLabel.text = DogSex(rawValue: dog.sex)?.description
     }
     
     private func setupPuppy() {
@@ -39,5 +41,6 @@ class DogMenuCell: UITableViewCell {
         dogImageView.setDogImage(from: puppy.image)
         nameLabel.text = puppy.name?.capitalized
         affixLabel.text = puppy.affix?.capitalized
+        sexLabel.text = DogSex(rawValue: puppy.sex)?.description
     }
 }

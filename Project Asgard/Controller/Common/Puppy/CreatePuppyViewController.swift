@@ -34,24 +34,22 @@ class CreatePuppyViewController: UIViewController {
     
     var delegate: CreatePuppyDelegate?
     private let pickerView = PickerViewManager()
-    private var coreDataStack: CoreDataStack?
+    private var coreData: CoreDataManager?
     private var necklaceColor: UIColor? {
         didSet {
             necklaceColorButton.backgroundColor = necklaceColor
             necklaceColorButton.setTitle(necklaceColor == nil ? "None" : nil, for: .normal)
         }
     }
-    var puppy: Puppy?
+    var puppyToModify: Puppy?
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if puppy != nil {
-            setupContent()
-        }
         setupCoreData()
         setupView()
+        setupContent()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(selectImage))
         pictureImageView.addGestureRecognizer(tap)
@@ -74,6 +72,7 @@ class CreatePuppyViewController: UIViewController {
         cancelButton.roundFilled(wih: .red)
         pictureImageView.rounded(nil)
         necklaceColorButton.roundFilled(wih: .gray)
+        necklaceColorButton.setTitle("None", for: .normal)
         
         setupTextFields()
         updateResetButton()
@@ -96,20 +95,22 @@ class CreatePuppyViewController: UIViewController {
         guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else {
             fatalError("Failed to load CoreDataStack")
         }
-        coreDataStack = stack
+        coreData = CoreDataManager(stack)
     }
     
     private func setupContent() {
+        affixTextField.text = "Des Monts d'Asgard"
+        guard let puppy = puppyToModify else { return }
         controllerNameLabel.text = "Modify existing puppy"
-        nameTextField.text = puppy?.name
-        affixTextField.text = puppy?.affix
-        lofNumberTextField.text = puppy?.lofNumber
-        chipNumberTextField.text = puppy?.chipNumber
-        pictureImageView.setDogImage(from: puppy?.image)
-        puppyColorTextField.text = puppy?.puppyColor
-        sexSegmentedControl.selectedSegmentIndex = Int(puppy!.sex)
-        isSoldSwitch.setOn(puppy!.sold!.boolValue, animated: true)
-        necklaceColor = UIColor(fromHex: puppy?.necklaceColor)
+        nameTextField.text = puppy.name
+        affixTextField.text = puppy.affix
+        lofNumberTextField.text = puppy.lofNumber
+        chipNumberTextField.text = puppy.chipNumber
+        pictureImageView.setDogImage(from: puppy.image)
+        puppyColorTextField.text = puppy.puppyColor
+        sexSegmentedControl.selectedSegmentIndex = Int(puppy.sex)
+        isSoldSwitch.setOn(puppy.sold!.boolValue, animated: true)
+        necklaceColor = UIColor(fromHex: puppy.necklaceColor)
         necklaceColorButton.setTitle(necklaceColor == nil ? "None" : nil, for: .normal)
     }
     
@@ -144,19 +145,20 @@ class CreatePuppyViewController: UIViewController {
         let chipNumber = chipNumberTextField.text.orNil
         let image = pictureImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
         let necklaceColor = self.necklaceColor?.toHex
+        let sold = NSNumber(booleanLiteral: isSoldSwitch.isOn)
         
-        if puppy != nil {
-            puppy?.name = name
-            puppy?.affix = affix
-            puppy?.sex = sex
-            puppy?.lofNumber = lofNumber
-            puppy?.chipNumber = chipNumber
-            puppy?.puppyColor = puppyColor
-            puppy?.image = image
-            puppy?.necklaceColor = necklaceColor
-            puppy?.sold = NSNumber(booleanLiteral: isSoldSwitch.isOn)
-            
-            coreDataStack?.saveContext()
+        if puppyToModify != nil {
+            coreData?.update(puppy: puppyToModify!, value: [
+                (name, "name"),
+                (affix, "affix"),
+                (sex, "sex"),
+                (puppyColor, "puppyColor"),
+                (lofNumber, "lofNumber"),
+                (chipNumber, "chipNumber"),
+                (image, "image"),
+                (necklaceColor, "necklaceColor"),
+                (sold, "sold")
+            ])
         } else {
             delegate?.createPuppy(named: name, affix, sex: sex, color: puppyColor, image: image, necklaceColor: necklaceColor)
         }

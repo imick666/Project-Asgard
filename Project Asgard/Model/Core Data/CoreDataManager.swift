@@ -100,13 +100,26 @@ final class CoreDataManager {
         newLitter.dog = dog
         newLitter.cesrean = cesarean
         newLitter.id = UUID()
-        puppies.forEach( {newLitter.addToPuppies(_: $0) })
+        puppies.forEach { puppy in
+            let newPuppy = Puppy(context: context)
+            newPuppy.name = puppy.name
+            newPuppy.affix = puppy.affix
+            newPuppy.birthDate = puppy.birthDate
+            newPuppy.chipNumber = puppy.chipNumber
+            newPuppy.id = puppy.id
+            newPuppy.image = puppy.image
+            newPuppy.lofNumber = puppy.lofNumber
+            newPuppy.necklaceColor = puppy.necklaceColor
+            newPuppy.puppyColor = puppy.puppyColor
+            
+            newLitter.addToPuppies(newPuppy)
+        }
         
         coreDataStack.saveContext()
     }
     
-    func createPuppy(named name: String?, affix: String?, birthThe date: Date, sex: Int16, dogColor: String?, necklaceColor: String? = nil, image: Data?) -> Puppy {
-        let newPuppy = Puppy(context: context)
+    func createPuppy(named name: String?, affix: String?, birthThe date: Date, sex: Int16, dogColor: String?, necklaceColor: String?, image: Data?) -> Puppy {
+        let newPuppy = Puppy(entity: Puppy.entity() , insertInto: nil)
         newPuppy.name = name
         newPuppy.affix = affix
         newPuppy.image = image

@@ -36,10 +36,9 @@ class SelectNecklaceColorViewController: UIViewController {
     // MARK: -  Methodes
     
     private func setupButtons() {
+        colorButtons.forEach({ $0.roundFilled(wih: .gray) })
         cancelButton.roundFilled(wih: .red)
         doneButton.roundFilled(wih: .green)
-        
-        colorButtons.forEach({ $0.roundFilled(wih: .gray) })
     }
     
     // MARK: - Actions

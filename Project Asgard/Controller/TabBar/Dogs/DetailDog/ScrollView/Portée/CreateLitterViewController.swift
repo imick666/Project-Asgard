@@ -55,6 +55,8 @@ class CreateLitterViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        let nib = UINib(nibName: Constants.Cells.dogMenuCellNib, bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: Constants.Cells.dogMenuCellID)
     }
     
     @objc
@@ -97,19 +99,15 @@ extension CreateLitterViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.dogMenuCellID, for: indexPath) as? DogMenuCell else { return UITableViewCell() }
         let puppy = puppies[indexPath.row]
-        let name = puppy.name ?? "N/C"
-        let color = puppy.puppyColor ?? "N/C"
-        let sex = DogSex(rawValue: puppy.sex)?.description ?? "N/C"
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = "\(name) - \(color) - \(sex)"
-        
+        cell.puppy = puppy
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 70
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -127,18 +125,25 @@ extension CreateLitterViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     // MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            puppies.remove(at: indexPath.row)
+            tableView.reloadData()
+        default: return
+        }
+    }
 }
 
 extension CreateLitterViewController: CreatePuppyDelegate {
     
     func createPuppy(named name: String?, _ affix: String?, sex: Int16, color: String?, image: Data?, necklaceColor: String?) {
         
-        let puppy = coreData?.createPuppy(named: nil, affix: nil, birthThe: datePicker.date, sex: sex, dogColor: color, necklaceColor: necklaceColor, image: nil)
+        let puppy = coreData?.createPuppy(named: name, affix: affix, birthThe: datePicker.date, sex: sex, dogColor: color, necklaceColor: necklaceColor, image: image)
+        
         if puppy?.name == nil {
             puppy?.name = "Puppy \(puppies.count + 1)"
-        }
-        if puppy?.affix == nil {
-            puppy?.affix = "Des monts d'asgard"
         }
         
         puppies.append(puppy!)

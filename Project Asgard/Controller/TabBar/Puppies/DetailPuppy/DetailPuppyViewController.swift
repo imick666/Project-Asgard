@@ -120,7 +120,7 @@ class DetailPuppyViewController: UIViewController {
     
     @IBAction func didTapEditButton(_ sender: Any) {
         guard let createPuppyVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createPuppy) as? CreatePuppyViewController else { return }
-        createPuppyVC.puppy = selectedPuppy
+        createPuppyVC.puppyToModify = selectedPuppy
         
         present(createPuppyVC, animated: true, completion: nil)
     }
