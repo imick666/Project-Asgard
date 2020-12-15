@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQl-Uz-fni">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQl-Uz-fni">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -203,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="-636" y="-327"/>
         </scene>
-        <!--Dog List-->
+        <!--Dog List Table View Controller-->
         <scene sceneID="PNF-MQ-G0F">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="eoZ-cN-cQC" customClass="DogListTableViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,7 +216,19 @@
                             <outlet property="delegate" destination="eoZ-cN-cQC" id="h7n-vw-Uh1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dog List" id="HFx-9I-CEb">
+                    <navigationItem key="navigationItem" id="HFx-9I-CEb">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Oee-5h-7Se">
+                            <rect key="frame" x="117.66666666666669" y="5.6666666666666679" width="193" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Alphabetical"/>
+                                <segment title="Birth date"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControllerValueHasChanged:" destination="eoZ-cN-cQC" eventType="valueChanged" id="Vr3-id-gTf"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ySA-X3-zZd">
                             <connections>
                                 <segue destination="Sqq-rb-iOJ" kind="presentation" identifier="CreateDogSegue" id="TpK-r0-JUO"/>
@@ -224,6 +236,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="sementedController" destination="Oee-5h-7Se" id="0yL-hc-cpg"/>
                         <segue destination="W3x-Ar-Okd" kind="show" identifier="DetailDogSegue" id="Fl8-7C-EQe"/>
                     </connections>
                 </tableViewController>

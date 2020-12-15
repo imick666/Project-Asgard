@@ -10,9 +10,11 @@ import CoreData
 
 class DogListTableViewController: UITableViewController {
     
-    // MARK: - Properties
+    // MARK: - Outlets
     
-    private var coreData: CoreDataManager?
+    @IBOutlet weak var sementedController: UISegmentedControl!
+    
+    // MARK: - Properties
 
     private var fetchedResultController: NSFetchedResultsController<Dog>?
     
@@ -21,29 +23,32 @@ class DogListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupCoreData()
         setupFetchedResultControler()
     }
 
     // MARK: - Methodes
     
     private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         let nib = UINib(nibName: Constants.Cells.dogMenuCellNib, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Constants.Cells.dogMenuCellID)
-        
         tableView.tableFooterView = UIView()
-    }
-    
-    private func setupCoreData() {
-        guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else { return }
-        coreData = CoreDataManager(stack)
     }
     
     private func setupFetchedResultControler() {
         let request: NSFetchRequest<Dog> = Dog.fetchRequest()
-        request.sortDescriptors = [
-            NSSortDescriptor(key: "name", ascending: true)
-        ]
+        var sortDescriptor: [NSSortDescriptor] {
+            switch sementedController.selectedSegmentIndex {
+            case 0:
+                return [NSSortDescriptor(key: "name", ascending: true)]
+            case 1:
+                return [NSSortDescriptor(key: "birthDate", ascending: true)]
+            default:
+                fatalError()
+            }
+        }
+        request.sortDescriptors = sortDescriptor
         
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         
@@ -76,16 +81,12 @@ class DogListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView: UIView = {
-            let label = UILabel()
-            label.text = "No dogs to show... Sorry"
-            label.numberOfLines = 0
-            label.textColor = .gray
-            label.textAlignment = .center
-            return label
-        }()
-        
-        return footerView
+        let label = UILabel()
+        label.text = "No dogs to show... Sorry"
+        label.numberOfLines = 0
+        label.textColor = .gray
+        label.textAlignment = .center
+        return label
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -101,13 +102,6 @@ class DogListTableViewController: UITableViewController {
     
     // MARK: - TableView Delegate
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            coreData?.deleteObject(fetchedResultController!.object(at: indexPath))
-            tableView.reloadData()
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: Constants.SeguesID.detailDog, sender: fetchedResultController?.object(at: indexPath))
@@ -121,6 +115,13 @@ class DogListTableViewController: UITableViewController {
             destination.selectedDog = sender as? Dog
         }
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func segmentedControllerValueHasChanged(_ sender: Any) {
+        setupFetchedResultControler()
+    }
+    
 }
 
 extension DogListTableViewController: NSFetchedResultsControllerDelegate {
