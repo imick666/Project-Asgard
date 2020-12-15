@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		E015D071257E813200175DBA /* DetailPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015D070257E813200175DBA /* DetailPuppyViewController.swift */; };
 		E01D4DB125862A5C00292BFA /* SelectDogAndPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */; };
+		E01D4DBC2588BC6000292BFA /* SelectNecklaceColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D4DBB2588BC6000292BFA /* SelectNecklaceColorViewController.swift */; };
 		E02282BC2577CD1200AD28DD /* Litter&PuppyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */; };
 		E02282C62577DF0100AD28DD /* CreateLitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */; };
 		E02282D52577F02300AD28DD /* CreatePuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */; };
 		E026BB1A258213FE002B8993 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E026BB19258213FE002B8993 /* KeyboardHelper.swift */; };
+		E053615D2588DEAD00AFF795 /* UIColor+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053615C2588DEAD00AFF795 /* UIColor+String.swift */; };
 		E070867025826FCF00CBCEE0 /* TreatementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070866F25826FCF00CBCEE0 /* TreatementsTableViewController.swift */; };
 		E07FEE3D257A81480023232E /* Treatement+PuppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */; };
 		E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */; };
@@ -64,10 +66,12 @@
 /* Begin PBXFileReference section */
 		E015D070257E813200175DBA /* DetailPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPuppyViewController.swift; sourceTree = "<group>"; };
 		E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogAndPuppyViewController.swift; sourceTree = "<group>"; };
+		E01D4DBB2588BC6000292BFA /* SelectNecklaceColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNecklaceColorViewController.swift; sourceTree = "<group>"; };
 		E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Litter&PuppyTest.swift"; sourceTree = "<group>"; };
 		E02282C52577DF0100AD28DD /* CreateLitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLitterViewController.swift; sourceTree = "<group>"; };
 		E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePuppyViewController.swift; sourceTree = "<group>"; };
 		E026BB19258213FE002B8993 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
+		E053615C2588DEAD00AFF795 /* UIColor+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+String.swift"; sourceTree = "<group>"; };
 		E070866F25826FCF00CBCEE0 /* TreatementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementsTableViewController.swift; sourceTree = "<group>"; };
 		E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Treatement+PuppyTests.swift"; sourceTree = "<group>"; };
 		E07FEE59257D0F100023232E /* PuppiesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppiesListTableViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E01D4DBA2588BC3B00292BFA /* Puppy */ = {
+			isa = PBXGroup;
+			children = (
+				E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */,
+				E01D4DBB2588BC6000292BFA /* SelectNecklaceColorViewController.swift */,
+			);
+			path = Puppy;
+			sourceTree = "<group>";
+		};
 		E02282C92577E06900AD28DD /* LiiterCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +234,7 @@
 				E0ED833125729617003E6BA2 /* UIAlertController+setValues.swift */,
 				E07FEE65257D301F0023232E /* UIViewController+Alert.swift */,
 				E026BB19258213FE002B8993 /* KeyboardHelper.swift */,
+				E053615C2588DEAD00AFF795 /* UIColor+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -391,8 +405,8 @@
 		E0F45111257E8E39000F75C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E01D4DBA2588BC3B00292BFA /* Puppy */,
 				E0BE1EEF2571610E00E9EEFA /* Treatement */,
-				E02282D42577F02300AD28DD /* CreatePuppyViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -522,6 +536,7 @@
 				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
 				E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */,
+				E053615D2588DEAD00AFF795 /* UIColor+String.swift in Sources */,
 				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
 				E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */,
 				E070867025826FCF00CBCEE0 /* TreatementsTableViewController.swift in Sources */,
@@ -533,6 +548,7 @@
 				E0952F57256C0D9000D09424 /* DogListTableViewController.swift in Sources */,
 				E0ED833225729617003E6BA2 /* UIAlertController+setValues.swift in Sources */,
 				E026BB1A258213FE002B8993 /* KeyboardHelper.swift in Sources */,
+				E01D4DBC2588BC6000292BFA /* SelectNecklaceColorViewController.swift in Sources */,
 				E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
 				E015D071257E813200175DBA /* DetailPuppyViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CreatePuppyDelegate {
-    func createPuppy(named name: String?, _ affix: String?, sex: Int16, color: String?, image: Data?)
+    func createPuppy(named name: String?, _ affix: String?, sex: Int16, color: String?, image: Data?, necklaceColor: String?)
 }
 
 class CreatePuppyViewController: UIViewController {
@@ -24,6 +24,7 @@ class CreatePuppyViewController: UIViewController {
     @IBOutlet weak var chipNumberTextField: UITextField!
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var isSoldSwitch: UISwitch!
+    @IBOutlet weak var necklaceColorButton: UIButton!
     
     @IBOutlet weak var resetImageButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -34,6 +35,12 @@ class CreatePuppyViewController: UIViewController {
     var delegate: CreatePuppyDelegate?
     private let pickerView = PickerViewManager()
     private var coreDataStack: CoreDataStack?
+    private var necklaceColor: UIColor? {
+        didSet {
+            necklaceColorButton.backgroundColor = necklaceColor
+            necklaceColorButton.setTitle(necklaceColor == nil ? "None" : nil, for: .normal)
+        }
+    }
     var puppy: Puppy?
     
     // MARK: - View Life Cycle
@@ -66,6 +73,7 @@ class CreatePuppyViewController: UIViewController {
         doneButton.roundFilled(wih: .green)
         cancelButton.roundFilled(wih: .red)
         pictureImageView.rounded(nil)
+        necklaceColorButton.roundFilled(wih: .gray)
         
         setupTextFields()
         updateResetButton()
@@ -101,6 +109,8 @@ class CreatePuppyViewController: UIViewController {
         puppyColorTextField.text = puppy?.puppyColor
         sexSegmentedControl.selectedSegmentIndex = Int(puppy!.sex)
         isSoldSwitch.setOn(puppy!.sold!.boolValue, animated: true)
+        necklaceColor = UIColor(fromHex: puppy?.necklaceColor)
+        necklaceColorButton.setTitle(necklaceColor == nil ? "None" : nil, for: .normal)
     }
     
     private func updateResetButton() {
@@ -117,6 +127,14 @@ class CreatePuppyViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func didTapSelectNecklaceColorButton(_ sender: UIButton) {
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.necklaceColor) as? SelectNecklaceColorViewController else { return }
+        vc.delegate = self
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
     @IBAction func didTapDoneButton(_ sender: Any) {
         let name = nameTextField.text.orNil
         let affix = affixTextField.text.orNil
@@ -125,6 +143,7 @@ class CreatePuppyViewController: UIViewController {
         let lofNumber = lofNumberTextField.text.orNil
         let chipNumber = chipNumberTextField.text.orNil
         let image = pictureImageView.imageOrNil?.jpegData(compressionQuality: 0.8)
+        let necklaceColor = self.necklaceColor?.toHex
         
         if puppy != nil {
             puppy?.name = name
@@ -134,11 +153,12 @@ class CreatePuppyViewController: UIViewController {
             puppy?.chipNumber = chipNumber
             puppy?.puppyColor = puppyColor
             puppy?.image = image
+            puppy?.necklaceColor = necklaceColor
             puppy?.sold = NSNumber(booleanLiteral: isSoldSwitch.isOn)
             
             coreDataStack?.saveContext()
         } else {
-            delegate?.createPuppy(named: name, affix, sex: sex, color: puppyColor, image: image)
+            delegate?.createPuppy(named: name, affix, sex: sex, color: puppyColor, image: image, necklaceColor: necklaceColor)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -155,4 +175,10 @@ extension CreatePuppyViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+extension CreatePuppyViewController: SelectNecklaceColorDelegate {
+    func didSelectNecklaceColor(_ color: UIColor?) {
+        necklaceColor = color
+    }
 }

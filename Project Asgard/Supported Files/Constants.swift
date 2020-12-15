@@ -23,6 +23,7 @@ struct Constants {
         static let detailPuppy = "DetailPuppyVC"
         static let createDog = "CreateDogVC"
         static let selectDogAndPuppy = "SelectDogAndPuppyVC"
+        static let necklaceColor = "NecklaceColorVC"
     }
     
     struct Cells {

@@ -35,7 +35,7 @@ class DogMenuCell: UITableViewCell {
     
     private func setupPuppy() {
         guard let puppy = puppy else { return }
-        dogImageView.rounded(nil)
+        dogImageView.rounded(UIColor(fromHex: puppy.necklaceColor))
         dogImageView.setDogImage(from: puppy.image)
         nameLabel.text = puppy.name?.capitalized
         affixLabel.text = puppy.affix?.capitalized

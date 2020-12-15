@@ -100,11 +100,13 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
     
-    func createPuppy(birth date: Date, sex: Int16, dogColor: String?) -> Puppy {
+    func createPuppy(birth date: Date, sex: Int16, dogColor: String?, necklaceColor: String?) -> Puppy {
         let newPuppy = Puppy(context: context)
         newPuppy.birthDate = date
         newPuppy.sex = sex
         newPuppy.puppyColor = dogColor
+        newPuppy.necklaceColor = necklaceColor
+        
         
         return newPuppy
     }

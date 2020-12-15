@@ -89,8 +89,6 @@ class DetailPuppyViewController: UIViewController {
         topView.layer.shadowColor = UIColor.gray.cgColor
         topView.layer.shadowRadius = 10
         topView.layer.shadowOpacity = 0.5
-        
-        pictureImageViw.rounded(nil)
     }
     
     private func setupContent() {
@@ -104,6 +102,7 @@ class DetailPuppyViewController: UIViewController {
         sexLabel.text = DogSex(rawValue: puppy.sex)?.description
         puppyColorLabel.text = puppy.puppyColor.orNc.capitalized
         pictureImageViw.setDogImage(from: puppy.image)
+        pictureImageViw.rounded(UIColor(fromHex: puppy.necklaceColor))
         birthDateLabel.text = "\(birthDate) (\(age))"
         lofNbLabel.text? = "Lof : \(puppy.lofNumber.orNc)"
         chipNbLabel.text = "Chip : \(puppy.chipNumber.orNc)"
