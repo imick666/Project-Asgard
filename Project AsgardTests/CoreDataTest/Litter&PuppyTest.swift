@@ -71,6 +71,20 @@ class Litter_PuppyTest: XCTestCase {
     
     // Updtae
     
+    func testUpdatePuppy() {
+        let dog = creatDog()
+        let puppies = createPuppies(1)
+        
+        coreData.createLitter(of: dog, the: Date(), cesarean: true, with: puppies)
+        
+        var puppy: Puppy {
+            return coreData.allPuppies[0]
+        }
+        
+        coreData.update(puppy: puppy, value: [("astride de ouf", "name")])
+        
+        XCTAssertEqual(puppy.name, "astride de ouf")
+    }
     
     // Delete
     

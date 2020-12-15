@@ -132,7 +132,8 @@ extension CreateLitterViewController: UITableViewDelegate, UITableViewDataSource
 extension CreateLitterViewController: CreatePuppyDelegate {
     
     func createPuppy(named name: String?, _ affix: String?, sex: Int16, color: String?, image: Data?, necklaceColor: String?) {
-        let puppy = coreData?.createPuppy(birth: datePicker.date, sex: sex, dogColor: color, necklaceColor: necklaceColor)
+        
+        let puppy = coreData?.createPuppy(named: nil, affix: nil, birthThe: datePicker.date, sex: sex, dogColor: color, necklaceColor: necklaceColor, image: nil)
         if puppy?.name == nil {
             puppy?.name = "Puppy \(puppies.count + 1)"
         }

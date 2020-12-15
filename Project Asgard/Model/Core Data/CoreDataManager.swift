@@ -61,6 +61,8 @@ final class CoreDataManager {
     
     // MARK: - Mehodes
     
+    // MARK: - Create
+    
     func createDog(named name: String, _ affix: String,sex: Int16, birthThe date: Date, lofNumber: String?, chipNumber: String?, pitcure: Data?) {
         let newDog = Dog(context: context)
         newDog.name = name
@@ -103,8 +105,11 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
     
-    func createPuppy(birth date: Date, sex: Int16, dogColor: String?, necklaceColor: String?) -> Puppy {
+    func createPuppy(named name: String?, affix: String?, birthThe date: Date, sex: Int16, dogColor: String?, necklaceColor: String? = nil, image: Data?) -> Puppy {
         let newPuppy = Puppy(context: context)
+        newPuppy.name = name
+        newPuppy.affix = affix
+        newPuppy.image = image
         newPuppy.birthDate = date
         newPuppy.sex = sex
         newPuppy.puppyColor = dogColor
@@ -113,6 +118,22 @@ final class CoreDataManager {
         
         return newPuppy
     }
+    
+    // MARK: - Update
+    
+    func update(dog: Dog, value: [(Any?, String)]) {
+        value.forEach( { dog.setValue($0.0, forKey: $0.1)})
+        
+        coreDataStack.saveContext()
+    }
+    
+    func update(puppy: Puppy, value: [(Any?, String)]) {
+        value.forEach({ puppy.setValue($0.0, forKey: $0.1)})
+        
+        coreDataStack.saveContext()
+    }
+    
+    // MARK: - Delete
     
     func deleteObject(_ object: NSManagedObject) {
         context.delete(object)
