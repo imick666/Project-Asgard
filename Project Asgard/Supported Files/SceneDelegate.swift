@@ -31,7 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         coreData.allTreatements.forEach { (treatement) in
             if treatement.endDate! < Date() {
                 coreData.deleteObject(treatement)
-                print("deleted")
             }
         }
     }

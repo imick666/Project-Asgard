@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("coucou")
+    }
+    
     // MARK: UISceneSession Lifecycle
     
 

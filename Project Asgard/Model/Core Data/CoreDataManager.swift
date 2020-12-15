@@ -24,7 +24,7 @@ final class CoreDataManager {
         do {
             return try context.fetch(request)
         } catch {
-            return [Dog]()
+            return []
         }
     }
     
@@ -37,7 +37,7 @@ final class CoreDataManager {
         do {
             return try context.fetch(request)
         } catch {
-            return [Puppy]()
+            return []
         }
     }
     

@@ -26,16 +26,7 @@ class SelectDogAndPuppyViewController: UIViewController {
     
     // Private
     private var coreData: CoreDataManager!
-    private var allObjects: [NSObject] {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            return coreData.allDogs
-        case 1:
-            return coreData.allPuppies
-        default:
-            return []
-        }
-    }
+    private var fetchedResultController: NSFetchedResultsController<NSFetchRequestResult>!
     
     // Public
     var delegate: SelectDogAndPuppyDelegate?
@@ -45,12 +36,58 @@ class SelectDogAndPuppyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        switch segmentedControl.selectedSegmentIndex {
+        case 0: setupFrcForDog()
+        case 1: setupFrcForPuppy()
+        default: return
+        }
         setupCoreData()
         setupView()
         setupTableView()
     }
     
     // MARK: - Methodes
+    
+    private func setupFrcForPuppy() {
+        let request: NSFetchRequest<NSFetchRequestResult> = Puppy.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "dogLitter.dog.name", ascending: true),
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else {
+            return
+        }
+        
+        fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "dogLitter.dog.name", cacheName: nil)
+        
+        do {
+            try fetchedResultController.performFetch()
+            tableView.reloadData()
+        } catch let err {
+            print(err)
+        }
+    }
+    
+    private func setupFrcForDog() {
+        let request: NSFetchRequest<NSFetchRequestResult> = Dog.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true),
+        ]
+        
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else {
+            return
+        }
+        
+        fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        do {
+            try fetchedResultController.performFetch()
+            tableView.reloadData()
+        } catch let err {
+            print(err)
+        }
+    }
     
     private func setupTableView() {
         tableView.delegate = self
@@ -71,10 +108,15 @@ class SelectDogAndPuppyViewController: UIViewController {
         doneButton.roundFilled(wih: .green)
     }
     
+    
     // MARK: - Actions
 
     @IBAction func segmentedValueHasChange(_ sender: Any) {
-        tableView.reloadData()
+        switch segmentedControl.selectedSegmentIndex {
+        case 0: setupFrcForDog()
+        case 1: setupFrcForPuppy()
+        default: return
+        }
     }
     
     @IBAction func didTapCancelButton(_ sender: Any) {
@@ -91,17 +133,25 @@ extension SelectDogAndPuppyViewController: UITableViewDelegate, UITableViewDataS
     
     // MARK: - TableView Data Source
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultController.sections?.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allObjects.count
+        return fetchedResultController.sections?[section].numberOfObjects ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return fetchedResultController.sections?[section].name
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.dogMenuCellID, for: indexPath) as? DogMenuCell else { return UITableViewCell() }
         
-        if let puppy = allObjects[indexPath.row] as? Puppy {
+        if let puppy = fetchedResultController.object(at: indexPath) as? Puppy {
             cell.puppy = puppy
             selectedObjects.contains(puppy) ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
-        } else if let dog = allObjects[indexPath.row] as? Dog {
+        } else if let dog = fetchedResultController.object(at: indexPath) as? Dog {
             cell.dog = dog
             selectedObjects.contains(dog) ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
         }
@@ -118,10 +168,10 @@ extension SelectDogAndPuppyViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if selectedObjects.contains(allObjects[indexPath.row]) {
-            selectedObjects.removeAll(where: { $0 == allObjects[indexPath.row] })
+        if selectedObjects.contains(fetchedResultController.object(at: indexPath) as! NSObject) {
+            selectedObjects.removeAll(where: { $0 == fetchedResultController.object(at: indexPath) as! AnyHashable })
         } else {
-            selectedObjects.append(allObjects[indexPath.row])
+            selectedObjects.append(fetchedResultController.object(at: indexPath) as! NSObject)
         }
         
         tableView.reloadData()
