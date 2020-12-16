@@ -116,7 +116,7 @@ class DetailDogViewController: UIViewController {
         treatementViewController.treatements = treatement ?? [Treatement]()
         
         // Litters
-        let litters = selectedDog?.litter?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [DogLitter]
+        let litters = selectedDog?.litters?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [DogLitter]
         litterViewController.litters = litters ?? [DogLitter]()
         litterViewController.delegate = self
     }

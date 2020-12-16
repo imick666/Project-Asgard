@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Dog" representedClassName=".Dog" syncable="YES" codeGenerationType="class">
         <attribute name="affix" optional="YES" attributeType="String"/>
         <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO"/>
@@ -10,15 +10,15 @@
         <attribute name="lofNumber" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sex" attributeType="Integer 16" minValueString="0" maxValueString="1" usesScalarValueType="YES"/>
-        <relationship name="litter" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DogLitter" inverseName="dog" inverseEntity="DogLitter"/>
+        <relationship name="litters" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DogLitter" inverseName="dog" inverseEntity="DogLitter"/>
         <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Treatement" inverseName="toDog" inverseEntity="Treatement"/>
     </entity>
     <entity name="DogLitter" representedClassName=".DogLitter" syncable="YES" codeGenerationType="class">
         <attribute name="cesrean" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="dog" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="litter" inverseEntity="Dog"/>
-        <relationship name="puppies" toMany="YES" deletionRule="Cascade" destinationEntity="Puppy" inverseName="dogLitter" inverseEntity="Puppy"/>
+        <relationship name="dog" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="litters" inverseEntity="Dog"/>
+        <relationship name="puppies" toMany="YES" deletionRule="Cascade" destinationEntity="Puppy" inverseName="litter" inverseEntity="Puppy"/>
     </entity>
     <entity name="Puppy" representedClassName=".Puppy" syncable="YES" codeGenerationType="class">
         <attribute name="affix" optional="YES" attributeType="String"/>
@@ -32,7 +32,7 @@
         <attribute name="puppyColor" optional="YES" attributeType="String"/>
         <attribute name="sex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sold" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
-        <relationship name="dogLitter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DogLitter" inverseName="puppies" inverseEntity="DogLitter"/>
+        <relationship name="litter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DogLitter" inverseName="puppies" inverseEntity="DogLitter"/>
         <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Treatement" inverseName="toPuppy" inverseEntity="Treatement"/>
     </entity>
     <entity name="Treatement" representedClassName=".Treatement" syncable="YES" codeGenerationType="class">
