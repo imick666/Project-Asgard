@@ -37,6 +37,7 @@ class TreatementViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupTableView()
         setupCoreData()
     }
@@ -46,13 +47,20 @@ class TreatementViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.layer.cornerRadius = 30
         tableView.tableFooterView = UIView()
     }
     
     private func setupCoreData() {
         guard let stack = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack else { return }
         coreData = CoreDataManager(stack)
+    }
+    
+    private func setupView() {
+        view.layer.cornerRadius = 30
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowRadius = 5
+        view.layer.shadowColor = UIColor.gray.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
 
     // MARK: - Actions

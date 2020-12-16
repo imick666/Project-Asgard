@@ -127,10 +127,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cj-jS-wZz">
-                                <rect key="frame" x="0.0" y="378" width="428" height="457"/>
+                                <rect key="frame" x="0.0" y="346" width="428" height="489"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-y9-inZ">
-                                        <rect key="frame" x="32" y="0.0" width="792" height="457"/>
+                                        <rect key="frame" x="32" y="16" width="792" height="457"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-bE-LWq" userLabel="TreatementContainerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
@@ -150,16 +150,16 @@
                                 <constraints>
                                     <constraint firstItem="XNg-y9-inZ" firstAttribute="trailing" secondItem="UMx-g6-whm" secondAttribute="trailing" constant="-32" id="Hiy-QH-Tgr"/>
                                     <constraint firstItem="XNg-y9-inZ" firstAttribute="leading" secondItem="UMx-g6-whm" secondAttribute="leading" constant="32" id="M8R-9p-MPp"/>
-                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="height" secondItem="iUg-Uy-Kmw" secondAttribute="height" id="UcO-2k-dIl"/>
-                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="bottom" secondItem="UMx-g6-whm" secondAttribute="bottom" id="Yzx-kl-lOo"/>
+                                    <constraint firstItem="Pg1-bE-LWq" firstAttribute="height" secondItem="iUg-Uy-Kmw" secondAttribute="height" constant="-32" id="UcO-2k-dIl"/>
+                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="bottom" secondItem="UMx-g6-whm" secondAttribute="bottom" constant="16" id="Yzx-kl-lOo"/>
                                     <constraint firstItem="Pg1-bE-LWq" firstAttribute="width" secondItem="iUg-Uy-Kmw" secondAttribute="width" constant="-64" id="j64-8E-H97"/>
-                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="top" secondItem="UMx-g6-whm" secondAttribute="top" id="oyO-OL-n0R"/>
+                                    <constraint firstItem="XNg-y9-inZ" firstAttribute="top" secondItem="UMx-g6-whm" secondAttribute="top" constant="16" id="oyO-OL-n0R"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="UMx-g6-whm"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="iUg-Uy-Kmw"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="vYQ-ec-YJv">
-                                <rect key="frame" x="171.66666666666666" y="807.66666666666663" width="84.666666666666657" height="27.333333333333371"/>
+                                <rect key="frame" x="171.66666666666666" y="791.66666666666663" width="84.666666666666657" height="27.333333333333371"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
@@ -167,10 +167,10 @@
                         <viewLayoutGuide key="safeArea" id="3gv-Xr-Sog"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Cj-jS-wZz" firstAttribute="top" secondItem="tid-nL-1eQ" secondAttribute="bottom" constant="32" id="0UL-8m-INy"/>
+                            <constraint firstItem="4Cj-jS-wZz" firstAttribute="top" secondItem="tid-nL-1eQ" secondAttribute="bottom" id="0UL-8m-INy"/>
                             <constraint firstItem="3gv-Xr-Sog" firstAttribute="trailing" secondItem="tid-nL-1eQ" secondAttribute="trailing" constant="8" id="55G-WE-zGt"/>
                             <constraint firstItem="tid-nL-1eQ" firstAttribute="top" secondItem="3gv-Xr-Sog" secondAttribute="top" constant="8" id="C01-Fr-pCb"/>
-                            <constraint firstItem="3gv-Xr-Sog" firstAttribute="bottom" secondItem="vYQ-ec-YJv" secondAttribute="bottom" constant="8" id="ItZ-YM-y0R"/>
+                            <constraint firstItem="3gv-Xr-Sog" firstAttribute="bottom" secondItem="vYQ-ec-YJv" secondAttribute="bottom" constant="24" id="ItZ-YM-y0R"/>
                             <constraint firstItem="4Cj-jS-wZz" firstAttribute="leading" secondItem="3gv-Xr-Sog" secondAttribute="leading" id="Jwc-Kd-g4d"/>
                             <constraint firstItem="tid-nL-1eQ" firstAttribute="leading" secondItem="3gv-Xr-Sog" secondAttribute="leading" constant="8" id="KFZ-qZ-791"/>
                             <constraint firstItem="vYQ-ec-YJv" firstAttribute="centerX" secondItem="0gS-kq-A3s" secondAttribute="centerX" id="NmZ-Ue-7CK"/>
@@ -218,7 +218,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="HFx-9I-CEb">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Oee-5h-7Se">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Oee-5h-7Se">
                             <rect key="frame" x="117.66666666666669" y="5.6666666666666679" width="193" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -1630,10 +1630,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfU-Kb-b1t">
-                                <rect key="frame" x="0.0" y="378" width="428" height="457"/>
+                                <rect key="frame" x="0.0" y="346" width="428" height="489"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-JW-cyx">
-                                        <rect key="frame" x="32" y="0.0" width="364" height="457"/>
+                                        <rect key="frame" x="32" y="16" width="364" height="457"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yun-NR-Lft" userLabel="TreatementContainerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="457"/>
@@ -1652,17 +1652,17 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Dd7-JW-cyx" firstAttribute="leading" secondItem="ymP-bP-dL2" secondAttribute="leading" constant="32" id="7TC-1i-hnV"/>
-                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="height" secondItem="Ieh-d6-iVX" secondAttribute="height" id="BlL-km-cW2"/>
+                                    <constraint firstItem="Yun-NR-Lft" firstAttribute="height" secondItem="Ieh-d6-iVX" secondAttribute="height" constant="-32" id="BlL-km-cW2"/>
                                     <constraint firstItem="Yun-NR-Lft" firstAttribute="width" secondItem="Ieh-d6-iVX" secondAttribute="width" constant="-64" id="L57-bw-kGt"/>
-                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="top" secondItem="ymP-bP-dL2" secondAttribute="top" id="agc-LN-OJG"/>
+                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="top" secondItem="ymP-bP-dL2" secondAttribute="top" constant="16" id="agc-LN-OJG"/>
                                     <constraint firstItem="Dd7-JW-cyx" firstAttribute="trailing" secondItem="ymP-bP-dL2" secondAttribute="trailing" constant="-32" id="kcl-bd-yLK"/>
-                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="bottom" secondItem="ymP-bP-dL2" secondAttribute="bottom" id="q3c-Gk-4UC"/>
+                                    <constraint firstItem="Dd7-JW-cyx" firstAttribute="bottom" secondItem="ymP-bP-dL2" secondAttribute="bottom" constant="16" id="q3c-Gk-4UC"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="ymP-bP-dL2"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Ieh-d6-iVX"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="QmI-g4-Za0">
-                                <rect key="frame" x="171.66666666666666" y="807.66666666666663" width="84.666666666666657" height="27.333333333333371"/>
+                                <rect key="frame" x="171.66666666666666" y="791.66666666666663" width="84.666666666666657" height="27.333333333333371"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
@@ -1672,12 +1672,12 @@
                         <constraints>
                             <constraint firstItem="o1x-FR-a31" firstAttribute="leading" secondItem="UbR-Sl-ckJ" secondAttribute="leading" constant="8" id="19X-HT-DTe"/>
                             <constraint firstItem="rfU-Kb-b1t" firstAttribute="leading" secondItem="UbR-Sl-ckJ" secondAttribute="leading" id="EIs-p6-NBW"/>
-                            <constraint firstItem="rfU-Kb-b1t" firstAttribute="top" secondItem="o1x-FR-a31" secondAttribute="bottom" constant="32" id="Iy6-6y-gDV"/>
+                            <constraint firstItem="rfU-Kb-b1t" firstAttribute="top" secondItem="o1x-FR-a31" secondAttribute="bottom" id="Iy6-6y-gDV"/>
                             <constraint firstItem="rfU-Kb-b1t" firstAttribute="bottom" secondItem="UbR-Sl-ckJ" secondAttribute="bottom" constant="-8" id="Ju8-Gy-gCO"/>
                             <constraint firstItem="QmI-g4-Za0" firstAttribute="centerX" secondItem="BLw-Gx-X6C" secondAttribute="centerX" id="L4K-tm-4dH"/>
                             <constraint firstItem="o1x-FR-a31" firstAttribute="top" secondItem="UbR-Sl-ckJ" secondAttribute="top" constant="8" id="hlQ-rr-J04"/>
                             <constraint firstItem="UbR-Sl-ckJ" firstAttribute="trailing" secondItem="rfU-Kb-b1t" secondAttribute="trailing" id="oih-wd-F1B"/>
-                            <constraint firstItem="UbR-Sl-ckJ" firstAttribute="bottom" secondItem="QmI-g4-Za0" secondAttribute="bottom" constant="8" id="rPm-yk-30J"/>
+                            <constraint firstItem="UbR-Sl-ckJ" firstAttribute="bottom" secondItem="QmI-g4-Za0" secondAttribute="bottom" constant="24" id="rPm-yk-30J"/>
                             <constraint firstItem="UbR-Sl-ckJ" firstAttribute="trailing" secondItem="o1x-FR-a31" secondAttribute="trailing" constant="8" id="tkL-Nj-L0o"/>
                         </constraints>
                     </view>

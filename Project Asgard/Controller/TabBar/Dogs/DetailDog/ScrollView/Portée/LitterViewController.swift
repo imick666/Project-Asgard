@@ -38,7 +38,6 @@ class LitterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTableView()
         setupView()
     }
@@ -53,6 +52,10 @@ class LitterViewController: UIViewController {
 
     private func setupView() {
         view.layer.cornerRadius = 30
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowRadius = 5
+        view.layer.shadowColor = UIColor.gray.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
     
     // MARK: - Actions
