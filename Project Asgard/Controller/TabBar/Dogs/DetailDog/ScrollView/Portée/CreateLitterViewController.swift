@@ -77,8 +77,7 @@ class CreateLitterViewController: UIViewController {
         let date = datePicker.date
         let cesarean = cesareanSwitch.isOn
         guard puppies.count != 0 else {
-            // TODO: add alert
-            // You must add a leats one puppy
+            showAlert(title: "Error", message: "You must add a least one puppy")
             return
         }
         
