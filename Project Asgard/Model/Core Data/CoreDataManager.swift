@@ -112,6 +112,7 @@ final class CoreDataManager {
             newPuppy.lofNumber = puppy.lofNumber
             newPuppy.necklaceColor = puppy.necklaceColor
             newPuppy.puppyColor = puppy.puppyColor
+            newPuppy.sex = puppy.sex
             
             newLitter.addToPuppies(newPuppy)
         }

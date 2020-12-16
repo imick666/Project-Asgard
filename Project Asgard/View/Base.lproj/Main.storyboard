@@ -203,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="-636" y="-327"/>
         </scene>
-        <!--Dog List Table View Controller-->
+        <!--Dogs-->
         <scene sceneID="PNF-MQ-G0F">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="eoZ-cN-cQC" customClass="DogListTableViewController" customModule="Project_Asgard" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,8 +216,7 @@
                             <outlet property="delegate" destination="eoZ-cN-cQC" id="h7n-vw-Uh1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HFx-9I-CEb">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Dogs" id="HFx-9I-CEb">
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Oee-5h-7Se">
                             <rect key="frame" x="117.66666666666669" y="5.6666666666666679" width="193" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

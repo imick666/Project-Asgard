@@ -12,9 +12,9 @@ class PuppiesListTableViewController: UITableViewController {
     
     // MARK: - Properties
 
-    var litterID: DogLitter?
+    var litter: DogLitter?
     
-    private var frc: NSFetchedResultsController<Puppy>!
+    private var fetchedResultController: NSFetchedResultsController<Puppy>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,28 +33,29 @@ class PuppiesListTableViewController: UITableViewController {
     private func setupFrc() {
         let request: NSFetchRequest<Puppy> = Puppy.fetchRequest()
         request.sortDescriptors = [
+            NSSortDescriptor(key: "litter.dog.name", ascending: true),
             NSSortDescriptor(key: "name", ascending: true)
         ]
         
         var predicate: NSPredicate {
-            switch litterID {
+            switch litter {
             case .none:
                 return NSPredicate(format: "sold == %@", NSNumber(booleanLiteral: false))
-            case .some(let id):
-                return NSPredicate(format: "dogLitter == %@", id)
+            case .some(let litter):
+                return NSPredicate(format: "litter == %@", litter)
             }
         }
         
         request.predicate = predicate
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         
-        frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "dogLitter.dog.name", cacheName: nil)
-        frc?.delegate = self
+        fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "litter.dog.name", cacheName: nil)
+        fetchedResultController?.delegate = self
         
         do {
-            try frc?.performFetch()
+            try fetchedResultController?.performFetch()
         } catch {
-            print("hoho")
+            fatalError("Failed to fetch entities")
         }
     }
 
@@ -62,21 +63,19 @@ class PuppiesListTableViewController: UITableViewController {
     
     // Header
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sections = frc.sections else { return nil }
-        return !sections.isEmpty ? sections[section].name : nil
+        guard let sections = fetchedResultController.sections else { return nil }
+        return !sections.isEmpty ? sections[section].name.capitalized : nil
     }
     
     // NumberOfSections / Row
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sections = frc.sections, !sections.isEmpty else { return 1 }
+        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return 1 }
         return sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = frc.sections, !sections.isEmpty else {
-            return 0
-        }
+        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return 0 }
         return sections[section].numberOfObjects
     }
     
@@ -84,12 +83,7 @@ class PuppiesListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.dogMenuCellID, for: indexPath) as? DogMenuCell else { return UITableViewCell() }
         
-        var puppy: Puppy? {
-            guard let sections = frc.sections, !sections.isEmpty else {
-                return nil
-            }
-            return sections[indexPath.section].objects?[indexPath.row] as? Puppy
-        }
+        let puppy = fetchedResultController.object(at: indexPath) as Puppy
 
         cell.puppy = puppy
 
@@ -122,7 +116,7 @@ class PuppiesListTableViewController: UITableViewController {
             return (minTabBarY - maxNavBarY)
         }
         
-        guard let sections = frc.sections else { return 0 }
+        guard let sections = fetchedResultController.sections else { return 0 }
         return !sections.isEmpty ? 0 : finalHeight
     }
     
@@ -130,12 +124,7 @@ class PuppiesListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        var puppy: Puppy? {
-            guard let sections = frc.sections, !sections.isEmpty else {
-                return nil
-            }
-            return sections[indexPath.section].objects?[indexPath.row] as? Puppy
-        }
+        let puppy = fetchedResultController.object(at: indexPath)
         performSegue(withIdentifier: Constants.SeguesID.detailPuppy, sender: puppy)
     }
     
@@ -147,7 +136,6 @@ class PuppiesListTableViewController: UITableViewController {
             destination.selectedPuppy = sender as? Puppy
         }
     }
-
 }
 
 extension PuppiesListTableViewController: NSFetchedResultsControllerDelegate {

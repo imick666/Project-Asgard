@@ -100,6 +100,7 @@ class CreatePuppyViewController: UIViewController {
     
     private func setupContent() {
         affixTextField.text = "Des Monts d'Asgard"
+        
         guard let puppy = puppyToModify else { return }
         controllerNameLabel.text = "Modify existing puppy"
         nameTextField.text = puppy.name
@@ -176,7 +177,6 @@ extension CreatePuppyViewController: UITextFieldDelegate {
         else if chipNumberTextField.isFirstResponder { textField.resignFirstResponder() }
         return true
     }
-    
 }
 
 extension CreatePuppyViewController: SelectNecklaceColorDelegate {
