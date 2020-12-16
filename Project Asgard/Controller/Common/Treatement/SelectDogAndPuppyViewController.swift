@@ -36,11 +36,7 @@ class SelectDogAndPuppyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        switch segmentedControl.selectedSegmentIndex {
-        case 0: setupFrcForDog()
-        case 1: setupFrcForPuppy()
-        default: return
-        }
+        setupFrc()
         setupCoreData()
         setupView()
         setupTableView()
@@ -48,10 +44,25 @@ class SelectDogAndPuppyViewController: UIViewController {
     
     // MARK: - Methodes
     
+    private func setupFrc() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0: setupFrcForDog()
+        case 1: setupFrcForPuppy()
+        default: return
+        }
+        
+        do {
+            try fetchedResultController.performFetch()
+            tableView.reloadData()
+        } catch {
+            fatalError("Failed to fetch entities")
+        }
+    }
+    
     private func setupFrcForPuppy() {
         let request: NSFetchRequest<NSFetchRequestResult> = Puppy.fetchRequest()
         request.sortDescriptors = [
-            NSSortDescriptor(key: "dogLitter.dog.name", ascending: true),
+            NSSortDescriptor(key: "litter.dog.name", ascending: true),
             NSSortDescriptor(key: "name", ascending: true)
         ]
         
@@ -59,14 +70,7 @@ class SelectDogAndPuppyViewController: UIViewController {
             return
         }
         
-        fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "dogLitter.dog.name", cacheName: nil)
-        
-        do {
-            try fetchedResultController.performFetch()
-            tableView.reloadData()
-        } catch let err {
-            print(err)
-        }
+        fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "litter.dog.name", cacheName: nil)
     }
     
     private func setupFrcForDog() {
@@ -80,13 +84,6 @@ class SelectDogAndPuppyViewController: UIViewController {
         }
         
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        do {
-            try fetchedResultController.performFetch()
-            tableView.reloadData()
-        } catch let err {
-            print(err)
-        }
     }
     
     private func setupTableView() {
@@ -112,11 +109,7 @@ class SelectDogAndPuppyViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func segmentedValueHasChange(_ sender: Any) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0: setupFrcForDog()
-        case 1: setupFrcForPuppy()
-        default: return
-        }
+        setupFrc()
     }
     
     @IBAction func didTapCancelButton(_ sender: Any) {
@@ -134,15 +127,18 @@ extension SelectDogAndPuppyViewController: UITableViewDelegate, UITableViewDataS
     // MARK: - TableView Data Source
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultController.sections?.count ?? 0
+        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return 1 }
+        return sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultController.sections?[section].numberOfObjects ?? 0
+        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return 0}
+        return sections[section].numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return fetchedResultController.sections?[section].name
+        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return nil }
+        return sections[section].name
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -163,6 +159,29 @@ extension SelectDogAndPuppyViewController: UITableViewDelegate, UITableViewDataS
         return 70
     }
 
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        var pets: String {
+            switch segmentedControl.selectedSegmentIndex {
+            case 0: return "dogs"
+            case 1: return "puppies"
+            default: return ""
+            }
+        }
+        let label = UILabel()
+        label.textColor = .gray
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.text = "Please add some \(pets) before to add their treatments"
+        
+        return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let objects = fetchedResultController.fetchedObjects ?? []
+        return objects.isEmpty ? tableView.frame.height : 0
+    }
+    
     // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

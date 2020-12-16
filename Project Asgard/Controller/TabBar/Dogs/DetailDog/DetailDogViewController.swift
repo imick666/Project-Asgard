@@ -70,6 +70,7 @@ class DetailDogViewController: UIViewController {
         request.sortDescriptors = [
             NSSortDescriptor(key: "name", ascending: true)
         ]
+        request.predicate = NSPredicate(format: "id == %@", selectedDog.id! as CVarArg)
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -151,7 +152,7 @@ extension DetailDogViewController: LitterViewControllerDelegate {
 
 extension DetailDogViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        selectedDog = fetchedResultController?.fetchedObjects?.first(where: { $0.objectID == self.selectedDog?.objectID })
+        selectedDog = fetchedResultController?.fetchedObjects?.first
         setupContent()
     }
 }

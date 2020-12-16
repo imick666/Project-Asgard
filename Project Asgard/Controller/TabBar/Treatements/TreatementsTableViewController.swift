@@ -34,8 +34,8 @@ class TreatementsTableViewController: UITableViewController {
         let request: NSFetchRequest<Treatement> = Treatement.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(key: "toDog.name", ascending: true),
+            NSSortDescriptor(key: "toPuppy.litter.dog.name", ascending: true),
             NSSortDescriptor(key: "toPuppy.name", ascending: true),
-            NSSortDescriptor(key: "startDate", ascending: false)
         ]
         
         var predicate: NSPredicate? {

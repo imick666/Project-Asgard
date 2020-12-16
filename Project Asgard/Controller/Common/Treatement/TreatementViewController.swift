@@ -73,7 +73,7 @@ class TreatementViewController: UIViewController {
         if let detailDog = parentView as? DetailDogViewController {
             createTreatementVC.objects = [detailDog.selectedDog]
         } else if let detailPuppy = parentView as? DetailPuppyViewController {
-            createTreatementVC.objects = [detailPuppy.selectedPuppy]
+            createTreatementVC.objects = [detailPuppy.puppy]
         }
         
         parent?.present(createTreatementVC, animated: true, completion: nil)
@@ -139,6 +139,6 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return treatements.count == 0 ? tableView.bounds.height : 0
+        return treatements.isEmpty ? tableView.frame.height : 0
     }
 }

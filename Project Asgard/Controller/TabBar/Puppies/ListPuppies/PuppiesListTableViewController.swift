@@ -133,7 +133,7 @@ class PuppiesListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.SeguesID.detailPuppy {
             guard let destination = segue.destination as? DetailPuppyViewController else { return }
-            destination.selectedPuppy = sender as? Puppy
+            destination.puppy = sender as? Puppy
         }
     }
 }

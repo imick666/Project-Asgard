@@ -28,9 +28,9 @@ class DetailPuppyViewController: UIViewController {
     
     // MARK: - Properties
     
-    var selectedPuppy: Puppy!
+    var puppy: Puppy!
     
-    private var frc: NSFetchedResultsController<Puppy>?
+    private var fetchResultController: NSFetchedResultsController<Puppy>?
     
     // MARK: - Children ViewController
     
@@ -70,15 +70,16 @@ class DetailPuppyViewController: UIViewController {
         request.sortDescriptors = [
             NSSortDescriptor(key: "name", ascending: true)
         ]
+        request.predicate = NSPredicate(format: "id == %@", puppy.id! as CVarArg)
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         
-        frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        frc?.delegate = self
+        fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController?.delegate = self
         
         do {
-            try frc?.performFetch()
+            try fetchResultController?.performFetch()
         } catch {
-            print("hoho")
+            fatalError("Failed to fecth entities")
         }
     }
     
@@ -92,7 +93,7 @@ class DetailPuppyViewController: UIViewController {
     }
     
     private func setupContent() {
-        guard let puppy = selectedPuppy,
+        guard let puppy = puppy,
               let birthDate = puppy.birthDate?.ddMMYY,
               let age = puppy.birthDate?.age else { return }
         
@@ -112,7 +113,7 @@ class DetailPuppyViewController: UIViewController {
     
     private func setupChildrens() {
         // Treatements
-        let treatement = selectedPuppy?.treatements?.sortedArray(using: [NSSortDescriptor(key: "name", ascending: true)]) as? [Treatement]
+        let treatement = puppy?.treatements?.sortedArray(using: [NSSortDescriptor(key: "name", ascending: true)]) as? [Treatement]
         treatementViewController.treatements = treatement ?? [Treatement]()
     }
     
@@ -120,7 +121,7 @@ class DetailPuppyViewController: UIViewController {
     
     @IBAction func didTapEditButton(_ sender: Any) {
         guard let createPuppyVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createPuppy) as? CreatePuppyViewController else { return }
-        createPuppyVC.puppyToModify = selectedPuppy
+        createPuppyVC.puppyToModify = puppy
         
         present(createPuppyVC, animated: true, completion: nil)
     }
@@ -137,7 +138,7 @@ extension DetailPuppyViewController: UIScrollViewDelegate {
 
 extension DetailPuppyViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        selectedPuppy = frc?.fetchedObjects?.first(where: { $0.objectID == self.selectedPuppy?.objectID })
+        puppy = fetchResultController?.fetchedObjects?.first
         setupContent()
     }
 }
