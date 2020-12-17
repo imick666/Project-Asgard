@@ -10,7 +10,7 @@ import UIKit
 extension UIButton {
     
     func roundFilled(wih color: UIColor) {
-        self.layer.cornerRadius = self.bounds.height / 2
+        self.layer.cornerRadius = self.frame.height / 2
         self.layer.borderWidth = 2
         self.layer.borderColor = color.cgColor
         self.setTitleColor(color, for: .normal)
