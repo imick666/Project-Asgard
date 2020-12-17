@@ -63,6 +63,7 @@ class SelectDogAndPuppyViewController: UIViewController {
         let request: NSFetchRequest<NSFetchRequestResult> = Puppy.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(key: "litter.dog.name", ascending: true),
+            NSSortDescriptor(key: "litter.date", ascending: false),
             NSSortDescriptor(key: "name", ascending: true)
         ]
         
