@@ -29,11 +29,12 @@ class TreatementsTableViewController: UITableViewController {
     }
     
     // MARK: - Methodes
-    
+
     private func setupFrc() {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else {
             return
         }
+        
         switch segmentedController.selectedSegmentIndex {
         case 0: setupFrcDog(context: context)
         case 1: setupFrcPuppy(context: context)
@@ -42,9 +43,12 @@ class TreatementsTableViewController: UITableViewController {
         
         do {
             try fetchedResultController.performFetch()
+            tableView.reloadData()
         } catch {
             fatalError("Failed to fetch entities")
         }
+        
+        tableView.reloadData()
     }
     
     private func setupFrcDog(context: NSManagedObjectContext) {
@@ -53,7 +57,7 @@ class TreatementsTableViewController: UITableViewController {
             NSSortDescriptor(key: "toDog.name", ascending: true),
             NSSortDescriptor(key: "name", ascending: true)
         ]
-        request.predicate = NSPredicate(format: "toDog != nil && endDate > %@", Date() as CVarArg)
+        request.predicate = NSPredicate(format: "toDog != nil")
                 
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "toDog.name", cacheName: nil)
         fetchedResultController.delegate = self
@@ -65,11 +69,11 @@ class TreatementsTableViewController: UITableViewController {
             NSSortDescriptor(key: "dog.name", ascending: true),
             NSSortDescriptor(key: "date", ascending: false)
         ]
-        request.predicate = NSPredicate(format: "SUBQUERY(puppies, $puppy, SOME $puppy.treatements != nil && SOME $puppy.treatements.endDate > %@).@count != 0", Date() as CVarArg)
-        fetchedResultController.delegate = self
         
+        request.predicate = NSPredicate(format: "SUBQUERY(puppies, $puppy, SOME $puppy.treatements != nil).@count != 0")
+    
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "dog.name", cacheName: nil)
-        
+        fetchedResultController.delegate = self
     }
     
     private func setupCoreData() {
@@ -115,7 +119,6 @@ class TreatementsTableViewController: UITableViewController {
     
     @IBAction func segmentedControllerHasChanged(_ sender: Any) {
         setupFrc()
-        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -144,7 +147,7 @@ class TreatementsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
-        let treatement = fetchedResultController.sections?[indexPath.section].objects?[indexPath.row] as? Treatement
+        let treatement = fetchedResultController.object(at: indexPath) as? Treatement
         let litter = fetchedResultController.object(at: indexPath) as? DogLitter
         switch segmentedController.selectedSegmentIndex {
         case 0: cell.textLabel?.text = treatement?.name?.capitalized
@@ -180,7 +183,7 @@ class TreatementsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+                
         switch segmentedController.selectedSegmentIndex {
         case 0:
             guard let treatment = fetchedResultController.object(at: indexPath) as? Treatement else { return }
@@ -195,7 +198,6 @@ class TreatementsTableViewController: UITableViewController {
 
 extension TreatementsTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        print("changed")
         tableView.reloadData()
     }
 }
