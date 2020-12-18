@@ -122,6 +122,9 @@ class PuppiesTreatmentsTableViewController: UITableViewController {
 
 extension PuppiesTreatmentsTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        if fetchedResultController.fetchedObjects?.count == 0 {
+            navigationController?.popViewController(animated: true)
+        }
         tableView.reloadData()
     }
 }

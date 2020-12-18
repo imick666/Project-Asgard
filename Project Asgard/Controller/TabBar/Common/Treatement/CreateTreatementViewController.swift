@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CreateTreatmentDelegate {
+    func treatementsDidCreate()
+}
+
 class CreateTreatementViewController: UIViewController {
     
     // MARK: - Outlets
@@ -23,6 +27,7 @@ class CreateTreatementViewController: UIViewController {
     // MARK: - Properties
     
     var objects = [NSObject]()
+    var delegate: CreateTreatmentDelegate?
     
     private var coreData: CoreDataManager?
     
@@ -93,8 +98,11 @@ class CreateTreatementViewController: UIViewController {
         objects.forEach { (object) in
             coreData?.createTreatement(named: name, startDate: startDate, endDate: endDate, note: note, to: object)
         }
-
-        dismiss(animated: true, completion: nil)
+        
+        dismiss(animated: true) {
+            self.delegate?.treatementsDidCreate()
+        }
+        
     }
 }
 

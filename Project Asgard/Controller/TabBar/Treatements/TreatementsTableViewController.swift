@@ -16,16 +16,20 @@ class TreatementsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    private var fetchedResultController: NSFetchedResultsController<NSFetchRequestResult>!
+    private var fetchedResultController: NSFetchedResultsController<NSFetchRequestResult>?
     private var coreData: CoreDataManager!
     
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFrc()
         setupCoreData()
         tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupFrc()
     }
     
     // MARK: - Methodes
@@ -40,9 +44,10 @@ class TreatementsTableViewController: UITableViewController {
         case 1: setupFrcPuppy(context: context)
         default: return
         }
+        fetchedResultController?.delegate = self
         
         do {
-            try fetchedResultController.performFetch()
+            try fetchedResultController?.performFetch()
             tableView.reloadData()
         } catch {
             fatalError("Failed to fetch entities")
@@ -60,7 +65,6 @@ class TreatementsTableViewController: UITableViewController {
         request.predicate = NSPredicate(format: "toDog != nil")
                 
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "toDog.name", cacheName: nil)
-        fetchedResultController.delegate = self
     }
     
     private func setupFrcPuppy(context: NSManagedObjectContext) {
@@ -73,7 +77,6 @@ class TreatementsTableViewController: UITableViewController {
         request.predicate = NSPredicate(format: "SUBQUERY(puppies, $puppy, SOME $puppy.treatements != nil).@count != 0")
     
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "dog.name", cacheName: nil)
-        fetchedResultController.delegate = self
     }
     
     private func setupCoreData() {
@@ -121,34 +124,44 @@ class TreatementsTableViewController: UITableViewController {
         setupFrc()
     }
     
+    @IBAction func didTapAddTreatementsButtons(_ sender: Any) {
+        guard let createTreatmentsVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createTreatement) as? CreateTreatementViewController else { return }
+        
+        createTreatmentsVC.delegate = self
+        present(createTreatmentsVC, animated: true) {
+            print("done")
+        }
+    }
+    
+    
     // MARK: - Table view data source
     
     // Section
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return 1 }
+        guard let sections = fetchedResultController?.sections, !sections.isEmpty else { return 1 }
         return sections.count
     }
 
     // Header
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return nil }
+        guard let sections = fetchedResultController?.sections, !sections.isEmpty else { return nil }
         return sections[section].name.capitalized
     }
     
     // Row
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = fetchedResultController.sections, !sections.isEmpty else { return 0 }
+        guard let sections = fetchedResultController?.sections, !sections.isEmpty else { return 0 }
         return sections[section].numberOfObjects
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
-        let treatement = fetchedResultController.object(at: indexPath) as? Treatement
-        let litter = fetchedResultController.object(at: indexPath) as? DogLitter
+        let treatement = fetchedResultController?.object(at: indexPath) as? Treatement
+        let litter = fetchedResultController?.object(at: indexPath) as? DogLitter
         switch segmentedController.selectedSegmentIndex {
         case 0: cell.textLabel?.text = treatement?.name?.capitalized
         case 1: cell.textLabel?.text = litter?.date?.ddMMYY
@@ -176,7 +189,7 @@ class TreatementsTableViewController: UITableViewController {
         let tabBarMinY = tabBarController?.tabBar.frame.minY ?? 0
         let finalHeight = tabBarMinY - navBarMaxY
         
-        return fetchedResultController.fetchedObjects?.count == 0 ? finalHeight : 0
+        return fetchedResultController?.fetchedObjects?.count == 0 ? finalHeight : 0
     }
     
     // MARK: - Table View Delegate
@@ -186,10 +199,10 @@ class TreatementsTableViewController: UITableViewController {
                 
         switch segmentedController.selectedSegmentIndex {
         case 0:
-            guard let treatment = fetchedResultController.object(at: indexPath) as? Treatement else { return }
+            guard let treatment = fetchedResultController?.object(at: indexPath) as? Treatement else { return }
             showTreatmentDetail(treatment)
         case 1:
-            guard let litter = fetchedResultController.object(at: indexPath) as? DogLitter else { return }
+            guard let litter = fetchedResultController?.object(at: indexPath) as? DogLitter else { return }
             showLitter(litter)
         default: return
         }
@@ -199,5 +212,11 @@ class TreatementsTableViewController: UITableViewController {
 extension TreatementsTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
+    }
+}
+
+extension TreatementsTableViewController: CreateTreatmentDelegate {
+    func treatementsDidCreate() {
+        setupFrc()
     }
 }
