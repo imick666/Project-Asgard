@@ -64,13 +64,17 @@ class TreatementViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func didTapAddButton(_ sender: Any) {
-        guard let createTreatementVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createTreatement) as? CreateTreatementViewController else {
+        guard let createTreatementVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createTreatement) as? CreateTreatementViewController,
+              let petDetail = parentView as? PetDetailsViewController else {
             return
         }
         
-//        if let detailDog = parentView as? PetDetailsViewController {
-//            createTreatementVC.objects = [detailDog.selectedDog]
-//        }
+        if let dog = petDetail.selectedDog {
+            createTreatementVC.objects = [dog]
+        }
+        if let puppy = petDetail.selectedPuppy {
+            createTreatementVC.objects = [puppy]
+        }
         
         parent?.present(createTreatementVC, animated: true, completion: nil)
     }

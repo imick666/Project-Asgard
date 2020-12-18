@@ -23,6 +23,7 @@ class PuppiesTreatmentsTableViewController: UITableViewController {
         let dogName = selectedLitter.dog!.name.orNc.capitalized
         let date = selectedLitter.date!.ddMMYY
         title = "\(dogName) - \(date)"
+        tableView.tableFooterView = UIView()
         setupCoreData()
         setupFrc()
 

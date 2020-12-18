@@ -10,7 +10,6 @@ import Foundation
 struct Constants {
     
     struct SeguesID {
-        static let createDog = "CreateDogSegue"
         static let detailDog = "DetailDogSegue"
         static let detailPuppy = "DetailPuppySegue"
     }
@@ -20,7 +19,6 @@ struct Constants {
         static let createLitter = "CreateLitterVC"
         static let createPuppy = "CreatePuppyVC"
         static let puppiesList = "PuppiesListVC"
-        static let detailPuppy = "DetailPuppyVC"
         static let createDog = "CreateDogVC"
         static let selectDogAndPuppy = "SelectDogAndPuppyVC"
         static let necklaceColor = "NecklaceColorVC"
