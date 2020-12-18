@@ -111,7 +111,7 @@ class DogListTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.SeguesID.detailDog {
-            guard let destination = segue.destination as? DetailDogViewController else { return }
+            guard let destination = segue.destination as? PetDetailsViewController else { return }
             destination.selectedDog = sender as? Dog
         }
     }

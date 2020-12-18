@@ -24,9 +24,7 @@ class TreatementViewController: UIViewController {
     private var coreData: CoreDataManager?
     
     private var parentView: UIViewController {
-        if let vc = parent as? DetailDogViewController {
-            return vc
-        } else if let vc = parent as? DetailPuppyViewController {
+        if let vc = parent as? PetDetailsViewController {
             return vc
         } else {
             fatalError("Failed to load parent ViewController")
@@ -70,11 +68,9 @@ class TreatementViewController: UIViewController {
             return
         }
         
-        if let detailDog = parentView as? DetailDogViewController {
-            createTreatementVC.objects = [detailDog.selectedDog]
-        } else if let detailPuppy = parentView as? DetailPuppyViewController {
-            createTreatementVC.objects = [detailPuppy.puppy]
-        }
+//        if let detailDog = parentView as? PetDetailsViewController {
+//            createTreatementVC.objects = [detailDog.selectedDog]
+//        }
         
         parent?.present(createTreatementVC, animated: true, completion: nil)
     }

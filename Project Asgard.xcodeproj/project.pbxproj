@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E015D071257E813200175DBA /* DetailPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E015D070257E813200175DBA /* DetailPuppyViewController.swift */; };
 		E01D4DB125862A5C00292BFA /* SelectDogAndPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */; };
 		E01D4DBC2588BC6000292BFA /* SelectNecklaceColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D4DBB2588BC6000292BFA /* SelectNecklaceColorViewController.swift */; };
 		E01D7A86258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D7A85258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift */; };
@@ -25,7 +24,7 @@
 		E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F68256C28B300D09424 /* UIButton+Layer.swift */; };
 		E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */; };
 		E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */; };
-		E0952F7E256D1E5300D09424 /* DetailDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */; };
+		E0952F7E256D1E5300D09424 /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F7D256D1E5300D09424 /* PetDetailsViewController.swift */; };
 		E0BE1EE42571480E00E9EEFA /* TreatementTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */; };
 		E0BE1EE8257151E200E9EEFA /* CreateTreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */; };
 		E0BE1EEC25715A9400E9EEFA /* Notifcation.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */; };
@@ -51,7 +50,6 @@
 		E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833625730C0C003E6BA2 /* LitterViewController.swift */; };
 		E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */; };
 		E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2568E2571444900D45094 /* TreatementViewController.swift */; };
-		E0F45117257E8E8E000F75C9 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F45116257E8E8E000F75C9 /* WeightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E015D070257E813200175DBA /* DetailPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPuppyViewController.swift; sourceTree = "<group>"; };
 		E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogAndPuppyViewController.swift; sourceTree = "<group>"; };
 		E01D4DBB2588BC6000292BFA /* SelectNecklaceColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNecklaceColorViewController.swift; sourceTree = "<group>"; };
 		E01D7A85258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppiesTreatmentsTableViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +80,7 @@
 		E0952F68256C28B300D09424 /* UIButton+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Layer.swift"; sourceTree = "<group>"; };
 		E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
 		E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+DefaultValue.swift"; sourceTree = "<group>"; };
-		E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDogViewController.swift; sourceTree = "<group>"; };
+		E0952F7D256D1E5300D09424 /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
 		E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementTest.swift; sourceTree = "<group>"; };
 		E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTreatementViewController.swift; sourceTree = "<group>"; };
 		E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifcation.Name.swift; sourceTree = "<group>"; };
@@ -113,7 +110,6 @@
 		E0ED833625730C0C003E6BA2 /* LitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitterViewController.swift; sourceTree = "<group>"; };
 		E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		E0F2568E2571444900D45094 /* TreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementViewController.swift; sourceTree = "<group>"; };
-		E0F45116257E8E8E000F75C9 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				E0F4510D257E8DE3000F75C9 /* ListPuppies */,
-				E0F4510F257E8DFF000F75C9 /* DetailPuppy */,
 			);
 			path = Puppies;
 			sourceTree = "<group>";
@@ -365,7 +360,6 @@
 		E0ED834125731404003E6BA2 /* DetailDog */ = {
 			isa = PBXGroup;
 			children = (
-				E0952F7D256D1E5300D09424 /* DetailDogViewController.swift */,
 				E0ED833E257313FB003E6BA2 /* ScrollView */,
 			);
 			path = DetailDog;
@@ -388,38 +382,14 @@
 			path = ListPuppies;
 			sourceTree = "<group>";
 		};
-		E0F4510F257E8DFF000F75C9 /* DetailPuppy */ = {
-			isa = PBXGroup;
-			children = (
-				E015D070257E813200175DBA /* DetailPuppyViewController.swift */,
-				E0F45110257E8E13000F75C9 /* ScrollView */,
-			);
-			path = DetailPuppy;
-			sourceTree = "<group>";
-		};
-		E0F45110257E8E13000F75C9 /* ScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				E0F45115257E8E6E000F75C9 /* Wieght */,
-			);
-			path = ScrollView;
-			sourceTree = "<group>";
-		};
 		E0F45111257E8E39000F75C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E0952F7D256D1E5300D09424 /* PetDetailsViewController.swift */,
 				E01D4DBA2588BC3B00292BFA /* Puppy */,
 				E0BE1EEF2571610E00E9EEFA /* Treatement */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		E0F45115257E8E6E000F75C9 /* Wieght */ = {
-			isa = PBXGroup;
-			children = (
-				E0F45116257E8E8E000F75C9 /* WeightViewController.swift */,
-			);
-			path = Wieght;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,7 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0952F7E256D1E5300D09424 /* DetailDogViewController.swift in Sources */,
+				E0952F7E256D1E5300D09424 /* PetDetailsViewController.swift in Sources */,
 				E0952F69256C28B300D09424 /* UIButton+Layer.swift in Sources */,
 				E0BE1EF52571631500E9EEFA /* DetailTreatementViewController.swift in Sources */,
 				E0BE1EFB25716F4200E9EEFA /* UIView+Constraints.swift in Sources */,
@@ -555,8 +525,6 @@
 				E01D4DBC2588BC6000292BFA /* SelectNecklaceColorViewController.swift in Sources */,
 				E07FEE5A257D0F100023232E /* PuppiesListTableViewController.swift in Sources */,
 				E0E44BEB256BFF860086F451 /* SceneDelegate.swift in Sources */,
-				E015D071257E813200175DBA /* DetailPuppyViewController.swift in Sources */,
-				E0F45117257E8E8E000F75C9 /* WeightViewController.swift in Sources */,
 				E07FEE66257D301F0023232E /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

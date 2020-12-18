@@ -27,8 +27,8 @@ class LitterViewController: UIViewController {
     
     var delegate: LitterViewControllerDelegate?
     
-    private var parentView: DetailDogViewController {
-        guard let vc = parent as? DetailDogViewController else {
+    private var parentView: PetDetailsViewController {
+        guard let vc = parent as? PetDetailsViewController else {
             fatalError("Failed to load parent viewController")
         }
         return vc
