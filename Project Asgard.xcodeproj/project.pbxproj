@@ -167,6 +167,7 @@
 		E07FEE71257E6A430023232E /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				E0F45111257E8E39000F75C9 /* Common */,
 				E07FEE73257E6A590023232E /* Dogs */,
 				E07FEE76257E6A670023232E /* Puppies */,
 				E070866E25826FA900CBCEE0 /* Treatements */,
@@ -300,7 +301,6 @@
 		E0E44C26256BFFBB0086F451 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E0F45111257E8E39000F75C9 /* Common */,
 				E07FEE71257E6A430023232E /* TabBar */,
 			);
 			path = Controller;

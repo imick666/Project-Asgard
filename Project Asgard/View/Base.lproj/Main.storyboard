@@ -482,7 +482,7 @@
         <scene sceneID="lWO-I1-yKb">
             <objects>
                 <navigationController id="Sxt-tF-Vcj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dogs" id="VId-1v-Xsx"/>
+                    <tabBarItem key="tabBarItem" title="Dogs" image="dogHouse" selectedImage="dogHouse_filled" id="VId-1v-Xsx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2t2-5s-MPd">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1401,7 +1401,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6HV-cU-0rl"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WPT-zz-Cm8" firstAttribute="top" secondItem="3MV-yX-93g" secondAttribute="top" constant="8" id="35n-Vx-9d5"/>
                             <constraint firstItem="6HV-cU-0rl" firstAttribute="trailing" secondItem="WPT-zz-Cm8" secondAttribute="trailing" constant="8" id="XI7-8S-UY3"/>
@@ -1456,7 +1456,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J8C-Gq-duo"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fCQ-LW-rYv" firstAttribute="leading" secondItem="J8C-Gq-duo" secondAttribute="leading" constant="8" id="2d5-zq-xtq"/>
                             <constraint firstAttribute="bottom" secondItem="giW-2r-pYQ" secondAttribute="bottom" constant="8" id="30m-4u-nhj"/>
@@ -1479,7 +1479,7 @@
         <scene sceneID="Kuh-vz-xin">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hII-bI-fzX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Puppies" id="rMf-eP-dko"/>
+                    <tabBarItem key="tabBarItem" title="Puppies" image="puppy" selectedImage="puppy_filled" id="rMf-eP-dko"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="EDT-KF-K5Y">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
@@ -1494,11 +1494,11 @@
             </objects>
             <point key="canvasLocation" x="-2543" y="617"/>
         </scene>
-        <!--Treatements-->
+        <!--Treatments-->
         <scene sceneID="VqF-ME-gtk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FZT-IV-2Vf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Treatements" id="HJ8-K4-Vz6"/>
+                    <tabBarItem key="tabBarItem" title="Treatments" image="treatement" selectedImage="treatment_filled" id="HJ8-K4-Vz6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ocj-6r-jlR">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
@@ -1519,6 +1519,12 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DogPlaceHolder" width="346" height="346"/>
+        <image name="dogHouse" width="18" height="18"/>
+        <image name="dogHouse_filled" width="18" height="18"/>
+        <image name="puppy" width="18" height="18"/>
+        <image name="puppy_filled" width="18" height="18"/>
+        <image name="treatement" width="18" height="18"/>
+        <image name="treatment_filled" width="18" height="18"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
