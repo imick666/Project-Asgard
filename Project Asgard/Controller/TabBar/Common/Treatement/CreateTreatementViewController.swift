@@ -86,9 +86,8 @@ class CreateTreatementViewController: UIViewController {
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
-        guard let name = nameTextField.text else {
-            // TODO: add Alert
-            // "You must enter a name"
+        guard let name = nameTextField.text.orNil else {
+            self.showAlert(title: "Error", message: "Please enter a name before create treatment")
             return
         }
         let note = noteTextView.text.orNil
