@@ -84,33 +84,6 @@ class TreatementsTableViewController: UITableViewController {
         coreData = CoreDataManager(stack)
     }
     
-    private func showTreatmentDetail(_ treatment: Treatement) {
-        let detailTreatelementVC = DetailTreatementViewController()
-        detailTreatelementVC.treatement = treatment
-        detailTreatelementVC.preferredContentSize.height = view.bounds.height * 0.4
-        
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.setTitle(treatment.name!.capitalized, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: nil)
-        actionSheet.setContentViewController(detailTreatelementVC)
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
-            self.confirmDeleteAction { (canceled) in
-                switch canceled {
-                case true:
-                    self.present(actionSheet, animated: true, completion: nil)
-                case false:
-                    self.coreData.deleteObject(treatment)
-                }
-            }
-        }
-        
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        actionSheet.addAction(okAction)
-        actionSheet.addAction(deleteAction)
-        
-        present(actionSheet, animated: true, completion: nil)
-    }
-    
     private func showLitter(_ litter: DogLitter) {
         let treatementForLitter = PuppiesTreatmentsTableViewController()
         treatementForLitter.selectedLitter = litter
@@ -200,7 +173,7 @@ class TreatementsTableViewController: UITableViewController {
         switch segmentedController.selectedSegmentIndex {
         case 0:
             guard let treatment = fetchedResultController?.object(at: indexPath) as? Treatement else { return }
-            showTreatmentDetail(treatment)
+            showTreatmentDeatil(for: treatment, coreData: coreData)
         case 1:
             guard let litter = fetchedResultController?.object(at: indexPath) as? DogLitter else { return }
             showLitter(litter)

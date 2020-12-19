@@ -58,33 +58,6 @@ class PuppiesTreatmentsTableViewController: UITableViewController {
             fatalError("Failed to load entities")
         }
     }
-    
-    private func showTreatmentDetail(_ treatment: Treatement) {
-        let detailTreatelementVC = DetailTreatementViewController()
-        detailTreatelementVC.treatement = treatment
-        detailTreatelementVC.preferredContentSize.height = view.bounds.height * 0.4
-        
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.setTitle(treatment.name!.capitalized, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: nil)
-        actionSheet.setContentViewController(detailTreatelementVC)
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
-            self.confirmDeleteAction { (canceled) in
-                switch canceled {
-                case true:
-                    self.present(actionSheet, animated: true, completion: nil)
-                case false:
-                    self.coreData.deleteObject(treatment)
-                }
-            }
-        }
-        
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        actionSheet.addAction(okAction)
-        actionSheet.addAction(deleteAction)
-        
-        present(actionSheet, animated: true, completion: nil)
-    }
 
     // MARK: - Table view data source
 
@@ -116,7 +89,7 @@ class PuppiesTreatmentsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let treatment = fetchedResultController?.object(at: indexPath) else { return }
         
-        showTreatmentDetail(treatment)
+        showTreatmentDeatil(for: treatment, coreData: coreData)
     }
 }
 

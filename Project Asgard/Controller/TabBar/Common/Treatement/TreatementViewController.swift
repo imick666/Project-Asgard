@@ -100,32 +100,9 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        var alert: UIAlertController!
-        let vc = DetailTreatementViewController()
-        vc.treatement = treatements[indexPath.row]
-        vc.preferredContentSize.height = parentView.view.bounds.height * 0.4
-
-        alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let treatment = treatements[indexPath.row]
         
-        alert.setTitle(treatements[indexPath.row].name!, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: nil)
-        
-        alert.setContentViewController(vc)
-        
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
-            self.confirmDeleteAction { (cancelled) in
-                switch cancelled {
-                case true:
-                    self.present(alert, animated: true, completion: nil)
-                case false:
-                    self.coreData?.deleteObject(self.treatements[indexPath.row])
-                }
-            }
-        }
-        alert.addAction(okAction)
-        alert.addAction(deleteAction)
-        
-        present(alert, animated: true, completion: nil)
+        showTreatmentDeatil(for: treatment, coreData: coreData)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

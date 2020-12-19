@@ -37,4 +37,35 @@ extension UIViewController {
         
         show(alert, sender: nil)
     }
+    
+    func showTreatmentDeatil(for treatment: Treatement, coreData: CoreDataManager?) {
+        
+        var alert: UIAlertController!
+        let vc = DetailTreatementViewController()
+        vc.treatement = treatment
+        vc.preferredContentSize.height = 250
+
+        alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.setTitle(treatment.name!, font: UIFont.systemFont(ofSize: 25, weight: .semibold), titleColor: nil)
+        
+        alert.setContentViewController(vc)
+        
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+            self.confirmDeleteAction { (cancelled) in
+                switch cancelled {
+                case true:
+                    self.showTreatmentDeatil(for: treatment, coreData: coreData)
+                case false:
+                    coreData?.deleteObject(treatment)
+                }
+            }
+        }
+        alert.addAction(okAction)
+        alert.addAction(deleteAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
 }
