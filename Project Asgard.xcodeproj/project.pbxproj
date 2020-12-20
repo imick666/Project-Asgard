@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAA660C38C28C26B21284D62 /* Pods_Project_AsgardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E514AAF0634876DC10B58635 /* Pods_Project_AsgardTests.framework */; };
+		D6616FA552CBD51113298250 /* Pods_Project_Asgard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83933538CA98C3882EF5BB20 /* Pods_Project_Asgard.framework */; };
 		E01D4DB125862A5C00292BFA /* SelectDogAndPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */; };
 		E01D4DBC2588BC6000292BFA /* SelectNecklaceColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D4DBB2588BC6000292BFA /* SelectNecklaceColorViewController.swift */; };
 		E01D7A86258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D7A85258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift */; };
@@ -50,6 +52,8 @@
 		E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833625730C0C003E6BA2 /* LitterViewController.swift */; };
 		E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */; };
 		E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2568E2571444900D45094 /* TreatementViewController.swift */; };
+		E0FDA2F5258F854D00CF943F /* WieghtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F4258F854D00CF943F /* WieghtViewController.swift */; };
+		E0FDA2F9258F8E2800CF943F /* XAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FAB35294F2304C5218948F0 /* Pods-Project Asgard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Asgard.debug.xcconfig"; path = "Target Support Files/Pods-Project Asgard/Pods-Project Asgard.debug.xcconfig"; sourceTree = "<group>"; };
+		52FE5F484AE74EFC30F93DF0 /* Pods-Project AsgardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project AsgardTests.debug.xcconfig"; path = "Target Support Files/Pods-Project AsgardTests/Pods-Project AsgardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		83933538CA98C3882EF5BB20 /* Pods_Project_Asgard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Asgard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F95B7FDDBA7A4B9D5B2F26B /* Pods-Project AsgardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project AsgardTests.release.xcconfig"; path = "Target Support Files/Pods-Project AsgardTests/Pods-Project AsgardTests.release.xcconfig"; sourceTree = "<group>"; };
 		E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogAndPuppyViewController.swift; sourceTree = "<group>"; };
 		E01D4DBB2588BC6000292BFA /* SelectNecklaceColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNecklaceColorViewController.swift; sourceTree = "<group>"; };
 		E01D7A85258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppiesTreatmentsTableViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +118,10 @@
 		E0ED833625730C0C003E6BA2 /* LitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitterViewController.swift; sourceTree = "<group>"; };
 		E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		E0F2568E2571444900D45094 /* TreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementViewController.swift; sourceTree = "<group>"; };
+		E0FDA2F4258F854D00CF943F /* WieghtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WieghtViewController.swift; sourceTree = "<group>"; };
+		E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisFormatter.swift; sourceTree = "<group>"; };
+		E514AAF0634876DC10B58635 /* Pods_Project_AsgardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_AsgardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE7B3EAD5818653FBC5645DB /* Pods-Project Asgard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Asgard.release.xcconfig"; path = "Target Support Files/Pods-Project Asgard/Pods-Project Asgard.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6616FA552CBD51113298250 /* Pods_Project_Asgard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,12 +137,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA660C38C28C26B21284D62 /* Pods_Project_AsgardTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2278AA6051A04BA18F72CED2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83933538CA98C3882EF5BB20 /* Pods_Project_Asgard.framework */,
+				E514AAF0634876DC10B58635 /* Pods_Project_AsgardTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88552A5B338C3B31C6282B63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB35294F2304C5218948F0 /* Pods-Project Asgard.debug.xcconfig */,
+				EE7B3EAD5818653FBC5645DB /* Pods-Project Asgard.release.xcconfig */,
+				52FE5F484AE74EFC30F93DF0 /* Pods-Project AsgardTests.debug.xcconfig */,
+				9F95B7FDDBA7A4B9D5B2F26B /* Pods-Project AsgardTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E01D4DBA2588BC3B00292BFA /* Puppy */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +221,7 @@
 		E07FEE76257E6A670023232E /* Puppies */ = {
 			isa = PBXGroup;
 			children = (
+				E0FDA2F1258F846500CF943F /* Weight */,
 				E0F4510D257E8DE3000F75C9 /* ListPuppies */,
 			);
 			path = Puppies;
@@ -244,6 +279,8 @@
 				E0E44BE7256BFF860086F451 /* Project Asgard */,
 				E0E44C01256BFF870086F451 /* Project AsgardTests */,
 				E0E44BE6256BFF860086F451 /* Products */,
+				88552A5B338C3B31C6282B63 /* Pods */,
+				2278AA6051A04BA18F72CED2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -392,6 +429,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E0FDA2F1258F846500CF943F /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				E0FDA2F4258F854D00CF943F /* WieghtViewController.swift */,
+				E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,9 +445,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0E44C12256BFF870086F451 /* Build configuration list for PBXNativeTarget "Project Asgard" */;
 			buildPhases = (
+				E11F215F0B740AE6170F4E05 /* [CP] Check Pods Manifest.lock */,
 				E0E44BE1256BFF860086F451 /* Sources */,
 				E0E44BE2256BFF860086F451 /* Frameworks */,
 				E0E44BE3256BFF860086F451 /* Resources */,
+				21554EDB5596700EE86D67BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,6 +464,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0E44C15256BFF870086F451 /* Build configuration list for PBXNativeTarget "Project AsgardTests" */;
 			buildPhases = (
+				2662105D22F0D2CC75A91DA5 /* [CP] Check Pods Manifest.lock */,
 				E0E44BFA256BFF870086F451 /* Sources */,
 				E0E44BFB256BFF870086F451 /* Frameworks */,
 				E0E44BFC256BFF870086F451 /* Resources */,
@@ -488,6 +537,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21554EDB5596700EE86D67BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Asgard/Pods-Project Asgard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Asgard/Pods-Project Asgard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project Asgard/Pods-Project Asgard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2662105D22F0D2CC75A91DA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project AsgardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E11F215F0B740AE6170F4E05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Asgard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E0E44BE1256BFF860086F451 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -501,6 +614,7 @@
 				E0CDC2862578E7A9008D22CB /* Project_Asgard.xcdatamodeld in Sources */,
 				E01D7A86258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift in Sources */,
 				E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */,
+				E0FDA2F5258F854D00CF943F /* WieghtViewController.swift in Sources */,
 				E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */,
 				E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */,
 				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
@@ -510,6 +624,7 @@
 				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
 				E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */,
+				E0FDA2F9258F8E2800CF943F /* XAxisFormatter.swift in Sources */,
 				E053615D2588DEAD00AFF795 /* UIColor+String.swift in Sources */,
 				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
 				E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */,
@@ -690,6 +805,7 @@
 		};
 		E0E44C13256BFF870086F451 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FAB35294F2304C5218948F0 /* Pods-Project Asgard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -709,6 +825,7 @@
 		};
 		E0E44C14256BFF870086F451 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE7B3EAD5818653FBC5645DB /* Pods-Project Asgard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -728,6 +845,7 @@
 		};
 		E0E44C16256BFF870086F451 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52FE5F484AE74EFC30F93DF0 /* Pods-Project AsgardTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -750,6 +868,7 @@
 		};
 		E0E44C17256BFF870086F451 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F95B7FDDBA7A4B9D5B2F26B /* Pods-Project AsgardTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

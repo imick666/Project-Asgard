@@ -27,6 +27,7 @@ class PetDetailsViewController: UIViewController {
     
     @IBOutlet weak var treatmentsViewContainer: UIView!
     @IBOutlet weak var littersViewContainer: UIView!
+    @IBOutlet weak var weightViewContainer: UIView!
     
     // MARK: - Properties
     
@@ -146,6 +147,7 @@ class PetDetailsViewController: UIViewController {
         
         littersViewContainer.isHidden = false
         treatmentsViewContainer.isHidden = false
+        weightViewContainer.isHidden = true
         
         setupChildrens()
     }
@@ -166,6 +168,7 @@ class PetDetailsViewController: UIViewController {
         
         littersViewContainer.isHidden = true
         treatmentsViewContainer.isHidden = false
+        weightViewContainer.isHidden = false
         
         setupChildrens()
     }
