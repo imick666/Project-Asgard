@@ -20,6 +20,7 @@ class WeightViewController: UIViewController {
     var weights = [Weight]() {
         didSet {
             noWeightLabel.isHidden = !weights.isEmpty
+            chartView.isHidden = weights.isEmpty
             if !weights.isEmpty {
                 updateGraph()
                 setupChart()
@@ -130,11 +131,19 @@ class WeightViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func didTapAddButton(_ sender: Any) {
-        guard let puppy = puppy else { return }
-        let date = weights.last?.date?.addingTimeInterval(TimeInterval(86400 * Int.random(in: 1...7))) ?? Date()
-        let weght = (weights.last?.weight ?? 0.5) + 0.255
-        coreData.createWeight(for: puppy, date: date, weight: weght)
+        guard let createWeightVC = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardID.createWeight) as? CreateWeightViewController else {
+            return
+        }
+        
+        createWeightVC.delegate = self
+        parent?.present(createWeightVC, animated: true, completion: nil)
     }
-    
 
+}
+
+extension WeightViewController: CreateWeightDelegate {
+    func didCreateWeight(date: Date, weight: Double) {
+        guard let puppy = puppy else { return }
+        coreData.createWeight(for: puppy, date: date, weight: weight)
+    }
 }
