@@ -34,6 +34,7 @@
         <attribute name="sold" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
         <relationship name="litter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DogLitter" inverseName="puppies" inverseEntity="DogLitter"/>
         <relationship name="treatements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Treatement" inverseName="toPuppy" inverseEntity="Treatement"/>
+        <relationship name="weights" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weight" inverseName="puppy" inverseEntity="Weight"/>
     </entity>
     <entity name="Treatement" representedClassName=".Treatement" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" attributeType="Date" usesScalarValueType="NO"/>
@@ -44,10 +45,16 @@
         <relationship name="toDog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="treatements" inverseEntity="Dog"/>
         <relationship name="toPuppy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Puppy" inverseName="treatements" inverseEntity="Puppy"/>
     </entity>
+    <entity name="Weight" representedClassName=".Weight" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="weight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="puppy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Puppy" inverseName="weights" inverseEntity="Puppy"/>
+    </entity>
     <elements>
         <element name="Dog" positionX="-117.647705078125" positionY="332.8988037109375" width="128" height="194"/>
         <element name="DogLitter" positionX="-90" positionY="189" width="128" height="104"/>
-        <element name="Puppy" positionX="-81" positionY="198" width="128" height="224"/>
+        <element name="Puppy" positionX="-81" positionY="198" width="128" height="239"/>
         <element name="Treatement" positionX="-63" positionY="27" width="128" height="134"/>
+        <element name="Weight" positionX="-90" positionY="189" width="128" height="74"/>
     </elements>
 </model>

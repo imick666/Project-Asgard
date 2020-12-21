@@ -29,13 +29,13 @@ class Treatement_PuppyTests: XCTestCase {
     // MARK: - Methodes
     
     private func createDogAndPuppy() -> Dog {
-        coreData.createDog(named: "Astride", "", sex: 0, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
+        coreData.createDog(named: "Astride", "", sex: 0, dogColor: nil, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
         
         let dog = coreData.allDogs[0]
-        let puppy = coreData.createPuppy(birth: Date(), sex: 1, dogColor: nil)
+        let puppy = coreData.createPuppy(named: nil, affix: nil, birthThe: Date(), sex: 1, dogColor: nil, necklaceColor: nil, image: nil)
         coreData.createLitter(of: dog, the: Date(), cesarean: true, with: [puppy])
         
-        guard let _ = ((coreData.allDogs[0].litter?.allObjects[0] as? DogLitter)?.puppies?.allObjects as? [Puppy])?[0] else {
+        guard let _ = ((coreData.allDogs[0].litters?.allObjects[0] as? DogLitter)?.puppies?.allObjects as? [Puppy])?[0] else {
             fatalError("Failed to create dog and puppy")
         }
         
@@ -49,7 +49,7 @@ class Treatement_PuppyTests: XCTestCase {
     func testCreateTreatement() {
         var dog = createDogAndPuppy()
         var litter: DogLitter {
-            return dog.litter?.allObjects[0] as! DogLitter
+            return dog.litters?.allObjects[0] as! DogLitter
         }
         var puppy: Puppy {
             return litter.puppies?.allObjects[0] as! Puppy
@@ -73,7 +73,7 @@ class Treatement_PuppyTests: XCTestCase {
     func testDeleteTreatement() {
         var dog = createDogAndPuppy()
         var litter: DogLitter {
-            return dog.litter?.allObjects[0] as! DogLitter
+            return dog.litters?.allObjects[0] as! DogLitter
         }
         var puppy: Puppy {
             return litter.puppies?.allObjects[0] as! Puppy

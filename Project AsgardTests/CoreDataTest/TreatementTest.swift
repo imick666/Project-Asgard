@@ -29,7 +29,7 @@ class TreatementTest: XCTestCase {
     // MARK: - Methodes
     
     private func createDog() -> Dog {
-        coreData?.createDog(named: "astride", "des", sex: 0, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
+        coreData?.createDog(named: "astride", "des", sex: 0, dogColor: nil, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
         
         guard let dog = coreData?.allDogs[0] else {
             fatalError("Failed to create dog")

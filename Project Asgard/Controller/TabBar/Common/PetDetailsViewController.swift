@@ -46,7 +46,15 @@ class PetDetailsViewController: UIViewController {
     
     private var litterViewController: LitterViewController {
         guard let vc = children.first(where: { $0 is LitterViewController }) as? LitterViewController else {
-            fatalError("Failed to load LitterVeiwController")
+            fatalError("Failed to load LitterViewController")
+        }
+        
+        return vc
+    }
+    
+    private var weightViewController: WeightViewController {
+        guard let vc = children.first(where: { $0 is WeightViewController }) as? WeightViewController else {
+            fatalError("Failed to load WeightViewController")
         }
         
         return vc
@@ -187,10 +195,18 @@ class PetDetailsViewController: UIViewController {
         treatementViewController.treatements = treatements ?? [Treatement]()
         
         // Litters
-        guard !littersViewContainer.isHidden else { return }
-        let litters = selectedDog?.litters?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [DogLitter]
-        litterViewController.litters = litters ?? [DogLitter]()
-        litterViewController.delegate = self
+        if !littersViewContainer.isHidden {
+            let litters = selectedDog?.litters?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [DogLitter]
+            litterViewController.litters = litters ?? []
+            litterViewController.delegate = self
+        }
+        
+        // Weight
+        if !weightViewContainer.isHidden {
+            let weights = selectedPuppy?.weights?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [Weight]
+            weightViewController.weights = weights ?? []
+        }
+        
     }
     
     // MARK: - Actions

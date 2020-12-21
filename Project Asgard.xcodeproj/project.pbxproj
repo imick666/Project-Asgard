@@ -27,6 +27,7 @@
 		E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */; };
 		E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */; };
 		E0952F7E256D1E5300D09424 /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0952F7D256D1E5300D09424 /* PetDetailsViewController.swift */; };
+		E0AF7BFA2590D3B8001AB333 /* Puppy+WeightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF7BF92590D3B8001AB333 /* Puppy+WeightsTests.swift */; };
 		E0BE1EE42571480E00E9EEFA /* TreatementTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */; };
 		E0BE1EE8257151E200E9EEFA /* CreateTreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */; };
 		E0BE1EEC25715A9400E9EEFA /* Notifcation.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */; };
@@ -52,7 +53,7 @@
 		E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ED833625730C0C003E6BA2 /* LitterViewController.swift */; };
 		E0EFA68B256FEA4100CB2BE6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */; };
 		E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2568E2571444900D45094 /* TreatementViewController.swift */; };
-		E0FDA2F5258F854D00CF943F /* WieghtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F4258F854D00CF943F /* WieghtViewController.swift */; };
+		E0FDA2F5258F854D00CF943F /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F4258F854D00CF943F /* WeightViewController.swift */; };
 		E0FDA2F9258F8E2800CF943F /* XAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
 		E0952F76256D0F5400D09424 /* OptionalString+DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+DefaultValue.swift"; sourceTree = "<group>"; };
 		E0952F7D256D1E5300D09424 /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
+		E0AF7BF92590D3B8001AB333 /* Puppy+WeightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Puppy+WeightsTests.swift"; sourceTree = "<group>"; };
 		E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementTest.swift; sourceTree = "<group>"; };
 		E0BE1EE7257151E200E9EEFA /* CreateTreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTreatementViewController.swift; sourceTree = "<group>"; };
 		E0BE1EEB25715A9400E9EEFA /* Notifcation.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifcation.Name.swift; sourceTree = "<group>"; };
@@ -118,7 +120,7 @@
 		E0ED833625730C0C003E6BA2 /* LitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitterViewController.swift; sourceTree = "<group>"; };
 		E0EFA68A256FEA4100CB2BE6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		E0F2568E2571444900D45094 /* TreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementViewController.swift; sourceTree = "<group>"; };
-		E0FDA2F4258F854D00CF943F /* WieghtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WieghtViewController.swift; sourceTree = "<group>"; };
+		E0FDA2F4258F854D00CF943F /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisFormatter.swift; sourceTree = "<group>"; };
 		E514AAF0634876DC10B58635 /* Pods_Project_AsgardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_AsgardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7B3EAD5818653FBC5645DB /* Pods-Project Asgard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Asgard.release.xcconfig"; path = "Target Support Files/Pods-Project Asgard/Pods-Project Asgard.release.xcconfig"; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				E0BE1EE32571480E00E9EEFA /* TreatementTest.swift */,
 				E02282BB2577CD1200AD28DD /* Litter&PuppyTest.swift */,
 				E07FEE3C257A81480023232E /* Treatement+PuppyTests.swift */,
+				E0AF7BF92590D3B8001AB333 /* Puppy+WeightsTests.swift */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -432,8 +435,8 @@
 		E0FDA2F1258F846500CF943F /* Weight */ = {
 			isa = PBXGroup;
 			children = (
-				E0FDA2F4258F854D00CF943F /* WieghtViewController.swift */,
 				E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */,
+				E0FDA2F4258F854D00CF943F /* WeightViewController.swift */,
 			);
 			path = Weight;
 			sourceTree = "<group>";
@@ -614,7 +617,7 @@
 				E0CDC2862578E7A9008D22CB /* Project_Asgard.xcdatamodeld in Sources */,
 				E01D7A86258B9AD3004A29E5 /* PuppiesTreatmentsTableViewController.swift in Sources */,
 				E0E44C34256C02740086F451 /* CoreDataManager.swift in Sources */,
-				E0FDA2F5258F854D00CF943F /* WieghtViewController.swift in Sources */,
+				E0FDA2F5258F854D00CF943F /* WeightViewController.swift in Sources */,
 				E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */,
 				E0952F6F256C2FAA00D09424 /* PickerViewManager.swift in Sources */,
 				E0E44C2D256C00C20086F451 /* CoreDataStack.swift in Sources */,
@@ -649,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BE1EE42571480E00E9EEFA /* TreatementTest.swift in Sources */,
+				E0AF7BFA2590D3B8001AB333 /* Puppy+WeightsTests.swift in Sources */,
 				E07FEE3D257A81480023232E /* Treatement+PuppyTests.swift in Sources */,
 				E0E44C42256C04D40086F451 /* DogTest.swift in Sources */,
 				E0E44C03256BFF870086F451 /* Project_AsgardTests.swift in Sources */,

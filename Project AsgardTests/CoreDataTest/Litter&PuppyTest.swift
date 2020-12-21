@@ -23,7 +23,7 @@ class Litter_PuppyTest: XCTestCase {
     }
     
     private func creatDog() -> Dog {
-        coreData?.createDog(named: "Asride", "", sex: 0, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
+        coreData?.createDog(named: "Asride", "", sex: 0, dogColor: nil, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
         
         guard let dog = coreData?.allDogs[0] else {
             fatalError("Failed to create dog")
@@ -36,7 +36,7 @@ class Litter_PuppyTest: XCTestCase {
         var puppies = [Puppy]()
         
         for _ in 0..<number {
-            let puppy = coreData.createPuppy(birth: Date(), sex: 0, dogColor: nil)
+            let puppy = coreData.createPuppy(named: nil, affix: nil, birthThe: Date(), sex: 1, dogColor: nil, necklaceColor: nil, image: nil)
             puppies.append(puppy)
         }
         
@@ -54,7 +54,7 @@ class Litter_PuppyTest: XCTestCase {
         coreData.createLitter(of: dog, the: Date(), cesarean: true, with: puppies)
         
         dog = coreData.allDogs[0]
-        let litter = dog.litter?.allObjects as! [DogLitter]
+        let litter = dog.litters?.allObjects as! [DogLitter]
         
         XCTAssertEqual(litter.count, 1)
         XCTAssertEqual(litter[0].puppies?.count, 5)
@@ -95,7 +95,7 @@ class Litter_PuppyTest: XCTestCase {
         coreData?.createLitter(of: dog, the: Date(), cesarean: true, with: puppies)
         dog = coreData.allDogs[0]
         var dogLitter: [DogLitter] {
-            return dog.litter?.allObjects as! [DogLitter]
+            return dog.litters?.allObjects as! [DogLitter]
         }
         var dogPuppies: [Puppy] {
             return dogLitter[0].puppies?.allObjects as! [Puppy]

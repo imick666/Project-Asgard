@@ -15,6 +15,43 @@ final class CoreDataManager {
     private let coreDataStack: CoreDataStack
     private let context: NSManagedObjectContext
     
+    var allDogs: [Dog] {
+        let request: NSFetchRequest<Dog> = Dog.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
+    var allPuppies: [Puppy] {
+        let request: NSFetchRequest<Puppy> = Puppy.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
+    var allTreatements: [Treatement] {
+        let request: NSFetchRequest<Treatement> = Treatement.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "endDate", ascending: true)]
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
     // MARK: - Init
     
     init(_ coreDataStack: CoreDataStack) {
@@ -84,7 +121,8 @@ final class CoreDataManager {
     }
     
     func createPuppy(named name: String?, affix: String?, birthThe date: Date, sex: Int16, dogColor: String?, necklaceColor: String?, image: Data?) -> Puppy {
-        let newPuppy = Puppy(entity: Puppy.entity() , insertInto: nil)
+        let desc = NSEntityDescription.entity(forEntityName: "Puppy", in: context)
+        let newPuppy = Puppy(entity: desc!, insertInto: nil)
         newPuppy.name = name
         newPuppy.affix = affix
         newPuppy.image = image
@@ -95,6 +133,15 @@ final class CoreDataManager {
         newPuppy.id = UUID()
         
         return newPuppy
+    }
+    
+    func createWeight(for puppy: Puppy, date: Date, weight: Double) {
+        let newWeight = Weight(context: context)
+        newWeight.date = date
+        newWeight.weight = weight
+        newWeight.puppy = puppy
+        
+        coreDataStack.saveContext()
     }
     
     // MARK: - Update
