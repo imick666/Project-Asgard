@@ -132,7 +132,7 @@ class PetDetailsViewController: UIViewController {
         } else if selectedPuppy != nil {
             setupPuppyContent()
         } else {
-            fatalError("This view should not be shown")
+            navigationController?.popViewController(animated: true)
         }
         let necklaceColor = UIColor(fromHex: selectedPuppy?.necklaceColor)
         pictureImageView.rounded(necklaceColor)

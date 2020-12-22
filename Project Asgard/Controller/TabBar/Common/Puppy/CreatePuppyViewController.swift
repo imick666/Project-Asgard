@@ -29,6 +29,7 @@ class CreatePuppyViewController: UIViewController {
     @IBOutlet weak var resetImageButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     // MARK: - Properties
     
@@ -73,6 +74,9 @@ class CreatePuppyViewController: UIViewController {
         pictureImageView.rounded(nil)
         necklaceColorButton.roundFilled(wih: .gray)
         necklaceColorButton.setTitle("None", for: .normal)
+        deleteButton.backgroundColor = .red
+        deleteButton.setTitleColor(.white, for: .normal)
+        deleteButton.roundFilled(wih: nil)
         
         setupTextFields()
         updateResetButton()
@@ -100,6 +104,7 @@ class CreatePuppyViewController: UIViewController {
     
     private func setupContent() {
         affixTextField.text = "Des Monts d'Asgard"
+        deleteButton.isHidden = true
         
         guard let puppy = puppyToModify else { return }
         controllerNameLabel.text = "Modify existing puppy"
@@ -113,6 +118,7 @@ class CreatePuppyViewController: UIViewController {
         isSoldSwitch.setOn(puppy.sold!.boolValue, animated: true)
         necklaceColor = UIColor(fromHex: puppy.necklaceColor)
         necklaceColorButton.setTitle(necklaceColor == nil ? "None" : nil, for: .normal)
+        deleteButton.isHidden = false
     }
     
     private func updateResetButton() {
@@ -135,6 +141,18 @@ class CreatePuppyViewController: UIViewController {
         vc.delegate = self
         
         present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapDeleteButton(_ sender: Any) {
+        confirmDeleteAction { (cancelled) in
+            switch cancelled {
+            case true:
+                return
+            case false:
+                self.coreData?.deleteObject(self.puppyToModify!)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {

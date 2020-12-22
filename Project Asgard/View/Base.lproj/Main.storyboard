@@ -797,7 +797,7 @@
                                 <rect key="frame" x="8" y="52" width="374" height="698"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3wk-EN-84v">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="335.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="332.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Litter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rf-Js-yW3">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -820,23 +820,23 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4In-B6-Zdg">
-                                                <rect key="frame" x="0.0" y="298.33333333333331" width="374" height="37.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="298.33333333333331" width="374" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cesarean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lq-lk-O5G">
-                                                        <rect key="frame" x="0.0" y="8.3333333333333695" width="325" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="6.9999999999999982" width="325" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-ab-yIe">
-                                                        <rect key="frame" x="325" y="3" width="51" height="31"/>
+                                                        <rect key="frame" x="325" y="1.6666666666666856" width="51" height="31"/>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pER-HE-Kwn">
-                                        <rect key="frame" x="0.0" y="351.66666666666674" width="374" height="346.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="348.33333333333326" width="374" height="349.66666666666674"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puppies :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUw-UT-9f3">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20.333333333333332"/>
@@ -845,7 +845,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfr-mf-MyL">
-                                                <rect key="frame" x="0.0" y="20.333333333333314" width="374" height="326"/>
+                                                <rect key="frame" x="0.0" y="20.333333333333371" width="374" height="329.33333333333331"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="TkW-aq-QAt"/>
@@ -976,7 +976,7 @@
                                 <rect key="frame" x="8" y="52" width="374" height="698"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-K3-jhY">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="860.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="920.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new puppy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-ub-j71">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -1153,6 +1153,16 @@
                                                     </switch>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsa-Ho-wfe">
+                                                <rect key="frame" x="0.0" y="876.66666666666663" width="374" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="mks-0x-4SF"/>
+                                                </constraints>
+                                                <state key="normal" title="Delete"/>
+                                                <connections>
+                                                    <action selector="didTapDeleteButton:" destination="8yf-Qp-4mS" eventType="touchUpInside" id="Sln-0y-hfc"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -1208,6 +1218,7 @@
                         <outlet property="cancelButton" destination="nJB-ux-Qz4" id="vmy-pT-e59"/>
                         <outlet property="chipNumberTextField" destination="cJ8-cD-Xlg" id="LOX-Ix-su4"/>
                         <outlet property="controllerNameLabel" destination="ddw-ub-j71" id="NV9-E5-CVI"/>
+                        <outlet property="deleteButton" destination="nsa-Ho-wfe" id="QOi-Im-3dG"/>
                         <outlet property="doneButton" destination="ZAO-Ae-GnE" id="MiO-v1-JEW"/>
                         <outlet property="isSoldSwitch" destination="NLr-Bm-hr5" id="PcK-ze-q1S"/>
                         <outlet property="lofNumberTextField" destination="RIX-Kj-K58" id="OoB-eN-am6"/>
@@ -1722,7 +1733,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fl8-7C-EQe"/>
+        <segue reference="UTf-6m-gBk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DogPlaceHolder" width="346" height="346"/>
