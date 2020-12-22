@@ -52,6 +52,17 @@ final class CoreDataManager {
         }
     }
     
+    private var allLiter: [DogLitter] {
+        let request: NSFetchRequest<DogLitter> = DogLitter.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
     // MARK: - Init
     
     init(_ coreDataStack: CoreDataStack) {
@@ -162,6 +173,10 @@ final class CoreDataManager {
     
     func deleteObject(_ object: NSManagedObject) {
         context.delete(object)
+        
+        if let puppy = object as? Puppy, let litter = puppy.litter {
+            if litter.puppies!.count <= 1 { context.delete(litter) }
+        }
         
         coreDataStack.saveContext()
     }
