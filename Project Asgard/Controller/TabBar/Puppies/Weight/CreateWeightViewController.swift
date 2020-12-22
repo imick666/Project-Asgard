@@ -64,14 +64,14 @@ class CreateWeightViewController: UIViewController {
 extension CreateWeightViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string == "." && textField.text!.contains(".") {
+        if (string == "." || string == ",") && (textField.text!.contains(".") || textField.text!.contains(",")) {
             return false
         }
         return true
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.text?.first == "." {
+        if textField.text?.first == "." || textField.text?.first == "," {
             textField.text = "0."
         }
     }
