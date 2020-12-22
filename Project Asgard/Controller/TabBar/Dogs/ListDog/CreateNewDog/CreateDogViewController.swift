@@ -24,6 +24,7 @@ class CreateDogViewController: UIViewController {
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     // MARK: - Properties
     
@@ -85,6 +86,8 @@ class CreateDogViewController: UIViewController {
     }
     
     private func setupContent() {
+        deleteButton.isHidden = true
+        
         guard let dog = dogToModify else { return }
         controllerNameLabel.text = "Modify existing dog"
         nameTextField.text = dog.name
@@ -94,6 +97,10 @@ class CreateDogViewController: UIViewController {
         birthDatePicker.setDate(dog.birthDate!, animated: true)
         dogImageView.setDogImage(from: dog.image)
         sexSegmentedControl.selectedSegmentIndex = Int(dog.sex)
+        deleteButton.isHidden = false
+        deleteButton.roundFilled(wih: nil)
+        deleteButton.backgroundColor = .red
+        deleteButton.setTitleColor(.white, for: .normal)
     }
     
     // MARK: - Actions
@@ -105,6 +112,17 @@ class CreateDogViewController: UIViewController {
     
     @IBAction func didTapCancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapDeleteButton(_ sender: Any) {
+        confirmDeleteAction { (cancelled) in
+            switch cancelled {
+            case true: return
+            case false:
+                self.coreData.deleteObject(self.dogToModify!)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {

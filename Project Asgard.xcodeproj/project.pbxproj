@@ -188,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				E0952F63256C280800D09424 /* CreateDogViewController.swift */,
-				E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */,
 			);
 			path = CreateNewDog;
 			sourceTree = "<group>";
@@ -427,6 +426,7 @@
 		E0F45111257E8E39000F75C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */,
 				E0952F7D256D1E5300D09424 /* PetDetailsViewController.swift */,
 				E01D4DBA2588BC3B00292BFA /* Puppy */,
 				E0BE1EEF2571610E00E9EEFA /* Treatement */,
