@@ -52,17 +52,6 @@ final class CoreDataManager {
         }
     }
     
-    private var allLiter: [DogLitter] {
-        let request: NSFetchRequest<DogLitter> = DogLitter.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
-        
-        do {
-            return try context.fetch(request)
-        } catch {
-            return []
-        }
-    }
-    
     // MARK: - Init
     
     init(_ coreDataStack: CoreDataStack) {

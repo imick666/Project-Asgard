@@ -110,4 +110,25 @@ class Litter_PuppyTest: XCTestCase {
         XCTAssertEqual(dogPuppies.count, 4)
         
     }
+    
+    func testAutoDeleteLitter() {
+        var dog = creatDog()
+        let puppies = createPuppies(1)
+        
+        coreData.createLitter(of: dog, the: Date(), cesarean: false, with: puppies)
+        var dogLitter: [DogLitter] {
+            return dog.litters?.allObjects as! [DogLitter]
+        }
+        var dogPuppies: [Puppy] {
+            return dogLitter[0].puppies?.allObjects as! [Puppy]
+        }
+        
+        XCTAssertEqual(dogPuppies.count, 1)
+        
+        coreData.deleteObject(dogPuppies[0])
+        dog = coreData.allDogs[0]
+        
+        XCTAssertEqual(dogLitter.count, 0)
+        
+    }
 }

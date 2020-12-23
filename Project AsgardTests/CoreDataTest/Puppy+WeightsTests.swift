@@ -28,7 +28,7 @@ class Puppy_WeightsTests: XCTestCase {
     
     // MARK: - Methodes
     
-    private func createDogAndPuppy() -> Puppy {
+    func createDogAndPuppy() -> Puppy {
         coreData.createDog(named: "astride", "", sex: 1, dogColor: nil, birthThe: Date(), lofNumber: nil, chipNumber: nil, pitcure: nil)
         
         var dog: Dog {
@@ -44,7 +44,7 @@ class Puppy_WeightsTests: XCTestCase {
     
     // MARK: - Tests
     
-    private func testWriteAndRead() {
+    func testWriteAndRead() {
         let newPupy = createDogAndPuppy()
         
         coreData?.createWeight(for: newPupy, date: Date(), weight: 2)
