@@ -91,6 +91,11 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
+        if treatements[indexPath.row].endDate! < Date() {
+            cell.textLabel?.textColor = .gray
+        } else {
+            cell.textLabel?.textColor = .black
+        }
         cell.textLabel?.text = treatements[indexPath.row].name
         
         return cell

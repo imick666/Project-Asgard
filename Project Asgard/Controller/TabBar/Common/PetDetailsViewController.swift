@@ -185,9 +185,9 @@ class PetDetailsViewController: UIViewController {
         // Treatements
         var treatements: [Treatement]? {
             if let dog = selectedDog {
-                return dog.treatements?.sortedArray(using: [NSSortDescriptor(key: "startDate", ascending: false)]) as? [Treatement]
+                return dog.treatements?.sortedArray(using: [NSSortDescriptor(key: "endDate", ascending: false)]) as? [Treatement]
             } else if let puppy = selectedPuppy {
-                return puppy.treatements?.sortedArray(using: [NSSortDescriptor(key: "startDate", ascending: false)]) as? [Treatement]
+                return puppy.treatements?.sortedArray(using: [NSSortDescriptor(key: "endDate", ascending: false)]) as? [Treatement]
             } else {
                 return nil
             }
