@@ -25,6 +25,7 @@ class CreatePuppyViewController: UIViewController {
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var isSoldSwitch: UISwitch!
     @IBOutlet weak var necklaceColorButton: UIButton!
+    @IBOutlet weak var isSoldRow: UIStackView!
     
     @IBOutlet weak var resetImageButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -103,8 +104,8 @@ class CreatePuppyViewController: UIViewController {
     }
     
     private func setupContent() {
-        affixTextField.text = "Des Monts d'Asgard"
         deleteButton.isHidden = true
+        isSoldRow.isHidden = true
         
         guard let puppy = puppyToModify else { return }
         controllerNameLabel.text = "Modify existing puppy"
@@ -119,6 +120,7 @@ class CreatePuppyViewController: UIViewController {
         necklaceColor = UIColor(fromHex: puppy.necklaceColor)
         necklaceColorButton.setTitle(necklaceColor == nil ? "None" : nil, for: .normal)
         deleteButton.isHidden = false
+        isSoldRow.isHidden = false
     }
     
     private func updateResetButton() {
@@ -156,8 +158,11 @@ class CreatePuppyViewController: UIViewController {
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
+        guard let affix = affixTextField.text.orNil else {
+            showAlert(title: "Error", message: "You must add an Affix")
+            return
+        }
         let name = nameTextField.text.orNil
-        let affix = affixTextField.text.orNil
         let sex = Int16(sexSegmentedControl.selectedSegmentIndex)
         let puppyColor = puppyColorTextField.text.orNil
         let lofNumber = lofNumberTextField.text.orNil
