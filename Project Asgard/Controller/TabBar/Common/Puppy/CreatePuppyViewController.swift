@@ -158,11 +158,8 @@ class CreatePuppyViewController: UIViewController {
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
-        guard let affix = affixTextField.text.orNil else {
-            showAlert(title: "Error", message: "You must add an Affix")
-            return
-        }
         let name = nameTextField.text.orNil
+        let affix = affixTextField.text.orNil
         let sex = Int16(sexSegmentedControl.selectedSegmentIndex)
         let puppyColor = puppyColorTextField.text.orNil
         let lofNumber = lofNumberTextField.text.orNil

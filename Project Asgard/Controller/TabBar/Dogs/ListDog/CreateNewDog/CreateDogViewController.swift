@@ -126,13 +126,14 @@ class CreateDogViewController: UIViewController {
     }
     
     @IBAction func didTapDoneButton(_ sender: Any) {
-        guard let name = nameTextField.text.orNil, let affix = affixTextField.text.orNil, let chipNumber = chipTextField.text.orNil else {
-            showAlert(title: "Error", message: "You shoudl enter a name, affix and chip number")
+        guard let name = nameTextField.text.orNil, let chipNumber = chipTextField.text.orNil else {
+            showAlert(title: "Error", message: "You must enter a name and chip number")
             return
         }
         let birthDate = birthDatePicker.date
         let sex = Int16(sexSegmentedControl.selectedSegmentIndex)
         
+        let affix = affixTextField.text.orNil
         let dogColor = dogColorTextField.text.orNil
         let lofNumber = lofTextField.text.orNil
         let image = dogImageView.imageOrNil?.jpegData(compressionQuality: 0.8)

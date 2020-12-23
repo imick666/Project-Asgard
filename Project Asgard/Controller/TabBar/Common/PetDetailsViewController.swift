@@ -196,7 +196,7 @@ class PetDetailsViewController: UIViewController {
         
         // Litters
         if !littersViewContainer.isHidden {
-            let litters = selectedDog?.litters?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)]) as? [DogLitter]
+            let litters = selectedDog?.litters?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: false)]) as? [DogLitter]
             litterViewController.litters = litters ?? []
             litterViewController.delegate = self
         }

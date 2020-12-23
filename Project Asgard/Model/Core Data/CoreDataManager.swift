@@ -63,7 +63,7 @@ final class CoreDataManager {
     
     // MARK: - Create
     
-    func createDog(named name: String, _ affix: String,sex: Int16, dogColor: String?, birthThe date: Date, lofNumber: String?, chipNumber: String?, pitcure: Data?) {
+    func createDog(named name: String, _ affix: String?,sex: Int16, dogColor: String?, birthThe date: Date, lofNumber: String?, chipNumber: String?, pitcure: Data?) {
         let newDog = Dog(context: context)
         newDog.name = name
         newDog.affix = affix
