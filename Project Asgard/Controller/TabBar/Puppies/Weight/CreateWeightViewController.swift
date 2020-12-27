@@ -26,6 +26,7 @@ class CreateWeightViewController: UIViewController {
     // MARK: - Properties
     
     var delegate: CreateWeightDelegate?
+    var minDate: Date?
     
     // MARK: - View Life Cycle
 
@@ -41,6 +42,8 @@ class CreateWeightViewController: UIViewController {
         doneButton.roundFilled(wih: .green)
         weightTextField.delegate = self
         weightTextField.addDoneToKeayboard()
+        datePicker.maximumDate = Date()
+        datePicker.minimumDate = minDate
     }
     
     // MARK: - Actions
@@ -56,7 +59,6 @@ class CreateWeightViewController: UIViewController {
         delegate?.didCreateWeight(date: date, weight: weight)
         
         dismiss(animated: true, completion: nil)
-        
     }
     
 }
@@ -71,8 +73,16 @@ extension CreateWeightViewController: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.text?.first == "." || textField.text?.first == "," {
+        if textField.text?.first == "."  {
             textField.text = "0."
+        } else if textField.text?.first == "," {
+            textField.text = "0,"
+        }
+        
+        guard let text = textField.text, let number = Double(text) else { return }
+        if number < 0 || number > 110 {
+            showAlert(title: "Error", message: "You must enter a weight between 0 and 110 Kg")
+            textField.text = nil
         }
     }
     

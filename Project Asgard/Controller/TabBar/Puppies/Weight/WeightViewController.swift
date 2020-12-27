@@ -127,6 +127,7 @@ class WeightViewController: UIViewController {
         }
         
         createWeightVC.delegate = self
+        createWeightVC.minDate = puppy?.birthDate
         parent?.present(createWeightVC, animated: true, completion: nil)
     }
 }
