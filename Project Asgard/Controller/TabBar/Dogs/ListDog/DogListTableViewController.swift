@@ -40,12 +40,10 @@ class DogListTableViewController: UITableViewController {
         let request: NSFetchRequest<Dog> = Dog.fetchRequest()
         var sortDescriptor: [NSSortDescriptor] {
             switch sementedController.selectedSegmentIndex {
-            case 0:
-                return [NSSortDescriptor(key: "name", ascending: true)]
-            case 1:
-                return [NSSortDescriptor(key: "birthDate", ascending: true)]
-            default:
-                fatalError()
+            case 0: return [NSSortDescriptor(key: "name", ascending: true)]
+            case 1: return [NSSortDescriptor(key: "birthDate", ascending: true)]
+            case 2: return [NSSortDescriptor(key: "birthDate", ascending: false)]
+            default: fatalError()
             }
         }
         request.sortDescriptors = sortDescriptor
@@ -63,7 +61,7 @@ class DogListTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultController?.fetchedObjects?.count ?? 0
     }
