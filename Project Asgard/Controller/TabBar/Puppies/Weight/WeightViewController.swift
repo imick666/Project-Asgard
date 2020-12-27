@@ -28,6 +28,14 @@ class WeightViewController: UIViewController {
         }
     }
     
+    private var minTimeInterval: TimeInterval {
+        return (weights.map( { $0.date!.timeIntervalSince1970 })).min() ?? 0
+    }
+    
+    private var maxTimeInterval: TimeInterval {
+        (weights.map( { $0.date!.timeIntervalSince1970 })).max() ?? 0
+    }
+    
     private var puppy: Puppy? {
         return parentView?.selectedPuppy
     }
@@ -45,7 +53,6 @@ class WeightViewController: UIViewController {
         setupView()
         setupCoreData()
         updateGraph()
-
     }
     
     // MARK: - Methodes
@@ -71,44 +78,27 @@ class WeightViewController: UIViewController {
         chartView.doubleTapToZoomEnabled = false
         chartView.leftAxis.enabled = false
         
-        
-        chartView.rightAxis.drawLabelsEnabled = false
         chartView.legend.enabled = false
         chartView.rightAxis.enabled = false
         chartView.xAxis.labelPosition = .bottom
         
         chartView.setVisibleXRangeMaximum(7)
-        
-        var minTime: TimeInterval = 0
-        if let minTI = (weights.map( { $0.date!.timeIntervalSince1970 })).min() {
-            minTime = minTI
-        }
-        var maxTime: TimeInterval = 0
-        if let lastTI = (weights.map( { $0.date!.timeIntervalSince1970 })).max() {
-            maxTime = lastTI
-        }
-        chartView.moveViewToX((maxTime - minTime) / (3600 * 24))
+        chartView.xAxis.granularityEnabled = true
+    
+        chartView.moveViewToX((maxTimeInterval - minTimeInterval) / (3600 * 24))
         chartView.minOffset = 16
     }
     
     private func updateGraph() {
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM"
-        formatter.locale = Locale.current
-        
-        var referenceTimeInterval: TimeInterval = 0
-        if let minTimeInterval = (weights.map( { $0.date!.timeIntervalSince1970 })).min() {
-            referenceTimeInterval = minTimeInterval
-        }
                 
-        let xValueNumbersFormatter = ChartXAxisFormatter(dateFormatter: formatter, referenceTimeInterval: referenceTimeInterval)
+        let xAxisFormatter = ChartXAxisFormatter(referenceTimeInterval: minTimeInterval)
+        let valueFormatter = ChartValueFormatter()
         
         var lineChartEntry = [ChartDataEntry]()
         
         for weight in weights {
             let timeIntervale = weight.date!.timeIntervalSince1970
-            let xValue = (timeIntervale - referenceTimeInterval) / (3600 * 24)
+            let xValue = (timeIntervale - minTimeInterval) / (3600 * 24)
             let yValue = weight.weight
             
             let entry = ChartDataEntry(x: xValue, y: yValue)
@@ -120,12 +110,13 @@ class WeightViewController: UIViewController {
         line1.drawCircleHoleEnabled = false
         line1.circleRadius = 7
         line1.valueFont = NSUIFont.systemFont(ofSize: 12)
+        line1.valueFormatter = valueFormatter
         
         let data = LineChartData()
         data.addDataSet(line1)
         
         chartView.data = data
-        chartView.xAxis.valueFormatter = xValueNumbersFormatter
+        chartView.xAxis.valueFormatter = xAxisFormatter
     }
 
     // MARK: - Actions
@@ -138,7 +129,6 @@ class WeightViewController: UIViewController {
         createWeightVC.delegate = self
         parent?.present(createWeightVC, animated: true, completion: nil)
     }
-
 }
 
 extension WeightViewController: CreateWeightDelegate {

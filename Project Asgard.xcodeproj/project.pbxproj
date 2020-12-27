@@ -55,7 +55,7 @@
 		E0F2568F2571444900D45094 /* TreatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2568E2571444900D45094 /* TreatementViewController.swift */; };
 		E0F668C92590FA14005E4B3C /* CreateWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F668C82590FA14005E4B3C /* CreateWeightViewController.swift */; };
 		E0FDA2F5258F854D00CF943F /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F4258F854D00CF943F /* WeightViewController.swift */; };
-		E0FDA2F9258F8E2800CF943F /* XAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */; };
+		E0FDA2F9258F8E2800CF943F /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDA2F8258F8E2800CF943F /* ChartFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +123,7 @@
 		E0F2568E2571444900D45094 /* TreatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatementViewController.swift; sourceTree = "<group>"; };
 		E0F668C82590FA14005E4B3C /* CreateWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWeightViewController.swift; sourceTree = "<group>"; };
 		E0FDA2F4258F854D00CF943F /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
-		E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisFormatter.swift; sourceTree = "<group>"; };
+		E0FDA2F8258F8E2800CF943F /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
 		E514AAF0634876DC10B58635 /* Pods_Project_AsgardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_AsgardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7B3EAD5818653FBC5645DB /* Pods-Project Asgard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Asgard.release.xcconfig"; path = "Target Support Files/Pods-Project Asgard/Pods-Project Asgard.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -437,7 +437,7 @@
 		E0FDA2F1258F846500CF943F /* Weight */ = {
 			isa = PBXGroup;
 			children = (
-				E0FDA2F8258F8E2800CF943F /* XAxisFormatter.swift */,
+				E0FDA2F8258F8E2800CF943F /* ChartFormatter.swift */,
 				E0FDA2F4258F854D00CF943F /* WeightViewController.swift */,
 				E0F668C82590FA14005E4B3C /* CreateWeightViewController.swift */,
 			);
@@ -630,7 +630,7 @@
 				E0952F64256C280800D09424 /* CreateDogViewController.swift in Sources */,
 				E0E44BE9256BFF860086F451 /* AppDelegate.swift in Sources */,
 				E0952F77256D0F5400D09424 /* OptionalString+DefaultValue.swift in Sources */,
-				E0FDA2F9258F8E2800CF943F /* XAxisFormatter.swift in Sources */,
+				E0FDA2F9258F8E2800CF943F /* ChartFormatter.swift in Sources */,
 				E053615D2588DEAD00AFF795 /* UIColor+String.swift in Sources */,
 				E0C8FA71256C09E900029BDB /* Constants.swift in Sources */,
 				E0ED833725730C0C003E6BA2 /* LitterViewController.swift in Sources */,
