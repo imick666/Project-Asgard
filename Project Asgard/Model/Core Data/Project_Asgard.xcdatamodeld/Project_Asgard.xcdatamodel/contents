@@ -18,7 +18,7 @@
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="dog" maxCount="1" deletionRule="Nullify" destinationEntity="Dog" inverseName="litters" inverseEntity="Dog"/>
-        <relationship name="puppies" toMany="YES" deletionRule="Nullify" destinationEntity="Puppy" inverseName="litter" inverseEntity="Puppy"/>
+        <relationship name="puppies" toMany="YES" deletionRule="Cascade" destinationEntity="Puppy" inverseName="litter" inverseEntity="Puppy"/>
     </entity>
     <entity name="Puppy" representedClassName=".Puppy" syncable="YES" codeGenerationType="class">
         <attribute name="affix" optional="YES" attributeType="String"/>
