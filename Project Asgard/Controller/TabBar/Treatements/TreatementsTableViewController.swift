@@ -62,7 +62,7 @@ class TreatementsTableViewController: UITableViewController {
             NSSortDescriptor(key: "toDog.name", ascending: true),
             NSSortDescriptor(key: "name", ascending: true)
         ]
-        request.predicate = NSPredicate(format: "toDog != nil")
+        request.predicate = NSPredicate(format: "toDog != nil && endDate > %@", Date(timeIntervalSinceNow: -86400) as CVarArg)
                 
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "toDog.name", cacheName: nil)
     }
@@ -74,7 +74,7 @@ class TreatementsTableViewController: UITableViewController {
             NSSortDescriptor(key: "date", ascending: false)
         ]
         
-        request.predicate = NSPredicate(format: "SUBQUERY(puppies, $puppy, SOME $puppy.treatements != nil).@count != 0")
+        request.predicate = NSPredicate(format: "SUBQUERY(puppies, $puppy, SOME $puppy.treatements != nil && SOME $puppy.treatements.endDate > %@).@count != 0", Date(timeIntervalSinceNow: -86400) as CVarArg)
     
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "dog.name", cacheName: nil)
     }

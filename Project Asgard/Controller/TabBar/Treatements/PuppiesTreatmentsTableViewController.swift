@@ -47,7 +47,7 @@ class PuppiesTreatmentsTableViewController: UITableViewController {
             NSSortDescriptor(key: "name", ascending: true),
             NSSortDescriptor(key: "startDate", ascending: false)
         ]
-        request.predicate = NSPredicate(format: "toPuppy != nil && toPuppy.litter == %@", selectedLitter)
+        request.predicate = NSPredicate(format: "toPuppy != nil && toPuppy.litter == %@ && endDate > %@", selectedLitter, Date(timeIntervalSinceNow: -86400) as CVarArg)
         
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "toPuppy.name", cacheName: nil)
         fetchedResultController.delegate = self

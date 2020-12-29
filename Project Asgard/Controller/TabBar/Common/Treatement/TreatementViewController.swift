@@ -91,7 +91,7 @@ extension TreatementViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
-        if treatements[indexPath.row].endDate! < Date() {
+        if treatements[indexPath.row].endDate! < Date(timeIntervalSinceNow: -86400) {
             cell.textLabel?.textColor = .gray
         } else {
             cell.textLabel?.textColor = .black
