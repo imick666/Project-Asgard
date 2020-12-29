@@ -81,6 +81,11 @@ class CreateTreatementViewController: UIViewController {
     
     // MARK: - Actions
     
+    @IBAction func datesHasChange(_ sender: Any) {
+        startDatePicker.maximumDate = endDatePicker.date
+        endDatePicker.minimumDate = startDatePicker.date
+    }
+    
     @IBAction func didTapCancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
