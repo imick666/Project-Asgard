@@ -126,8 +126,12 @@ class WeightViewController: UIViewController {
             return
         }
         
+        if let lastWeight = weights.last?.date {
+            createWeightVC.minDate = lastWeight
+        } else {
+            createWeightVC.minDate = puppy?.birthDate
+        }
         createWeightVC.delegate = self
-        createWeightVC.minDate = puppy?.birthDate
         parent?.present(createWeightVC, animated: true, completion: nil)
     }
 }
