@@ -94,6 +94,7 @@ class CreateDogViewController: UIViewController {
         affixTextField.text = dog.affix
         chipTextField.text = dog.chipNumber
         lofTextField.text = dog.lofNumber
+        dogColorTextField.text = dog.dogColor
         birthDatePicker.setDate(dog.birthDate!, animated: true)
         dogImageView.setDogImage(from: dog.image)
         sexSegmentedControl.selectedSegmentIndex = Int(dog.sex)

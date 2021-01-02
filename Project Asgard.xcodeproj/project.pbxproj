@@ -184,14 +184,6 @@
 			path = LiiterCell;
 			sourceTree = "<group>";
 		};
-		E03D7727256FC54E001128F9 /* CreateNewDog */ = {
-			isa = PBXGroup;
-			children = (
-				E0952F63256C280800D09424 /* CreateDogViewController.swift */,
-			);
-			path = CreateNewDog;
-			sourceTree = "<group>";
-		};
 		E070866E25826FA900CBCEE0 /* Treatements */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +231,14 @@
 				E01D4DB025862A5C00292BFA /* SelectDogAndPuppyViewController.swift */,
 			);
 			path = Treatement;
+			sourceTree = "<group>";
+		};
+		E0C4720225A0AD7D0079A5A0 /* Dog */ = {
+			isa = PBXGroup;
+			children = (
+				E0952F63256C280800D09424 /* CreateDogViewController.swift */,
+			);
+			path = Dog;
 			sourceTree = "<group>";
 		};
 		E0C8FA75256C0A3E00029BDB /* Cells */ = {
@@ -410,7 +410,6 @@
 			isa = PBXGroup;
 			children = (
 				E0952F56256C0D9000D09424 /* DogListTableViewController.swift */,
-				E03D7727256FC54E001128F9 /* CreateNewDog */,
 			);
 			path = ListDog;
 			sourceTree = "<group>";
@@ -426,6 +425,7 @@
 		E0F45111257E8E39000F75C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E0C4720225A0AD7D0079A5A0 /* Dog */,
 				E0952F6E256C2FAA00D09424 /* PickerViewManager.swift */,
 				E0952F7D256D1E5300D09424 /* PetDetailsViewController.swift */,
 				E01D4DBA2588BC3B00292BFA /* Puppy */,
