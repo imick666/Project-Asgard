@@ -45,9 +45,10 @@ class SelectDogAndPuppyViewController: UIViewController {
     // MARK: - Methodes
     
     private func setupFrc() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else { return }
         switch segmentedControl.selectedSegmentIndex {
-        case 0: setupFrcForDog()
-        case 1: setupFrcForPuppy()
+        case 0: setupFrcForDog(context: context)
+        case 1: setupFrcForPuppy(context: context)
         default: return
         }
         
@@ -59,7 +60,7 @@ class SelectDogAndPuppyViewController: UIViewController {
         }
     }
     
-    private func setupFrcForPuppy() {
+    private func setupFrcForPuppy(context: NSManagedObjectContext) {
         let request: NSFetchRequest<NSFetchRequestResult> = Puppy.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(key: "litter.dog.name", ascending: true),
@@ -69,22 +70,14 @@ class SelectDogAndPuppyViewController: UIViewController {
         
         request.predicate = NSPredicate(format: "sold == %@", NSNumber(booleanLiteral: false))
         
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else {
-            return
-        }
-        
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "litter.dog.name", cacheName: nil)
     }
     
-    private func setupFrcForDog() {
+    private func setupFrcForDog(context: NSManagedObjectContext) {
         let request: NSFetchRequest<NSFetchRequestResult> = Dog.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(key: "name", ascending: true),
         ]
-        
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else {
-            return
-        }
         
         fetchedResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     }
