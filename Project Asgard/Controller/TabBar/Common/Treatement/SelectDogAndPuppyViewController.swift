@@ -67,6 +67,8 @@ class SelectDogAndPuppyViewController: UIViewController {
             NSSortDescriptor(key: "name", ascending: true)
         ]
         
+        request.predicate = NSPredicate(format: "sold == %@", NSNumber(booleanLiteral: false))
+        
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.mainContext else {
             return
         }
