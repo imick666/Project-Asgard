@@ -35,6 +35,7 @@ class CreateLitterViewController: UIViewController {
         setupCoreData()
         setupView()
         setupTableView()
+        datePicker.minimumDate = forDog.birthDate
     }
     
     // MARK: - Methodes

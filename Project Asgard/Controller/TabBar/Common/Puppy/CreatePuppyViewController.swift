@@ -121,6 +121,7 @@ class CreatePuppyViewController: UIViewController {
         necklaceColorButton.setTitle(necklaceColor == nil ? "None" : nil, for: .normal)
         deleteButton.isHidden = false
         isSoldRow.isHidden = false
+        updateResetButton()
     }
     
     private func updateResetButton() {

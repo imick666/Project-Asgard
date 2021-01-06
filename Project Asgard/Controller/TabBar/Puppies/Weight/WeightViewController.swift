@@ -126,7 +126,7 @@ class WeightViewController: UIViewController {
             return
         }
         
-        if let lastWeight = weights.last?.date {
+        if let lastWeight = weights.last?.date?.addingTimeInterval(86400) {
             createWeightVC.minDate = lastWeight
         } else {
             createWeightVC.minDate = puppy?.birthDate

@@ -67,7 +67,6 @@ class CreateDogViewController: UIViewController {
         doneButton.roundFilled(wih: .green)
         resetImageButton.roundFilled(wih: .gray)
         dogImageView.rounded(nil)
-        resetImageButton.isHidden = !dogImageView.imageHasChanged
         
         setupTextFields()
     }
@@ -102,6 +101,7 @@ class CreateDogViewController: UIViewController {
         deleteButton.roundFilled(wih: nil)
         deleteButton.backgroundColor = .red
         deleteButton.setTitleColor(.white, for: .normal)
+        resetImageButton.isHidden = !dogImageView.imageHasChanged
     }
     
     // MARK: - Actions
